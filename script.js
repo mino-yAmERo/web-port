@@ -1,13 +1,14 @@
 
 window.onload = function () {
-    //welcome
-    const hint_message = document.getElementById('welcome-message');  
+    // ----------------welcome------------------- //
+    const welcome_message = document.getElementById('welcome-message');  
     const welcome = document.getElementById('welcome');
     const main = document.getElementById('main');
 
 
     //welcome fade-in
-    setTimeout(fadeIn,6000);
+    setTimeout(fadeIn,6000); // welcome to my website //
+
     setTimeout(fadeOut,7500);
 
 
@@ -22,7 +23,7 @@ window.onload = function () {
     }
     
 
-
+    // welcome disappear
     function disr(){
         let opa = Number(window.getComputedStyle(welcome).getPropertyValue("opacity"));
         if (opa >= 0) {
@@ -54,14 +55,14 @@ window.onload = function () {
 }
     // welcome message
     function welcome() {
-        let opacity = Number(window.getComputedStyle(hint_message).getPropertyValue("opacity"));
+        let opacity = Number(window.getComputedStyle(welcome_message).getPropertyValue("opacity"));
         if (opacity <= 1) {
             opacity += 0.01;
-            hint_message.style.opacity = opacity;
+            welcome_message.style.opacity = opacity;
         }
     } 
 
-    // change icon
+    // ----------------------------change icon ------------------------------------//
     const ig_icon = document.getElementById('ig-icon');
     const fb_icon = document.getElementById('fb-icon');
     const line_icon = document.getElementById('line-icon');
