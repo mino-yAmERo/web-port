@@ -9,6 +9,7 @@ window.onload = function () {
     //welcome fade-in
     setTimeout(fadeIn,6000); // welcome to my website //
 
+    //welcome fade-out and show main webpage
     setTimeout(fadeOut,7500);
 
 
@@ -23,7 +24,7 @@ window.onload = function () {
     }
     
 
-    // welcome disappear
+    // welcome disappear and show main webpage 
     function disr(){
         let opa = Number(window.getComputedStyle(welcome).getPropertyValue("opacity"));
         if (opa >= 0) {
