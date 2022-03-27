@@ -1,0 +1,318 @@
+* {
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+#welcome {
+    opacity: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
+}
+#welcome h1 {
+    margin: 0;
+    padding: 0;
+    color: white ;
+    font-size: 100px;
+    text-align: center;
+    
+}
+#h {
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: 0.15em solid orange; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto;
+    letter-spacing: .1em; /* Adjust as needed */
+    animation: 
+    typing 5s steps(80, end),
+    blink-caret .5s step-end infinite;
+}
+
+
+/* The typing effect */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+  /* The typewriter cursor effect */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+    100% { border:none;}
+}
+
+#welcome-message {
+    opacity:0 ;
+    margin-top: 50px;
+    color: white;
+    font-size: 25px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+#main {
+    opacity: 0;
+    display:none;
+}
+.header {
+    border : 1px solid #2a2a2a;
+    background-color: #2a2a2a;
+    width: 100%;
+
+}
+.header h1 {
+    margin-left: 50px;
+    font-size: 45px;
+    color: #8a8a8a;
+
+}
+.top-nav{
+    overflow: hidden;
+    background-color: #2a2a2ada;
+    padding: 10px 20px;
+}
+.top-nav a {
+    display: inline;
+    text-decoration: none;
+    font-size: 25px;
+    color :white;
+    padding: 14px 16px;
+}
+.top-nav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+.flex-container {
+    background-image: linear-gradient(to right,rgba(10, 10, 10,0.85),rgba(47,47,47,0.85));
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.flex-container > * {
+    flex-grow: 1;
+    flex-basis: 25%;
+}
+.column {
+    padding: 15px 15px;
+}
+/*---first paragraph---*/
+.column:first-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-basis: 100%;
+}
+
+/*---Hello! I'm---*/
+.column:first-child h1 {
+    margin: 40px 0px 0px;
+    font-weight: normal;
+    font-size: 50px; 
+    color: #ddd;
+    letter-spacing: 1px;
+    text-shadow: 5px 5px 3.5px black;
+}
+
+/*---Nutthabhas Thitabhas---*/
+.column:first-child p {
+    margin: 0px 0px 30px ;
+    font-size: 45px;
+    color: #ddd;
+    font-weight: 50;
+    letter-spacing: 1.25px;
+    text-shadow: 5px 5px 3.5px black;
+}
+
+/*---my photo---*/
+#img-1 {
+    width:500px;
+    height:500px;
+    padding:10px 0px;
+    margin-bottom: 25px;
+    opacity:0.55;
+    transition: all 1s;
+}
+#img-1:hover {
+    opacity: 1;
+    width: 600px;
+    height: 600px;
+}
+
+/*---social media tab---*/
+.contact-tab{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    z-index: 1;
+    align-items: center;
+}
+.contact-tab div a > img {
+    width:48px;
+    height:48px;
+    margin:10px 15px;
+    opacity: 0.5;
+    transition:all 0.5s;
+}
+.contact-tab div a > img:hover {
+    opacity: 1;
+    width:80px;height:80px;
+}
+
+/*---about me---*/
+#about-me {
+    text-align:center ;
+    /* text-shadow: 5px 5px 5px #ddd; */
+    font-size:50px ; 
+    letter-spacing:1px ;
+    color: rgba(231, 228, 228, 0.931);
+    margin:30px 0px 0px;
+}
+/* ---hi my name is Nuttbhas---  */
+#hi-myname{
+    text-align:center ;
+    color: #ddd;
+    flex-basis: 100% ; 
+    font-size:30px ;
+    letter-spacing: 1.25px; 
+    margin: 10px 0 30px;
+}
+#line-1{
+    width:45%;
+    color:#ddd;
+}
+#line-2 {
+    width:45%;
+    margin-bottom:50px;
+    color:#ddd;
+}
+.biocard-container {
+    display: flex;
+    flex-direction: row;
+}
+.biocard-container > div {
+    flex-basis: 25%;
+}
+.biocard-container p{
+    margin-top:0px ;
+    font-size: 18px;
+    color: #ddd;
+}
+
+#biocard-1{
+    display:flex ; 
+    flex-flow: row wrap;
+    
+}
+#biocard-1 > div {
+    flex-basis: 50%;
+}
+
+/* ---biocard text--- */
+#biocard-1 div p:first-child{
+    font-size: 22px;
+}
+#biocard-1 div p:nth-child(2){
+    font-size: 20px;
+    opacity: 0.5;
+}
+#biocard-2 div p:first-child{
+    font-size: 22px;
+    text-align: center;
+}
+#biocard-2 div p:nth-child(n+2){
+    margin-left : 75px;
+    font-size: 20px;
+    opacity: 0.5;
+
+}
+/* .column-space-right {
+    margin-left: 30px ;
+    border-left : 3px solid #ddd;
+}
+.column-space-left {
+    margin-right: 30px ;
+    border-right : 3px solid #ddd;
+} */
+.footer {
+    display: flex;
+    flex-direction: row;
+    background-color:#333;
+
+}
+.footer-column{
+    width:33.33%;
+    background-color: #2a2a2a;
+}
+.footer-column h1 {
+    padding : 10px 0px;
+    text-align: center;
+    color: #8a8a8a;
+
+}
+@media screen and (max-width:768px) {
+    #img-1 {
+        width:400px;
+        height:400px;
+    }
+    #img-1:hover {
+        width: 500px;
+        height: 500px;
+    }
+    .flex-container .column p{
+        font-size: 40px;
+    }
+    .biocard-container {
+        flex-flow: column nowrap;
+    }
+    .biocard-container > div {
+        flex-basis: 100%;
+    }
+    #biocard-1 {
+        flex-flow: column nowrap;
+        align-items:normal;
+    }
+    #biocard-1 > div {
+        padding : 5px 0px;
+    }
+    #biocard-1 div p:first-child{
+        text-align:center;
+    }
+    #biocard-1 div p:nth-child(2){
+        margin-left : 75px;
+        font-size: 20px;
+        opacity: 0.5;
+    }
+    #line-2 {
+        margin-bottom: 25px;
+    }
+}
+@media screen and (max-width:420px){
+    .column:first-child h1 {
+        margin: 20px 0px 0px;
+    }
+    #line-1 , #line-2 {
+        width: 80%;
+    }
+    #img-1{
+        width:300px;
+        height:300px;
+        padding:10px 0px;
+        margin-bottom: 25px;
+        opacity:0.55
+    }
+    #img-1:hover {
+        width: 400px;
+        height: 400px;
+    }
+    .flex-container .column p{
+        font-size: 30px;
+    }
+    .flex-container .column h1{
+        font-size: 40px;
+    }
+}
