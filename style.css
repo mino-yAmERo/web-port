@@ -287,6 +287,16 @@ body{
 
 }
 @media screen and (max-width:768px) {
+    #welcome h1 {
+        font-size: 70px;
+    }
+    #welcome-message h2 {
+        font-size: 40px;
+    }
+    #welcome-message p{
+        font-size: 30px;
+    }
+
     #img-1 {
         width:400px;
         height:400px;
@@ -324,6 +334,15 @@ body{
     }
 }
 @media screen and (max-width:420px){
+    #welcome h1 {
+        font-size: 50px;
+    }
+    #welcome-message h2 {
+        font-size: 30px;
+    }
+    #welcome-message p{
+        font-size: 20px;
+    }
     .column:first-child h1 {
         margin: 20px 0px 0px;
     }
