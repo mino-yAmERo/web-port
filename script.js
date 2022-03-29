@@ -6,16 +6,19 @@ window.onload = function () {
     const main = document.getElementById('main');
 
 
+    //main function 
     //welcome fade-in
     setTimeout(fadeIn,6000); // welcome to my website //
 
+    //main function 
     //welcome fade-out and show main webpage
-    setTimeout(fadeOut,7500);
+    setTimeout(fadeOut,8000);
+
 
 
     // tag p welcome function 
     function fadeIn (){
-        setInterval(welcome,10);
+        setInterval(welcomeText,10);
 
     }
     // welcome ani fadeout --> webpage
@@ -48,19 +51,21 @@ window.onload = function () {
     function webFadeIn() {
         let opa = Number(window.getComputedStyle(main).getPropertyValue("opacity"));
         if (opa <=1){
+        if (opa == 1)  return;
         opa += 0.1;
         main.style.opacity = opa;
         }
-        if (opa >= 1)  return;
+        
 
 }
     // welcome message
-    function welcome() {
+    function welcomeText() {
         let opacity = Number(window.getComputedStyle(welcome_message).getPropertyValue("opacity"));
         if (opacity <= 1) {
             opacity += 0.01;
             welcome_message.style.opacity = opacity;
         }
+        if (opacity >= 1) return;
     } 
 
     // ----------------------------change icon ------------------------------------//
