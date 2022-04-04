@@ -39,14 +39,14 @@ window.onload = function () {
     // welcome disappear && show webpage
     function disr(){
         let opa = Number(window.getComputedStyle(welcome).getPropertyValue("opacity"));
-        if (opa >= 0) {
+        if (opa > 0) {
             opa -= 0.01;
-            if (opa==0) {
+            welcome.style.opacity = opa; 
+            if (opa <= 0) {
                 welcome.style.display = 'none';
                 main.style.display = 'block';
                 return;
             }
-            welcome.style.opacity = opa;            
         }       
 }
 
