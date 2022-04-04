@@ -83,7 +83,7 @@ body{
     margin:7.5px 0px;
 }
 #main {
-    opacity: 0;
+    opacity: 1;
     display:none;
 }
 .header {

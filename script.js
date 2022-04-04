@@ -18,46 +18,8 @@ window.onload = function () {
 
     // tag p welcome function 
     function fadeIn (){
-        setInterval(welcomeText,10);
-
+        setInterval(welcomeText,10); 
     }
-    // welcome ani fadeout --> webpage
-    function fadeOut (){
-        setInterval(disr,10);
-    }
-    
-
-    // welcome disappear and show main webpage 
-    function disr(){
-        let opa = Number(window.getComputedStyle(welcome).getPropertyValue("opacity"));
-        if (opa >= 0) {
-            opa -= 0.01;
-            if (opa==0) {
-                welcome.style.display = 'none';
-                return;
-            }
-            welcome.style.opacity = opa;
-            
-        }
-        showWebPage();       
-    }
-    function showWebPage() {
-        main.style.display = 'block';
-        setInterval(webFadeIn,10);
-        
-    }
-
-    //main webpage fadein
-    function webFadeIn() {
-        let opa = Number(window.getComputedStyle(main).getPropertyValue("opacity"));
-        if (opa <=1){
-        if (opa == 1)  return;
-        opa += 0.1;
-        main.style.opacity = opa;
-        }
-        
-
-}
     // welcome message
     function welcomeText() {
         let opacity = Number(window.getComputedStyle(welcome_message).getPropertyValue("opacity"));
@@ -67,6 +29,26 @@ window.onload = function () {
         }
         if (opacity >= 1) return;
     } 
+
+    // welcome ani fadeout --> webpage
+    function fadeOut (){
+        setInterval(disr,10);
+    }
+    
+
+    // welcome disappear && show webpage
+    function disr(){
+        let opa = Number(window.getComputedStyle(welcome).getPropertyValue("opacity"));
+        if (opa >= 0) {
+            opa -= 0.01;
+            if (opa==0) {
+                welcome.style.display = 'none';
+                main.style.display = 'block';
+                return;
+            }
+            welcome.style.opacity = opa;            
+        }       
+}
 
     // ----------------------------change icon ------------------------------------//
     const ig_icon = document.getElementById('ig-icon');
