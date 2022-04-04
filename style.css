@@ -251,6 +251,7 @@ body{
 #biocard-1 div p:nth-child(2){
     font-size: 20px;
     opacity: 0.5;
+    text-decoration: none;
 }
 #biocard-2 div p:first-child{
     font-size: 22px;
