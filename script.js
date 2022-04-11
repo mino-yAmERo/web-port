@@ -8,13 +8,15 @@ window.onload = function () {
 
     //main function 
     //welcome fade-in
-    setTimeout(fadeIn,6000); // welcome to my website //
+    // setTimeout(fadeIn,6000); // welcome to my website //
 
     //main function 
     //welcome fade-out and show main webpage
-    setTimeout(fadeOut,8000);
+    // setTimeout(fadeOut,8000);
 
-
+    //----FOR TEST----
+    setTimeout(fadeIn,100);
+    setTimeout(fadeOut,100);
 
     // tag p welcome function 
     function fadeIn (){

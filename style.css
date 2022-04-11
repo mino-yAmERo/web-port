@@ -1,6 +1,9 @@
 * {
     box-sizing: border-box;
 }
+html{
+    scroll-behavior: smooth;
+}
 body{
     margin: 0;
     padding: 0;
@@ -87,8 +90,8 @@ body{
     display:none;
 }
 .header {
-    border : 1px solid #2a2a2a;
-    background-color: #2a2a2a;
+    border : 1px solid transparent;
+    background-color: rgba(5, 5, 5, 0.9);
     width: 100%;
 
 }
@@ -115,7 +118,7 @@ body{
     color: black;
 }
 .flex-container {
-    background-image: linear-gradient(to right,rgba(10, 10, 10,0.85),rgba(47,47,47,0.85));
+    background-color: rgba(5, 5, 5, 0.9);
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -125,7 +128,8 @@ body{
     flex-basis: 25%;
 }
 .column {
-    padding: 15px 15px;
+    background-color: #2a2a2a;
+    margin: 15px 15px;
 }
 /*---first paragraph---*/
 .column:first-child {
@@ -136,31 +140,28 @@ body{
 }
 
 /*---Hello! I'm---*/
-.column:first-child h1 {
+/* .column:first-child h1 {
     margin: 40px 0px 0px;
     font-weight: normal;
     font-size: 50px; 
     color: #ddd;
     letter-spacing: 1px;
     text-shadow: 5px 5px 3.5px black;
-}
+} */
 
 /*---Nutthabhas Thitabhas---*/
-.column:first-child p {
-    margin: 0px 0px 30px ;
-    font-size: 45px;
-    color: #ddd;
-    font-weight: 50;
-    letter-spacing: 1.25px;
-    text-shadow: 5px 5px 3.5px black;
+.column:first-child h1 {
+    margin: 30px 0px ;
+    font-size: 70px;
+    color: rgba(15, 15, 10, 0.8);
+    letter-spacing: 0.75px;
+    
 }
 
 /*---my photo---*/
 #img-1 {
     width:500px;
     height:500px;
-    padding:10px 0px;
-    margin-bottom: 25px;
     opacity:0.55;
     transition: all 1s;
 }
@@ -175,8 +176,8 @@ body{
     display: flex;
     flex-direction: column;
     width: 100%;
-    z-index: 1;
     align-items: center;
+    padding: 10px 0px;
 }
 .contact-tab div a > img {
     width:48px;
@@ -202,7 +203,7 @@ body{
     font-size:50px ; 
     letter-spacing:1px ;
     color: rgba(231, 228, 228, 0.931);
-    margin:30px 0px 0px;
+    margin:10px 0px 0px;
 }
 /* ---hi my name is Nuttbhas---  */
 #hi-myname{
@@ -211,9 +212,9 @@ body{
     flex-basis: 100% ; 
     font-size:30px ;
     letter-spacing: 1.25px; 
-    margin: 10px 0 30px;
+    margin: 5px 0 50px;
 }
-#line-1{
+/* #line-1{
     width:45%;
     color:#ddd;
 }
@@ -221,10 +222,12 @@ body{
     width:45%;
     margin:0px 0px 50px;
     color:#ddd;
-}
+} */
 .biocard-container {
     display: flex;
     flex-direction: row;
+    padding: 30px 0px;
+    flex-basis: 100%;
 }
 .biocard-container > div {
     flex-basis: 25%;
@@ -234,7 +237,6 @@ body{
     font-size: 18px;
     color: #ddd;
 }
-
 #biocard-1{
     display:flex ; 
     flex-flow: row wrap;
@@ -242,11 +244,13 @@ body{
 }
 #biocard-1 > div {
     flex-basis: 50%;
+    padding:0px 10px;
 }
 
 /* ---biocard text--- */
 #biocard-1 div p:first-child{
     font-size: 22px;
+    white-space: nowrap;
 }
 #biocard-1 div p:nth-child(2){
     font-size: 20px;
@@ -271,15 +275,100 @@ body{
     margin-right: 30px ;
     border-right : 3px solid #ddd;
 } */
+
+/* -------- education -------*/
+#education-container {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+    margin: 15px 15px;
+    background-color: #2a2a2a;
+}
+.ed-title {
+    width: 100%;
+}
+.ed-title h1 {
+    text-align: center;
+    font-size: 50px;
+    color:rgba(231, 228, 228, 0.931);
+    margin: 75px 0px;
+}
+.ed-list {
+    display: flex;
+    flex-direction: column;
+    height:80vh;
+    width: 100%;
+    padding:0 5vw 5vh;
+}
+.ed-item {
+    position: relative;
+    margin: 0px 0px 10px;
+    flex-basis: 15%;
+    width: 100%;
+    min-width: 600px;
+    min-height: 120px;
+    transition : all 0.9s ease-in-out ;
+}
+.ed-item::after{
+    content: "";
+    position: absolute;
+    background-color: orange;
+    top: 0; left:0;
+    height: 100% ;
+    width: 15px;
+}
+.ed-item:hover {
+    flex-basis:45%;
+    cursor: pointer;
+}
+.ed-bg {
+    background-image: linear-gradient(180deg, rgba(25, 25, 25, 0.9),#2a2a2a);
+    position: relative;
+    top:0; left:0;
+    width:100%; height: 100%;
+}
+.ed-item:hover .ed-bg{
+    background-image: linear-gradient(180deg, rgba(25, 25, 25, 0.9),rgba(15,15,15,0.9));
+    transition: all 1.0s ease-in-out;
+}
+.ed-year {
+    position: absolute;
+    top:15%;left:5%;
+}
+.ed-year p {
+    margin: 0;
+    font-size: 40px;
+    white-space: nowrap;
+    letter-spacing: -2px;
+    color:rgba(231, 228, 228, 0.931);
+}
+.ed-content {
+    position: absolute;
+    top:35% ; left:15%;
+    overflow: hidden;   
+}
+.ed-content-hide{
+    opacity: 0;
+    transform:translateY(25px);
+    font-size: 25px;
+    letter-spacing: 0px;
+    color:rgba(231, 228, 228, 0.931); 
+}
+.ed-item:hover .ed-content-hide{
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.85s ease-in-out 1s;
+}
+
+/* -------- footer -------*/
 .footer {
     display: flex;
     flex-direction: row;
-    background-color:#333;
-
+    
 }
 .footer-column{
     width:33.33%;
-    background-color: #2a2a2a;
+    background-color: rgba(5, 5, 5, 0.9);
 }
 .footer-column h1 {
     padding : 10px 0px;
@@ -287,7 +376,12 @@ body{
     color: #8a8a8a;
 
 }
+/* ------- Responsive -------*/
 @media screen and (max-width:768px) {
+    .column:first-child h1 {
+        font-size: 55px;
+        margin: 20px 0px ;
+    }
     #welcome h1 {
         font-size: 70px;
     }
@@ -297,7 +391,6 @@ body{
     #welcome-message p{
         font-size: 30px;
     }
-
     #img-1 {
         width:400px;
         height:400px;
@@ -330,8 +423,35 @@ body{
         font-size: 20px;
         opacity: 0.5;
     }
-    #line-2 {
-        margin-bottom: 25px;
+    .ed-title h1{
+        margin: 50px 0px
+    }
+    .ed-list{
+        height:75vh
+    }
+}
+@media screen and (max-width:600px){
+    .column:first-child h1 {
+        font-size: 45px;
+        margin: 15px 0px ;
+    }
+    #about-me {
+        font-size : 40px;
+    }
+    #hi-myname {
+        font-size: 25px;
+    }
+    #img-1{
+        width:350px;
+        height:350px;
+        padding:10px 0px;
+        margin-bottom: 0px;
+        opacity:0.55
+        
+    }
+    #img-1:hover {
+        width: 450px;
+        height: 450px;
     }
 }
 @media screen and (max-width:420px){
