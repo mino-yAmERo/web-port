@@ -337,7 +337,6 @@ body{
     width: auto;
 }
 .ed-year > p {
-    filter:blur(0px) !important;
     text-align:center ;
     margin: 0;
     font-size: 40px;
