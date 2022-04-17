@@ -139,16 +139,6 @@ body{
     flex-basis: 100%;
 }
 
-/*---Hello! I'm---*/
-/* .column:first-child h1 {
-    margin: 40px 0px 0px;
-    font-weight: normal;
-    font-size: 50px; 
-    color: #ddd;
-    letter-spacing: 1px;
-    text-shadow: 5px 5px 3.5px black;
-} */
-
 /*---Nutthabhas Thitabhas---*/
 .column:first-child h1 {
     margin: 30px 0px ;
@@ -177,7 +167,7 @@ body{
     flex-direction: column;
     width: 100%;
     align-items: center;
-    padding: 10px 0px;
+    padding: 30px 0px;
 }
 .contact-tab div a > img {
     width:48px;
@@ -188,7 +178,7 @@ body{
 }
 .contact-tab div a > img:hover {
     opacity: 1;
-    width:80px;height:80px;
+    width:80px ;height:80px;
 }
 #about-me-container {
     display:flex;
@@ -199,7 +189,6 @@ body{
 /*---about me---*/
 #about-me {
     text-align:center ;
-    /* text-shadow: 5px 5px 5px #ddd; */
     font-size:50px ; 
     letter-spacing:1px ;
     color: rgba(231, 228, 228, 0.931);
@@ -257,16 +246,7 @@ body{
     margin-left : 75px;
     font-size: 20px;
     opacity: 0.5;
-
 }
-/* .column-space-right {
-    margin-left: 30px ;
-    border-left : 3px solid #ddd;
-}
-.column-space-left {
-    margin-right: 30px ;
-    border-right : 3px solid #ddd;
-} */
 
 /* -------- education -------*/
 #education-container {
