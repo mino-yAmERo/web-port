@@ -8,6 +8,7 @@
     <meta name="format-detection" content="telephone=no">
     <title>Home | Nutthabhas</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 
 <body>
@@ -39,19 +40,35 @@
 
 <!-- top nav -->
         <div class="top-nav">
-            <a href="#">Link</a>
+            <a href="#main">Home</a>
             <a href="#about-me-container">About me</a>
             <a href="#education-container">Education</a>
         </div>
 
 <!-- content -->
-        <div class="section">
+        <div class="page-wrapper">
             <div class="flex-container">
                 <div class="column">
                     <h1> Nutthabhas Thitabhas</h1>
-                    <img id="img-1"
-                        src="https://scontent.fbkk10-1.fna.fbcdn.net/v/t1.6435-9/122671800_3043486405865297_6521283233246456402_n.jpg?_nc_cat=101&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=NwXQsTd_txcAX9V_Syz&_nc_ht=scontent.fbkk10-1.fna&oh=00_AT9XIJweI2RJVUVYqEA8SX9sJ8XStUQhRfJxsW4Gencw0A&oe=625B0469"
-                        alt="">
+                    <div class="slideshow-container">
+                        <div class="myslide fade">
+                            <img src="image/myphoto1.jpg">
+                        </div>
+
+                        <div class="myslide fade">
+                            <img src="image/myphoto2.JPG">
+                        </div>
+            
+                        <div class="myslide fade">
+                            <img src="image/myphoto3.JPEG">
+                        </div>
+                    
+                        <div style="text-align:center;">
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                    </div>
                     <div class="contact-tab">
                         <div>
                             <a href='https://www.facebook.com/off.miner' target='_blank'><img id="fb-icon"
@@ -60,6 +77,8 @@
                                     src='icon/ig_grey.png'></a>
                             <a href='https://line.me/ti/p/HQsqVZMcMv' target='_blank'><img id="line-icon"
                                     src='icon/line_grey.png'></a>
+                            <a href='https://github.com/mino-yAmERo' target='_blank'><img id="github-icon"
+                                    src='icon/github-logo.png'></a>
                         </div>
                     </div>
                 </div>
@@ -150,7 +169,6 @@
                             </div>
                             <div class="logo" style="background-image: url('image/logo_buu.png');"></div>
                         </div>
-
                         <div class="ed-item">
                             <div class="ed-bg"></div>
                             <div class="ed-year">
@@ -158,7 +176,7 @@
                                 <p>2016 - 2019</p>
                                 <hr class="year-line">
                                 <p>Bachelor's Degree</p>
-                            </div>
+                            </div>/
                             <div class="ed-content">
                                 <p class="ed-content-hide">
                                     Bachelor of Engineering in Aeronautical Engineering<br>
@@ -190,7 +208,7 @@
         </div>
 
     </div>
-    <script src="script.js"></script>
+    
 </body>
 
 </html>

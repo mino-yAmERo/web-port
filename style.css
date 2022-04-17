@@ -56,13 +56,11 @@ body{
     from { width: 0 }
     to { width: 100% ;}
 }
-
 /* The typewriter cursor effect */
 @keyframes blink-caret {
     from, to { border-color: transparent }
     50% { border-color: orange; }   
 }
-
 
 #welcome-message {
     opacity:0 ;
@@ -123,10 +121,6 @@ body{
     flex-wrap: wrap;
     flex-direction: row;
 }
-.flex-container > * {
-    flex-grow: 1;
-    flex-basis: 25%;
-}
 .column {
     background-color: #2a2a2a;
     margin: 15px 15px;
@@ -138,33 +132,51 @@ body{
     align-items: center;
     flex-basis: 100%;
 }
-
 /*---Nutthabhas Thitabhas---*/
 .column:first-child h1 {
     margin: 30px 0px ;
     font-size: 70px;
     color: rgba(231, 228, 228, 0.931);
     letter-spacing: 0.75px;
-    
+    text-align: center;
+}
+/*--- Slide Show ---*/
+.slideshow-container {
+    max-width: 600px;
+}
+.myslide {
+    display:none;
+}
+.myslide img {
+    width:600px; height:600px;
+}
+.dot {
+    cursor: pointer;
+    display: inline-block;
+    width:20px; height: 20px; 
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    transition: background-color 0.6s ease;
+}
+.active ,.dot:hover {
+    background-color: #717171;
 }
 
-/*---my photo---*/
-#img-1 {
-    width:500px;
-    height:500px;
-    opacity:0.55;
-    transition: all 1s;
+/*--- fade animation ---*/
+.fade {
+    animation-name : fade;
+    animation-duration: 1.5s ;
 }
-#img-1:hover {
-    opacity: 1;
-    width: 600px;
-    height: 600px;
+@keyframes fade {
+    from { opacity: 0.4}
+    to {opacity: 1}
 }
 
 /*---social media tab---*/
 .contact-tab{
     display: flex;
-    flex-direction: column;
+    flex-flow: column nowrap;
     width: 100%;
     align-items: center;
     padding: 30px 0px;
@@ -284,14 +296,7 @@ body{
     transition : all 0.9s ease-in-out ;
     border: 3px solid white;
 }
-/* .ed-item::after{
-    content: "";
-    position: absolute;
-    background-color: orange;
-    top: 0; left:0;
-    height: 100% ;
-    width: 15px;
-} */
+
 .ed-item:hover {
     flex-basis:45%;
     filter: blur(0px);
@@ -389,14 +394,10 @@ body{
     #welcome-message p{
         font-size: 30px;
     }
-    #img-1 {
-        width:400px;
-        height:400px;
+    .myslide img {
+        width:500px; height:500px;
     }
-    #img-1:hover {
-        width: 500px;
-        height: 500px;
-    }
+
     .flex-container .column p{
         font-size: 40px;
     }
@@ -429,8 +430,11 @@ body{
     }
 }
 @media screen and (max-width:600px){
+    .header h1{
+        font-size: 40px;
+    }
     .column:first-child h1 {
-        font-size: 45px;
+        font-size: 40px;
         margin: 15px 0px ;
     }
     #about-me {
@@ -439,20 +443,18 @@ body{
     #hi-myname {
         font-size: 25px;
     }
-    #img-1{
-        width:350px;
-        height:350px;
-        padding:10px 0px;
-        margin-bottom: 0px;
-        opacity:0.55
-        
+    .myslide img {
+        width:400px; height:400px;
     }
-    #img-1:hover {
-        width: 450px;
-        height: 450px;
+    .contact-tab{
+        padding: 20px 0px;
+    }
+    .dot{
+        width:15px; height:15px;
     }
 }
-@media screen and (max-width:420px){
+@media screen and (max-width:450px){
+    
     #welcome h1 {
         font-size: 50px;
     }
@@ -462,27 +464,35 @@ body{
     #welcome-message p{
         font-size: 20px;
     }
+    .header h1{
+        font-size: 35px;
+        margin-left: 0px;
+        text-align: center;
+    }
+    .myslide img {
+        width:300px; height:300px;
+    }
+    .top-nav a {
+        display: inline;
+        text-decoration: none;
+        font-size: 20px;
+        color :white;
+        padding: 8px 10px;
+    }
+    .contact-tab div a > img {
+        width:36px; height:36px;
+        margin:5px 10px;
+    }
+    .contact-tab div a > img:hover {
+        width:55px ;height:55px;
+    }
     .column:first-child h1 {
-        margin: 20px 0px 0px;
-    }
-    #line-1 , #line-2 {
-        width: 80%;
-    }
-    #img-1{
-        width:300px;
-        height:300px;
-        padding:10px 0px;
-        margin-bottom: 25px;
-        opacity:0.55
-    }
-    #img-1:hover {
-        width: 400px;
-        height: 400px;
+        margin: 20px 0px;
     }
     .flex-container .column p{
         font-size: 30px;
     }
     .flex-container .column h1{
-        font-size: 40px;
+        font-size: 35px;
     }
 }

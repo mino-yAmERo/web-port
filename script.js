@@ -88,4 +88,28 @@ window.onload = function () {
         }, 100)
 
     }
+    //----------------------------- slide show ----------------------------- //
+    const slide = document.getElementsByClassName('myslide');
+    const dot = document.getElementsByClassName('dot');
+    let slideIndex = 0 ; 
+    showSlides();
+    
+    function showSlides() { 
+        let i;
+        for (i=0 ; i< slide.length ; i++) {
+            slide[i].style.display = "none";
+        }
+        for (i = 0; i < dot.length; i++) {
+            dot[i].className = dot[i].className.replace(" active", "");
+        }
+        slideIndex++ ;
+        console.log("slideIndex++ : "+slideIndex);
+
+        if (slideIndex > slide.length) {slideIndex=1} // set SlideIndex = 1
+        slide[slideIndex-1].style.display = "block";
+        dot[slideIndex-1].className += " active";
+        setTimeout(showSlides,2000);
+    }
+
+
 }
