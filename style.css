@@ -4,7 +4,7 @@
 html{
     scroll-behavior: smooth;
 }
-body{
+body , html {
     margin: 0;
     padding: 0;
 }
@@ -61,7 +61,6 @@ body{
     from, to { border-color: transparent }
     50% { border-color: orange; }   
 }
-
 #welcome-message {
     opacity:0 ;
     margin-top: 75px;
@@ -84,36 +83,46 @@ body{
     margin:7.5px 0px;
 }
 #main {
+    background-color: rgba(5, 5, 5, 0.9) ;
     opacity: 1;
     display:none;
 }
-.header {
-    border : 1px solid transparent;
-    background-color: rgba(5, 5, 5, 0.9);
-    width: 100%;
 
+.header {
+    background-color: rgba(5, 5, 5, 0.9) !important;
+    width: 100%;
+    padding: 30px 0px;
 }
 .header h1 {
+    margin:0;
     margin-left: 50px;
     font-size: 45px;
     color: #8a8a8a;
 
 }
-.top-nav{
-    overflow: hidden;
-    background-color: #2a2a2ada;
-    padding: 10px 20px;
+.sticky {
+    position:fixed;
+    top: 0;
+    width: 100%;
 }
-.top-nav a {
+#top-nav{
+    overflow: hidden;
+    background: rgb(124, 123, 123) !important;
+    padding: 15px 20px;
+    z-index: 1;
+    transition: top 0.3s ease-in-out;
+}
+#top-nav a {
     display: inline;
     text-decoration: none;
     font-size: 25px;
-    color :white;
-    padding: 14px 16px;
+    color :rgba(5, 5, 5, 0.9);
+    padding: 16px;
+    transition: all 0.2s
 }
-.top-nav a:hover {
-    background-color: #ddd;
-    color: black;
+#top-nav a:hover {
+    background-color: rgba(5, 5, 5, 0.9) !important;
+    color: rgba(231, 228, 228, 0.931);
 }
 .flex-container {
     background-color: rgba(5, 5, 5, 0.9);
@@ -123,7 +132,7 @@ body{
 }
 .column {
     background-color: #2a2a2a;
-    margin: 15px 15px;
+    margin: 15px 15px 0px;
 }
 /*---first paragraph---*/
 .column:first-child {
@@ -149,12 +158,13 @@ body{
 }
 .myslide img {
     width:600px; height:600px;
+    border: 5px solid rgba(0.5,0.5,0.5,0.9)
 }
 .dot {
     cursor: pointer;
     display: inline-block;
     width:20px; height: 20px; 
-    margin: 0 2px;
+    margin: 2px 2px;
     background-color: #bbb;
     border-radius: 50%;
     transition: background-color 0.6s ease;
@@ -166,10 +176,10 @@ body{
 /*--- fade animation ---*/
 .fade {
     animation-name : fade;
-    animation-duration: 1.5s ;
+    animation-duration: 1.75s ;
 }
 @keyframes fade {
-    from { opacity: 0.4}
+    from { opacity: 0.3}
     to {opacity: 1}
 }
 
@@ -197,6 +207,7 @@ body{
     flex-flow: column nowrap;
     flex-basis: 100%;
     align-items: center;
+    padding-top:60px;
 }
 /*---about me---*/
 #about-me {
@@ -215,11 +226,10 @@ body{
     letter-spacing: 1.25px; 
     margin: 5px 0 50px;
 }
-
 .biocard-container {
     display: flex;
     flex-direction: row;
-    padding: 30px 0px;
+    padding-bottom:100px;
     flex-basis: 100%;
 }
 .biocard-container > div {
@@ -397,7 +407,9 @@ body{
     .myslide img {
         width:500px; height:500px;
     }
-
+    .dot {
+        width:15px; height: 15px; 
+    }
     .flex-container .column p{
         font-size: 40px;
     }
@@ -446,6 +458,9 @@ body{
     .myslide img {
         width:400px; height:400px;
     }
+    .dot {
+        width:12px; height: 12px; 
+    }
     .contact-tab{
         padding: 20px 0px;
     }
@@ -472,7 +487,10 @@ body{
     .myslide img {
         width:300px; height:300px;
     }
-    .top-nav a {
+    .dot {
+        width:10px; height: 10px; 
+    }
+    #top-nav a {
         display: inline;
         text-decoration: none;
         font-size: 20px;

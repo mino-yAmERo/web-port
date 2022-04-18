@@ -8,7 +8,6 @@
     <meta name="format-detection" content="telephone=no">
     <title>Home | Nutthabhas</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
 </head>
 
 <body>
@@ -39,7 +38,7 @@
         </div>
 
 <!-- top nav -->
-        <div class="top-nav">
+        <div id="top-nav">
             <a href="#main">Home</a>
             <a href="#about-me-container">About me</a>
             <a href="#education-container">Education</a>
@@ -59,14 +58,34 @@
                             <img src="image/myphoto2.JPG">
                         </div>
             
-                        <div class="myslide fade">
+                        <!-- <div class="myslide fade">
                             <img src="image/myphoto3.JPEG">
+                        </div> -->
+
+                        <div class="myslide fade">
+                            <img src="image/myphoto4.JPG">
                         </div>
-                    
+
+                        <div class="myslide fade">
+                            <img src="image/myphoto5.JPG">
+                        </div>
+
+                        <div class="myslide fade">
+                            <img src="image/myphoto6.jpg">
+                        </div>
+
+                        <div class="myslide fade">
+                            <img src="image/myphoto7.JPG">
+                        </div>
+                        
                         <div style="text-align:center;">
-                            <span class="dot"></span>
-                            <span class="dot"></span>
-                            <span class="dot"></span>
+                            <span class="dot" onclick="currentSlide(0)"></span>
+                            <span class="dot" onclick="currentSlide(1)"></span>
+                            <span class="dot" onclick="currentSlide(2)"></span>
+                            <span class="dot" onclick="currentSlide(3)"></span>
+                            <span class="dot" onclick="currentSlide(4)"></span>
+                            <span class="dot" onclick="currentSlide(5)"></span>
+                            <!-- <span class="dot" onclick="currentSlide(6)"></span> -->
                         </div>
                     </div>
                     <div class="contact-tab">
@@ -210,5 +229,5 @@
     </div>
     
 </body>
-
+    <script src="script.js"></script>
 </html>
