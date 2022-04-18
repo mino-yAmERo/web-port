@@ -4,7 +4,7 @@
 html{
     scroll-behavior: smooth;
 }
-body{
+body , html {
     margin: 0;
     padding: 0;
 }
@@ -56,14 +56,11 @@ body{
     from { width: 0 }
     to { width: 100% ;}
 }
-
 /* The typewriter cursor effect */
 @keyframes blink-caret {
     from, to { border-color: transparent }
     50% { border-color: orange; }   
 }
-
-
 #welcome-message {
     opacity:0 ;
     margin-top: 75px;
@@ -86,36 +83,46 @@ body{
     margin:7.5px 0px;
 }
 #main {
+    background-color: rgba(5, 5, 5, 0.9) ;
     opacity: 1;
     display:none;
 }
-.header {
-    border : 1px solid transparent;
-    background-color: rgba(5, 5, 5, 0.9);
-    width: 100%;
 
+.header {
+    background-color: rgba(5, 5, 5, 0.9) !important;
+    width: 100%;
+    padding: 30px 0px;
 }
 .header h1 {
+    margin:0;
     margin-left: 50px;
     font-size: 45px;
     color: #8a8a8a;
 
 }
-.top-nav{
-    overflow: hidden;
-    background-color: #2a2a2ada;
-    padding: 10px 20px;
+.sticky {
+    position:fixed;
+    top: 0;
+    width: 100%;
 }
-.top-nav a {
+#top-nav{
+    overflow: hidden;
+    background: rgb(124, 123, 123) !important;
+    padding: 15px 20px;
+    z-index: 1;
+    transition: top 0.3s ease-in-out;
+}
+#top-nav a {
     display: inline;
     text-decoration: none;
     font-size: 25px;
-    color :white;
-    padding: 14px 16px;
+    color :rgba(5, 5, 5, 0.9);
+    padding: 16px;
+    transition: all 0.2s
 }
-.top-nav a:hover {
-    background-color: #ddd;
-    color: black;
+#top-nav a:hover {
+    background-color: rgba(5, 5, 5, 0.9) !important;
+    color: rgba(231, 228, 228, 0.931);
 }
 .flex-container {
     background-color: rgba(5, 5, 5, 0.9);
@@ -123,13 +130,9 @@ body{
     flex-wrap: wrap;
     flex-direction: row;
 }
-.flex-container > * {
-    flex-grow: 1;
-    flex-basis: 25%;
-}
 .column {
     background-color: #2a2a2a;
-    margin: 15px 15px;
+    margin: 15px 15px 0px;
 }
 /*---first paragraph---*/
 .column:first-child {
@@ -138,46 +141,55 @@ body{
     align-items: center;
     flex-basis: 100%;
 }
-
-/*---Hello! I'm---*/
-/* .column:first-child h1 {
-    margin: 40px 0px 0px;
-    font-weight: normal;
-    font-size: 50px; 
-    color: #ddd;
-    letter-spacing: 1px;
-    text-shadow: 5px 5px 3.5px black;
-} */
-
 /*---Nutthabhas Thitabhas---*/
 .column:first-child h1 {
     margin: 30px 0px ;
     font-size: 70px;
     color: rgba(231, 228, 228, 0.931);
     letter-spacing: 0.75px;
-    
+    text-align: center;
+}
+/*--- Slide Show ---*/
+.slideshow-container {
+    max-width: 600px;
+}
+.myslide {
+    display:none;
+}
+.myslide img {
+    width:600px; height:600px;
+    border: 5px solid rgba(0.5,0.5,0.5,0.9)
+}
+.dot {
+    cursor: pointer;
+    display: inline-block;
+    width:20px; height: 20px; 
+    margin: 2px 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    transition: background-color 0.6s ease;
+}
+.active ,.dot:hover {
+    background-color: #717171;
 }
 
-/*---my photo---*/
-#img-1 {
-    width:500px;
-    height:500px;
-    opacity:0.55;
-    transition: all 1s;
+/*--- fade animation ---*/
+.fade {
+    animation-name : fade;
+    animation-duration: 1.75s ;
 }
-#img-1:hover {
-    opacity: 1;
-    width: 600px;
-    height: 600px;
+@keyframes fade {
+    from { opacity: 0.3}
+    to {opacity: 1}
 }
 
 /*---social media tab---*/
 .contact-tab{
     display: flex;
-    flex-direction: column;
+    flex-flow: column nowrap;
     width: 100%;
     align-items: center;
-    padding: 10px 0px;
+    padding: 30px 0px;
 }
 .contact-tab div a > img {
     width:48px;
@@ -188,18 +200,18 @@ body{
 }
 .contact-tab div a > img:hover {
     opacity: 1;
-    width:80px;height:80px;
+    width:80px ;height:80px;
 }
 #about-me-container {
     display:flex;
     flex-flow: column nowrap;
     flex-basis: 100%;
     align-items: center;
+    padding-top:60px;
 }
 /*---about me---*/
 #about-me {
     text-align:center ;
-    /* text-shadow: 5px 5px 5px #ddd; */
     font-size:50px ; 
     letter-spacing:1px ;
     color: rgba(231, 228, 228, 0.931);
@@ -214,11 +226,10 @@ body{
     letter-spacing: 1.25px; 
     margin: 5px 0 50px;
 }
-
 .biocard-container {
     display: flex;
     flex-direction: row;
-    padding: 30px 0px;
+    padding-bottom:100px;
     flex-basis: 100%;
 }
 .biocard-container > div {
@@ -257,16 +268,7 @@ body{
     margin-left : 75px;
     font-size: 20px;
     opacity: 0.5;
-
 }
-/* .column-space-right {
-    margin-left: 30px ;
-    border-left : 3px solid #ddd;
-}
-.column-space-left {
-    margin-right: 30px ;
-    border-right : 3px solid #ddd;
-} */
 
 /* -------- education -------*/
 #education-container {
@@ -304,14 +306,7 @@ body{
     transition : all 0.9s ease-in-out ;
     border: 3px solid white;
 }
-/* .ed-item::after{
-    content: "";
-    position: absolute;
-    background-color: orange;
-    top: 0; left:0;
-    height: 100% ;
-    width: 15px;
-} */
+
 .ed-item:hover {
     flex-basis:45%;
     filter: blur(0px);
@@ -409,13 +404,11 @@ body{
     #welcome-message p{
         font-size: 30px;
     }
-    #img-1 {
-        width:400px;
-        height:400px;
+    .myslide img {
+        width:500px; height:500px;
     }
-    #img-1:hover {
-        width: 500px;
-        height: 500px;
+    .dot {
+        width:15px; height: 15px; 
     }
     .flex-container .column p{
         font-size: 40px;
@@ -449,8 +442,11 @@ body{
     }
 }
 @media screen and (max-width:600px){
+    .header h1{
+        font-size: 40px;
+    }
     .column:first-child h1 {
-        font-size: 45px;
+        font-size: 40px;
         margin: 15px 0px ;
     }
     #about-me {
@@ -459,20 +455,21 @@ body{
     #hi-myname {
         font-size: 25px;
     }
-    #img-1{
-        width:350px;
-        height:350px;
-        padding:10px 0px;
-        margin-bottom: 0px;
-        opacity:0.55
-        
+    .myslide img {
+        width:400px; height:400px;
     }
-    #img-1:hover {
-        width: 450px;
-        height: 450px;
+    .dot {
+        width:12px; height: 12px; 
+    }
+    .contact-tab{
+        padding: 20px 0px;
+    }
+    .dot{
+        width:15px; height:15px;
     }
 }
-@media screen and (max-width:420px){
+@media screen and (max-width:450px){
+    
     #welcome h1 {
         font-size: 50px;
     }
@@ -482,27 +479,38 @@ body{
     #welcome-message p{
         font-size: 20px;
     }
+    .header h1{
+        font-size: 35px;
+        margin-left: 0px;
+        text-align: center;
+    }
+    .myslide img {
+        width:300px; height:300px;
+    }
+    .dot {
+        width:10px; height: 10px; 
+    }
+    #top-nav a {
+        display: inline;
+        text-decoration: none;
+        font-size: 20px;
+        color :white;
+        padding: 8px 10px;
+    }
+    .contact-tab div a > img {
+        width:36px; height:36px;
+        margin:5px 10px;
+    }
+    .contact-tab div a > img:hover {
+        width:55px ;height:55px;
+    }
     .column:first-child h1 {
-        margin: 20px 0px 0px;
-    }
-    #line-1 , #line-2 {
-        width: 80%;
-    }
-    #img-1{
-        width:300px;
-        height:300px;
-        padding:10px 0px;
-        margin-bottom: 25px;
-        opacity:0.55
-    }
-    #img-1:hover {
-        width: 400px;
-        height: 400px;
+        margin: 20px 0px;
     }
     .flex-container .column p{
         font-size: 30px;
     }
     .flex-container .column h1{
-        font-size: 40px;
+        font-size: 35px;
     }
 }
