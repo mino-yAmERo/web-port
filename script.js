@@ -49,41 +49,8 @@ function fadeOut (){
 }
 // welcome disappear && show webpage
 
-    // ----------------------------change icon ------------------------------------//
-const ig_icon = document.getElementById('ig-icon');
-const fb_icon = document.getElementById('fb-icon');
-const line_icon = document.getElementById('line-icon');
+// ----------------------------change icon ------------------------------------//
 
-ig_icon.onmouseover = function () {
-    setTimeout(function () {
-        ig_icon.src = 'icon/ig_normal.png';
-    }, 100)
-}
-ig_icon.onmouseout = function () {
-    setTimeout(function () {
-        ig_icon.src = 'icon/ig_grey.png';   
-    }, 100)
-}
-fb_icon.onmouseover = function () {
-    setTimeout(function () {
-        fb_icon.src = 'icon/fb_normal.png';
-    }, 100)
-}
-fb_icon.onmouseout = function () {
-    setTimeout(function () {
-        fb_icon.src = 'icon/fb_grey.png';   
-    }, 100)
-}
-line_icon.onmouseover = function () {
-    setTimeout(function () {
-        line_icon.src = 'icon/line_normal.png';
-    }, 100)
-}
-line_icon.onmouseout = function () {
-    setTimeout(function () {
-        line_icon.src = 'icon/line_grey.png';   
-    }, 100)
-}
 //----------------------------- slide show ----------------------------- //
 const slide = document.getElementsByClassName('myslide');
 const dot = document.getElementsByClassName('dot');
@@ -133,4 +100,111 @@ function myFunction(){
     }
 }
 
+//--- contact tab show div + message ---//
+const ig_icon = document.getElementById('ig-icon');
+const fb_icon = document.getElementById('fb-icon');
+const line_icon = document.getElementById('line-icon');
+const github_icon = document.getElementById('github-icon');
+const contactMes = document.getElementById('contact-message');
+const fbMes = document.getElementById('fb-message');
+const igMes = document.getElementById('ig-message');
+const lineMes = document.getElementById('line-message');
+const githubMes = document.getElementById('github-message');
+//---------------------------GENERAL FUNCTION---------------------------//
+let mesStatus;
+    contactMes.onmouseover = function () {
+        mesStatus = true;
+        console.log('mouseover');
+        
+    };
+    contactMes.onmouseout = function () { 
+        mesStatus = false;
+        console.log('mouseout');
+    };
 
+let fadeInTime = 500; // time to change the div 
+let fadeOutTime = 200; // delay 
+let IntervalTime = 10; 
+    //---------------------------FACEBOOK FUNCTION---------------------------//
+    fb_icon.addEventListener("mouseover",function() { setTimeout(
+        function () {
+            contactMes.classList.add("fb");
+            fbMes.style.display = 'block';
+
+        },fadeInTime) });
+
+    fb_icon.addEventListener("mouseout",function () { setTimeout(function () {
+        let myInterval = setInterval(function (){ 
+            if (mesStatus){
+                contactMes.classList.add("fb");
+                console.log('status : '+mesStatus);
+                
+            } else {
+                contactMes.classList.remove("fb");
+                fbMes.style.display = 'none';
+                clearInterval(myInterval);
+            }
+        },IntervalTime);
+        
+    },fadeOutTime) });
+    //---------------------------IG FUNCTION---------------------------//
+
+    ig_icon.addEventListener("mouseover",function () { setTimeout(function () {
+        contactMes.classList.add("ig");
+        igMes.style.display = 'block';
+    },fadeInTime) });
+
+    ig_icon.addEventListener("mouseout",function () { setTimeout(function () {
+        let myInterval = setInterval(function (){ 
+            if (mesStatus){
+                contactMes.classList.add("ig");
+                console.log('status : '+mesStatus);
+            } else {
+                contactMes.classList.remove("ig");
+                igMes.style.display = 'none';
+                clearInterval(myInterval);
+            }
+        },IntervalTime);
+
+    },fadeOutTime) });
+    //---------------------------LINE FUNCTION---------------------------//
+    line_icon.addEventListener("mouseover",function () { setTimeout(function () {
+        contactMes.classList.add("line");
+        lineMes.style.display = 'block';
+    },fadeInTime) });
+
+    line_icon.addEventListener("mouseout",function () { setTimeout(function () {
+        let myInterval = setInterval(function (){ 
+            if (mesStatus){
+                contactMes.classList.add("line");
+                console.log('status : '+mesStatus);
+            } else {
+                lineMes.style.display = 'none';
+                contactMes.classList.remove("line");
+                clearInterval(myInterval);
+            }
+        },IntervalTime);
+
+    },fadeOutTime) });
+
+
+    //---------------------------GITHUB FUNCTION---------------------------//
+    github_icon.addEventListener("mouseover",function () { setTimeout(function () {
+        contactMes.classList.add("github");
+        githubMes.style.display = 'block';
+
+    },fadeInTime) });
+
+    github_icon.addEventListener("mouseout",function () { setTimeout(function () {
+        let myInterval = setInterval(function (){ 
+            if (mesStatus){
+                contactMes.classList.add("github");
+                console.log('status : '+mesStatus);
+            } else {
+                githubMes.style.display = 'none';
+                contactMes.classList.remove("github");
+                clearInterval(myInterval);
+            }
+        },IntervalTime);
+
+    },fadeOutTime) });

@@ -107,12 +107,13 @@ body , html {
 }
 #top-nav{
     overflow: hidden;
-    background: rgb(124, 123, 123) !important;
+    background: rgb(124, 123, 123);
     padding: 15px 20px;
     z-index: 1;
     transition: top 0.3s ease-in-out;
 }
 #top-nav a {
+    font-family: 'Akshar', sans-serif;
     display: inline;
     text-decoration: none;
     font-size: 25px;
@@ -131,7 +132,9 @@ body , html {
     flex-direction: row;
 }
 .column {
+    min-height: 90vh;
     background-color: #2a2a2a;
+    padding: 100px 0px 0px;
     margin: 15px 15px 0px;
 }
 /*---first paragraph---*/
@@ -158,7 +161,7 @@ body , html {
 }
 .myslide img {
     width:600px; height:600px;
-    border: 5px solid rgba(0.5,0.5,0.5,0.9)
+
 }
 .dot {
     cursor: pointer;
@@ -189,18 +192,59 @@ body , html {
     flex-flow: column nowrap;
     width: 100%;
     align-items: center;
-    padding: 30px 0px;
+    padding: 15px 0px 0px;
 }
-.contact-tab div a > img {
-    width:48px;
-    height:48px;
+.icon {
+    width:64px;
+    height:64px;
     margin:10px 15px;
     opacity: 0.5;
     transition:all 0.5s;
 }
-.contact-tab div a > img:hover {
+.icon:hover {
     opacity: 1;
-    width:80px ;height:80px;
+}
+.icon:hover + .column{
+    flex-basis: 20%;
+}
+#contact-message {
+    position: relative;
+    overflow: hidden;
+    display: none;
+    width: 40vw; height: auto;
+    max-width: 80vw;
+    margin : 15px 0px 30px;
+    transition: all 1s ease-in-out;
+    border-radius: 15px;
+}
+#contact-message:hover{
+    cursor: pointer;
+    display: block !important;
+
+}
+#contact-message > p {
+    display:none; 
+    word-break: keep-all ;
+    font-family: 'Akshar', sans-serif;
+    font-size: 30px !important ;
+    color: #ffff;
+    text-align: center;
+}
+.fb , .ig ,.line , .github {
+    display: block !important;
+    opacity: 1;
+}
+.fb {
+    background-image: linear-gradient(to right, #1976d2 , #3b5998);
+}
+.ig {
+    background-image: linear-gradient(to right,rgba(255,211,85,1),rgba(255,84,62,1),rgba(200,55,171,1));
+}
+.line {
+    background-image: linear-gradient(to right,#19D219, #00B900,#00B900);
+}
+.github {
+    background-image: linear-gradient(to right,#010409,#0d1117);
 }
 #about-me-container {
     display:flex;
@@ -276,7 +320,7 @@ body , html {
     flex-flow: column nowrap;
     width: 100%;
     margin: 15px 15px;
-    background-color: #2a2a2a;
+    background-color: #2a2a2a ;
 }
 .ed-title {
     width: 100%;
@@ -379,15 +423,27 @@ body , html {
     flex-direction: row;
     
 }
-.footer-column{
+.footer div{
     width:33.33%;
     background-color: rgba(5, 5, 5, 0.9);
 }
-.footer-column h1 {
+.footer div h1 {
     padding : 10px 0px;
     text-align: center;
     color: #8a8a8a;
 
+}
+.credit {
+    display : flex;
+    flex-direction: column;
+}
+.credit > a {
+    margin: 0 15px ;
+    align-self: flex-end;
+    font-size: 20px;
+    text-align: center;
+    color: rgba(231, 228, 228, 0.931);
+    text-decoration: none;
 }
 /* ------- Responsive -------*/
 @media screen and (max-width:768px) {
