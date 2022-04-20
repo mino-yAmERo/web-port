@@ -105,8 +105,8 @@ body , html {
 }
 #top-nav{
     overflow: hidden;
-    background: rgb(124, 123, 123);
-    padding: 15px 20px;
+    background: rgb(50,50,50);
+    padding: 16px 20px;
     z-index: 1;
     transition: top 0.3s ease-in-out;
 }
@@ -116,7 +116,7 @@ body , html {
     text-decoration: none;
     font-size: 25px;
     color :#ffffff;
-    padding: 16px;
+    padding: 20px 20px;
     transition: all 0.2s
 }
 #top-nav a:hover {
@@ -242,7 +242,7 @@ a:-webkit-any-link{
     flex-flow: column nowrap;
     flex-basis: 100%;
     align-items: center;
-    padding-top:60px;
+    padding-top:30px;
 }
 /*---about me---*/
 #about-me {
@@ -251,7 +251,7 @@ a:-webkit-any-link{
     font-size: 75px;
     letter-spacing: 2px;
     color: rgba(231, 228, 228, 0.931);
-    margin:10px 0px 10px;
+    margin:45px 0px 10px;
 }
 /* ---hi my name is Nuttbhas---  */
 #hi-myname{
@@ -440,7 +440,6 @@ a:-webkit-any-link{
     text-decoration: none;
 }
 /* ------- Responsive -------*/
-
 /*---------------------LAPTOP-------------------------*/
 @media screen and (max-width : 1366px) and ( max-height: 768px) {
     .ed-content {
@@ -455,7 +454,7 @@ a:-webkit-any-link{
 }
 @media screen and (max-width:1280px) and (max-height: 768px) {
     .ed-item:hover .logo{
-        bottom: 5% !important;
+        bottom: 5% ;
     }
 }
 
@@ -689,6 +688,9 @@ a:-webkit-any-link{
     .flex-container .column h1{
         font-size: 35px;
     }
+    .ed-title h1 {
+        font-size: 50px;
+    }
     .ed-item:hover > .ed-year{
         top: 20%;
         transition: top 1s;
@@ -726,6 +728,9 @@ a:-webkit-any-link{
 @media screen and (max-width:375px) {
     .myslide img {
         width:275px; height:275px;
+    }
+    .ed-title h1 {
+        font-size: 40px;
     }
     .ed-item:hover {
         flex-basis: 50%;
