@@ -50,7 +50,6 @@ body , html {
     typing 2s steps(100, end) 3.5s backwards,
     blink-caret .5s step-end 4 3.5s forwards;
 }
-
 /* The typing effect */
 @keyframes typing {
     from { width: 0 }
@@ -87,7 +86,6 @@ body , html {
     opacity: 1;
     display:none;
 }
-
 .header {
     background-color: rgba(5, 5, 5, 0.9) !important;
     width: 100%;
@@ -107,17 +105,18 @@ body , html {
 }
 #top-nav{
     overflow: hidden;
-    background: rgb(124, 123, 123) !important;
-    padding: 15px 20px;
+    background: rgb(50,50,50);
+    padding: 16px 20px;
     z-index: 1;
     transition: top 0.3s ease-in-out;
 }
 #top-nav a {
+    font-family: 'Akshar', sans-serif;
     display: inline;
     text-decoration: none;
     font-size: 25px;
-    color :rgba(5, 5, 5, 0.9);
-    padding: 16px;
+    color :#ffffff;
+    padding: 20px 20px;
     transition: all 0.2s
 }
 #top-nav a:hover {
@@ -132,6 +131,7 @@ body , html {
 }
 .column {
     background-color: #2a2a2a;
+    padding: 100px 0px 0px;
     margin: 15px 15px 0px;
 }
 /*---first paragraph---*/
@@ -158,7 +158,6 @@ body , html {
 }
 .myslide img {
     width:600px; height:600px;
-    border: 5px solid rgba(0.5,0.5,0.5,0.9)
 }
 .dot {
     cursor: pointer;
@@ -189,41 +188,79 @@ body , html {
     flex-flow: column nowrap;
     width: 100%;
     align-items: center;
-    padding: 30px 0px;
+    padding: 15px 0px 50px;
 }
-.contact-tab div a > img {
-    width:48px;
-    height:48px;
+.icon {
+    color: transparent;
+    position: relative;
+    width:64px;
+    height:64px;
     margin:10px 15px;
     opacity: 0.5;
     transition:all 0.5s;
 }
-.contact-tab div a > img:hover {
+.icon:hover {
     opacity: 1;
-    width:80px ;height:80px;
+}
+a:-webkit-any-link{
+    text-decoration: none;
+}
+.tooltipText {
+    width: 220px;
+    margin-left: -110px; /*width / 2 */
+    font-size: 22px;
+    font-family: 'Akshar', sans-serif;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+    border-radius: 6px;
+    padding: 5px 5px;
+    position: absolute;
+    visibility: hidden;
+    z-index: 1;
+    top:125%;
+    left:50%;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.tooltipText::after {
+    content: "";
+    position: absolute;
+    left:50%;
+    bottom:100%;
+    margin-left: -7px;
+    border-width: 7px;
+    border-style: solid;
+    border-color: inherit ;
+}
+.icon:hover + .tooltipText {
+    visibility : visible;
+    opacity : 1;
 }
 #about-me-container {
     display:flex;
     flex-flow: column nowrap;
     flex-basis: 100%;
     align-items: center;
-    padding-top:60px;
+    padding-top:30px;
 }
 /*---about me---*/
 #about-me {
-    text-align:center ;
-    font-size:50px ; 
-    letter-spacing:1px ;
+    font-family: 'Akshar', sans-serif;
+    text-align: center;
+    font-size: 75px;
+    letter-spacing: 2px;
     color: rgba(231, 228, 228, 0.931);
-    margin:10px 0px 0px;
+    margin:45px 0px 10px;
 }
 /* ---hi my name is Nuttbhas---  */
 #hi-myname{
     text-align:center ;
+    font-family: 'Akshar', sans-serif;
     color: #ddd;
     flex-basis: 100% ; 
     font-size:30px ;
-    letter-spacing: 1.25px; 
+    letter-spacing: 0px; 
     margin: 5px 0 50px;
 }
 .biocard-container {
@@ -276,14 +313,16 @@ body , html {
     flex-flow: column nowrap;
     width: 100%;
     margin: 15px 15px;
-    background-color: #2a2a2a;
+    background-color: #2a2a2a ;
 }
 .ed-title {
     width: 100%;
 }
 .ed-title h1 {
+    font-family: 'Akshar', sans-serif;
     text-align: center;
-    font-size: 50px;
+    font-size: 75px;
+    letter-spacing: 2px;
     color:rgba(231, 228, 228, 0.931);
     margin: 75px 0px;
 }
@@ -292,7 +331,7 @@ body , html {
     flex-flow: row nowrap;
     height:80vh;
     width: 100%;
-    padding:0 5vw 5vh;
+    padding:0 30px 30px;
     justify-content: space-evenly;
 }
 .ed-item {
@@ -306,7 +345,6 @@ body , html {
     transition : all 0.9s ease-in-out ;
     border: 3px solid white;
 }
-
 .ed-item:hover {
     flex-basis:45%;
     filter: blur(0px);
@@ -318,37 +356,39 @@ body , html {
     position: relative;
     top:0; left:0;
     width:100%; height: 100%;
+    transition: all 1.0s ease-in-out 3s;
 }
 .ed-item:hover .ed-bg{
-    background-image: linear-gradient(180deg, rgba(25, 25, 25, 0.9),rgba(15,15,15,0.9));
-    transition: all 1.0s ease-in-out;
+    background-image: linear-gradient(180deg, rgba(25, 25, 25, 0.9),rgb(80, 80, 80));
 }
 .ed-year {
     transform: translateX(-50%) translateY(-50%);
     position: absolute;
-    top:20%;left:50%;
-}
-.year-line {
-    width: auto;
+    top:15%;left:50%;
 }
 .ed-year > p {
     text-align:center ;
     margin: 0;
-    font-size: 40px;
+    font-family: 'Akshar', sans-serif;
+    font-size: 50px;
     white-space: nowrap;
-    letter-spacing: -2px;
+    letter-spacing: -1px;
     color:rgba(231, 228, 228, 0.931);
 }
 .ed-content {
+    width:auto;
     position: absolute;
-    top:50% ; left:50%;
+    top:40% ; left:50%;
     overflow: hidden;
     transform: translateX(-50%) translateY(-50%);   
 }
 .ed-content-hide{
     opacity: 0;
     transform:translateY(25px);
-    font-size: 30px;
+    font-family: 'Akshar', sans-serif;
+    font-size: 25px;
+    text-align: center;
+    white-space: nowrap;
     letter-spacing: 0px;
     color:rgba(231, 228, 228, 0.931); 
 }
@@ -370,31 +410,117 @@ body , html {
 .ed-item:hover .logo{
     opacity: 1;
     bottom: -10%;
-    transition: all 0.85s ease-in-out 1.5s;
-    
+    transition: all 0.85s ease-in-out 1.25s;
 }
 /* -------- footer -------*/
 .footer {
     display: flex;
     flex-direction: row;
-    
 }
-.footer-column{
-    width:33.33%;
+.footer div{
+    flex-basis:33.33%;
     background-color: rgba(5, 5, 5, 0.9);
 }
-.footer-column h1 {
+.footer div h1 {
     padding : 10px 0px;
     text-align: center;
     color: #8a8a8a;
 
 }
+.credit {
+    display : flex;
+    flex-direction: column;
+}
+.credit > a {
+    margin: 0 15px ;
+    align-self: flex-end;
+    font-size: 20px;
+    text-align: center;
+    color: rgba(231, 228, 228, 0.931);
+    text-decoration: none;
+}
 /* ------- Responsive -------*/
-@media screen and (max-width:768px) {
-    .column:first-child h1 {
-        font-size: 55px;
-        margin: 20px 0px ;
+/*---------------------LAPTOP-------------------------*/
+@media screen and (max-width : 1366px) and ( max-height: 768px) {
+    .ed-content {
+        top:45%;
     }
+    .logo {
+        width: 150px; height: 150px;
+    }
+    .ed-item:hover .logo{
+        bottom:-10%;
+    }
+}
+@media screen and (max-width:1280px) and (max-height: 768px) {
+    .ed-item:hover .logo{
+        bottom: 5% ;
+    }
+}
+
+/*------------------------WIDTH------------------------- */
+@media screen and (max-width: 1366px){
+    .ed-content-hide {
+        font-size: 23px;
+    }
+}
+@media screen and (max-width:1280px) {
+    .ed-list{
+        flex-flow : column nowrap;
+        height: 90vh ;
+    }
+    .ed-item{
+        margin: 0px;
+    }
+    .ed-year {
+        left: 15%;
+        top:50%
+    }
+    .ed-year > p {
+        font-size: 45px;
+    }
+    .ed-content{
+        left: 50%;
+        top:50%;
+    }
+    .logo {
+        left: 85%;
+        bottom: -40%;
+    }
+    .ed-title h1 {
+        margin : 50px 0px;
+    }
+    .ed-item {
+        flex-basis : 25%;
+    }
+    .ed-item:hover{
+        flex-basis:50%;
+    }
+    .ed-item:hover .logo{
+        bottom: -15%;
+    }
+}
+/*-------------- Laptop --------------*/
+@media screen and (max-width:1024px){
+    .ed-content-hide {
+        font-size: 21px;
+        white-space: normal;
+    }
+    .ed-year {
+        left: 15%;
+    }
+    .ed-year > p {
+        font-size: 40px;
+    }
+    .logo {
+        width: 150px; height: 150px;
+    }
+    .ed-item:hover .logo{
+        bottom: 0%;
+    }
+}
+/*-------------- Tablet--------------*/
+@media screen and (max-width:768px) {
     #welcome h1 {
         font-size: 70px;
     }
@@ -404,11 +530,23 @@ body , html {
     #welcome-message p{
         font-size: 30px;
     }
+    .column:first-child h1 {
+        font-size: 55px;
+        margin: 20px 0px ;
+    }
     .myslide img {
         width:500px; height:500px;
     }
     .dot {
         width:15px; height: 15px; 
+    }
+    .column {
+        padding: 60px 0 30px;
+    }
+    .tooltipText {
+        width: 200px;
+        margin-left: -100px; /*width / 2 */
+        font-size: 20px;
     }
     .flex-container .column p{
         font-size: 40px;
@@ -435,11 +573,29 @@ body , html {
         opacity: 0.5;
     }
     .ed-title h1{
-        margin: 50px 0px
+        margin: 50px 0px 25px;
     }
-    .ed-list{
-        height:75vh
+    .ed-content-hide {
+        font-size: 18px;
+        white-space: normal;
     }
+    .ed-item {
+        flex-basis : 25%;
+    }
+    .ed-item:hover{
+        flex-basis:40%;
+    }
+    .ed-year {
+        left: 13%;
+        letter-spacing: -2px;
+    }
+    .ed-year > p {
+        font-size: 30px;
+    }
+    .logo {
+        width: 125px; height: 125px;
+    }
+
 }
 @media screen and (max-width:600px){
     .header h1{
@@ -464,12 +620,32 @@ body , html {
     .contact-tab{
         padding: 20px 0px;
     }
+    .column {
+        padding: 50px 0 40px;
+    }
+    .tooltipText {
+        width: 190px;
+        margin-left: -95px; /*width / 2 */
+        font-size: 19px;
+    }
     .dot{
         width:15px; height:15px;
     }
+    .ed-title h1 {
+        margin: 25px 0 25px;
+    }
+    .ed-year > p {
+        font-size: 25px;
+    }
+    .ed-list {
+        padding: 0 10px 10px;
+    }
+    .ed-content-hide {
+        font-size: 19px;
+    }
 }
-@media screen and (max-width:450px){
-    
+/*-------------- Mobile L --------------*/
+@media screen and (max-width:425px){
     #welcome h1 {
         font-size: 50px;
     }
@@ -489,20 +665,19 @@ body , html {
     }
     .dot {
         width:10px; height: 10px; 
+        
     }
-    #top-nav a {
-        display: inline;
-        text-decoration: none;
-        font-size: 20px;
-        color :white;
-        padding: 8px 10px;
+    .column {
+        padding: 60px 0 30px;
     }
-    .contact-tab div a > img {
-        width:36px; height:36px;
+    .tooltipText {
+        width: 180px;
+        margin-left: -90px; /*width / 2 */
+        font-size: 18px;
+    }
+    .icon {
+        width:48px; height:48px;
         margin:5px 10px;
-    }
-    .contact-tab div a > img:hover {
-        width:55px ;height:55px;
     }
     .column:first-child h1 {
         margin: 20px 0px;
@@ -512,5 +687,65 @@ body , html {
     }
     .flex-container .column h1{
         font-size: 35px;
+    }
+    .ed-title h1 {
+        font-size: 50px;
+    }
+    .ed-item:hover > .ed-year{
+        top: 20%;
+        transition: top 1s;
+    }
+    .ed-year {
+        letter-spacing: -1px;
+        top: 50%;
+        left: 50%;
+    }
+    .ed-content {
+        top: 60%;
+        left: 35%;
+    }
+    .ed-content-hide{
+        font-size: 16px;
+        letter-spacing: 0.5px;
+    }
+    .logo {
+        left: 85%;
+        width: 80px; height: 80px;
+    }
+    .ed-item:hover .logo{
+        bottom: 0%;
+    }
+    .footer {
+        flex-direction: column;
+    }
+    .credit > a {
+        font-size: 16px;
+        white-space: nowrap;
+    }
+
+}
+/*-------------- Mobile M --------------*/
+@media screen and (max-width:375px) {
+    .myslide img {
+        width:275px; height:275px;
+    }
+    .ed-title h1 {
+        font-size: 40px;
+    }
+    .ed-item:hover {
+        flex-basis: 50%;
+    }
+    .ed-year > p {
+        font-size: 25px;
+    }
+    .ed-content-hide{
+        font-size: 14px;
+        letter-spacing: 0.5px;
+    }
+}
+/*-------------- Mobile S --------------*/
+@media screen and (max-width:320px) {
+    .myslide img {
+        width:250px; height:250px;
     }
 }

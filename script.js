@@ -48,41 +48,8 @@ function fadeOut (){
 }
 // welcome disappear && show webpage
 
-    // ----------------------------change icon ------------------------------------//
-const ig_icon = document.getElementById('ig-icon');
-const fb_icon = document.getElementById('fb-icon');
-const line_icon = document.getElementById('line-icon');
+// ----------------------------change icon ------------------------------------//
 
-ig_icon.onmouseover = function () {
-    setTimeout(function () {
-        ig_icon.src = 'icon/ig_normal.png';
-    }, 100)
-}
-ig_icon.onmouseout = function () {
-    setTimeout(function () {
-        ig_icon.src = 'icon/ig_grey.png';   
-    }, 100)
-}
-fb_icon.onmouseover = function () {
-    setTimeout(function () {
-        fb_icon.src = 'icon/fb_normal.png';
-    }, 100)
-}
-fb_icon.onmouseout = function () {
-    setTimeout(function () {
-        fb_icon.src = 'icon/fb_grey.png';   
-    }, 100)
-}
-line_icon.onmouseover = function () {
-    setTimeout(function () {
-        line_icon.src = 'icon/line_normal.png';
-    }, 100)
-}
-line_icon.onmouseout = function () {
-    setTimeout(function () {
-        line_icon.src = 'icon/line_grey.png';   
-    }, 100)
-}
 //----------------------------- slide show ----------------------------- //
 const slide = document.getElementsByClassName('myslide');
 const dot = document.getElementsByClassName('dot');
@@ -131,5 +98,4 @@ function myFunction(){
         navbar.classList.remove("sticky");
     }
 }
-
 
