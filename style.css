@@ -50,7 +50,6 @@ body , html {
     typing 2s steps(100, end) 3.5s backwards,
     blink-caret .5s step-end 4 3.5s forwards;
 }
-
 /* The typing effect */
 @keyframes typing {
     from { width: 0 }
@@ -159,7 +158,6 @@ body , html {
 }
 .myslide img {
     width:600px; height:600px;
-
 }
 .dot {
     cursor: pointer;
@@ -239,46 +237,6 @@ a:-webkit-any-link{
     visibility : visible;
     opacity : 1;
 }
-#contact-message {
-    position: relative;
-    overflow: hidden;
-    display: none;
-    width: auto; height: auto;
-    min-width: 30vw;
-    max-width: 80vw;
-    margin : 15px 0px 30px;
-    transition: all 1s ease-in-out;
-    border-radius: 15px;
-}
-#contact-message:hover{
-    cursor: pointer;
-    display: block !important;
-
-}
-#contact-message > p {
-    display:none; 
-    word-break: keep-all ;
-    font-family: 'Akshar', sans-serif;
-    font-size: 30px !important ;
-    color: #ffff;
-    text-align: center;
-}
-.fb , .ig ,.line , .github {
-    display: block !important;
-    opacity: 1;
-}
-.fb {
-    background-image: linear-gradient(to right, #1976d2 , #3b5998);
-}
-.ig {
-    background-image: linear-gradient(to right,rgba(255,211,85,1),rgba(255,84,62,1),rgba(200,55,171,1));
-}
-.line {
-    background-image: linear-gradient(to right,#19D219, #00B900,#00B900);
-}
-.github {
-    background-image: linear-gradient(to right,#010409,#0d1117);
-}
 #about-me-container {
     display:flex;
     flex-flow: column nowrap;
@@ -288,19 +246,21 @@ a:-webkit-any-link{
 }
 /*---about me---*/
 #about-me {
-    text-align:center ;
-    font-size:50px ; 
-    letter-spacing:1px ;
+    font-family: 'Akshar', sans-serif;
+    text-align: center;
+    font-size: 75px;
+    letter-spacing: 2px;
     color: rgba(231, 228, 228, 0.931);
-    margin:10px 0px 0px;
+    margin:10px 0px 10px;
 }
 /* ---hi my name is Nuttbhas---  */
 #hi-myname{
     text-align:center ;
+    font-family: 'Akshar', sans-serif;
     color: #ddd;
     flex-basis: 100% ; 
     font-size:30px ;
-    letter-spacing: 1.25px; 
+    letter-spacing: 0px; 
     margin: 5px 0 50px;
 }
 .biocard-container {
@@ -359,8 +319,10 @@ a:-webkit-any-link{
     width: 100%;
 }
 .ed-title h1 {
+    font-family: 'Akshar', sans-serif;
     text-align: center;
-    font-size: 50px;
+    font-size: 75px;
+    letter-spacing: 2px;
     color:rgba(231, 228, 228, 0.931);
     margin: 75px 0px;
 }
@@ -369,7 +331,7 @@ a:-webkit-any-link{
     flex-flow: row nowrap;
     height:80vh;
     width: 100%;
-    padding:0 5vw 5vh;
+    padding:0 30px 30px;
     justify-content: space-evenly;
 }
 .ed-item {
@@ -383,7 +345,6 @@ a:-webkit-any-link{
     transition : all 0.9s ease-in-out ;
     border: 3px solid white;
 }
-
 .ed-item:hover {
     flex-basis:45%;
     filter: blur(0px);
@@ -395,37 +356,39 @@ a:-webkit-any-link{
     position: relative;
     top:0; left:0;
     width:100%; height: 100%;
+    transition: all 1.0s ease-in-out 3s;
 }
 .ed-item:hover .ed-bg{
-    background-image: linear-gradient(180deg, rgba(25, 25, 25, 0.9),rgba(15,15,15,0.9));
-    transition: all 1.0s ease-in-out;
+    background-image: linear-gradient(180deg, rgba(25, 25, 25, 0.9),rgb(80, 80, 80));
 }
 .ed-year {
     transform: translateX(-50%) translateY(-50%);
     position: absolute;
-    top:20%;left:50%;
-}
-.year-line {
-    width: auto;
+    top:15%;left:50%;
 }
 .ed-year > p {
     text-align:center ;
     margin: 0;
-    font-size: 40px;
+    font-family: 'Akshar', sans-serif;
+    font-size: 50px;
     white-space: nowrap;
-    letter-spacing: -2px;
+    letter-spacing: -1px;
     color:rgba(231, 228, 228, 0.931);
 }
 .ed-content {
+    width:auto;
     position: absolute;
-    top:50% ; left:50%;
+    top:40% ; left:50%;
     overflow: hidden;
     transform: translateX(-50%) translateY(-50%);   
 }
 .ed-content-hide{
     opacity: 0;
     transform:translateY(25px);
-    font-size: 30px;
+    font-family: 'Akshar', sans-serif;
+    font-size: 25px;
+    text-align: center;
+    white-space: nowrap;
     letter-spacing: 0px;
     color:rgba(231, 228, 228, 0.931); 
 }
@@ -447,17 +410,15 @@ a:-webkit-any-link{
 .ed-item:hover .logo{
     opacity: 1;
     bottom: -10%;
-    transition: all 0.85s ease-in-out 1.5s;
-    
+    transition: all 0.85s ease-in-out 1.25s;
 }
 /* -------- footer -------*/
 .footer {
     display: flex;
     flex-direction: row;
-    
 }
 .footer div{
-    width:33.33%;
+    flex-basis:33.33%;
     background-color: rgba(5, 5, 5, 0.9);
 }
 .footer div h1 {
@@ -479,6 +440,87 @@ a:-webkit-any-link{
     text-decoration: none;
 }
 /* ------- Responsive -------*/
+
+/*---------------------LAPTOP-------------------------*/
+@media screen and (max-width : 1366px) and ( max-height: 768px) {
+    .ed-content {
+        top:45%;
+    }
+    .logo {
+        width: 150px; height: 150px;
+    }
+    .ed-item:hover .logo{
+        bottom:-10%;
+    }
+}
+@media screen and (max-width:1280px) and (max-height: 768px) {
+    .ed-item:hover .logo{
+        bottom: 5% !important;
+    }
+}
+
+/*------------------------WIDTH------------------------- */
+@media screen and (max-width: 1366px){
+    .ed-content-hide {
+        font-size: 23px;
+    }
+}
+@media screen and (max-width:1280px) {
+    .ed-list{
+        flex-flow : column nowrap;
+        height: 90vh ;
+    }
+    .ed-item{
+        margin: 0px;
+    }
+    .ed-year {
+        left: 15%;
+        top:50%
+    }
+    .ed-year > p {
+        font-size: 45px;
+    }
+    .ed-content{
+        left: 50%;
+        top:50%;
+    }
+    .logo {
+        left: 85%;
+        bottom: -40%;
+    }
+    .ed-title h1 {
+        margin : 50px 0px;
+    }
+    .ed-item {
+        flex-basis : 25%;
+    }
+    .ed-item:hover{
+        flex-basis:50%;
+    }
+    .ed-item:hover .logo{
+        bottom: -15%;
+    }
+}
+/*-------------- Laptop --------------*/
+@media screen and (max-width:1024px){
+    .ed-content-hide {
+        font-size: 21px;
+        white-space: normal;
+    }
+    .ed-year {
+        left: 15%;
+    }
+    .ed-year > p {
+        font-size: 40px;
+    }
+    .logo {
+        width: 150px; height: 150px;
+    }
+    .ed-item:hover .logo{
+        bottom: 0%;
+    }
+}
+/*-------------- Tablet--------------*/
 @media screen and (max-width:768px) {
     #welcome h1 {
         font-size: 70px;
@@ -532,11 +574,29 @@ a:-webkit-any-link{
         opacity: 0.5;
     }
     .ed-title h1{
-        margin: 50px 0px
+        margin: 50px 0px 25px;
     }
-    .ed-list{
-        height:75vh
+    .ed-content-hide {
+        font-size: 18px;
+        white-space: normal;
     }
+    .ed-item {
+        flex-basis : 25%;
+    }
+    .ed-item:hover{
+        flex-basis:40%;
+    }
+    .ed-year {
+        left: 13%;
+        letter-spacing: -2px;
+    }
+    .ed-year > p {
+        font-size: 30px;
+    }
+    .logo {
+        width: 125px; height: 125px;
+    }
+
 }
 @media screen and (max-width:600px){
     .header h1{
@@ -572,8 +632,21 @@ a:-webkit-any-link{
     .dot{
         width:15px; height:15px;
     }
+    .ed-title h1 {
+        margin: 25px 0 25px;
+    }
+    .ed-year > p {
+        font-size: 25px;
+    }
+    .ed-list {
+        padding: 0 10px 10px;
+    }
+    .ed-content-hide {
+        font-size: 19px;
+    }
 }
-@media screen and (max-width:450px){
+/*-------------- Mobile L --------------*/
+@media screen and (max-width:425px){
     #welcome h1 {
         font-size: 50px;
     }
@@ -607,9 +680,6 @@ a:-webkit-any-link{
         width:48px; height:48px;
         margin:5px 10px;
     }
-    .icon:hover {
-        width:64px ;height:64px;
-    }
     .column:first-child h1 {
         margin: 20px 0px;
     }
@@ -618,5 +688,59 @@ a:-webkit-any-link{
     }
     .flex-container .column h1{
         font-size: 35px;
+    }
+    .ed-item:hover > .ed-year{
+        top: 20%;
+        transition: top 1s;
+    }
+    .ed-year {
+        letter-spacing: -1px;
+        top: 50%;
+        left: 50%;
+    }
+    .ed-content {
+        top: 60%;
+        left: 35%;
+    }
+    .ed-content-hide{
+        font-size: 16px;
+        letter-spacing: 0.5px;
+    }
+    .logo {
+        left: 85%;
+        width: 80px; height: 80px;
+    }
+    .ed-item:hover .logo{
+        bottom: 0%;
+    }
+    .footer {
+        flex-direction: column;
+    }
+    .credit > a {
+        font-size: 16px;
+        white-space: nowrap;
+    }
+
+}
+/*-------------- Mobile M --------------*/
+@media screen and (max-width:375px) {
+    .myslide img {
+        width:275px; height:275px;
+    }
+    .ed-item:hover {
+        flex-basis: 50%;
+    }
+    .ed-year > p {
+        font-size: 25px;
+    }
+    .ed-content-hide{
+        font-size: 14px;
+        letter-spacing: 0.5px;
+    }
+}
+/*-------------- Mobile S --------------*/
+@media screen and (max-width:320px) {
+    .myslide img {
+        width:250px; height:250px;
     }
 }
