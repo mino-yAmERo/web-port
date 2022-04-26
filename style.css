@@ -1,5 +1,13 @@
+/*----- GENERAL -----*/
+    /* font color */
+    /* color: rgba(231, 228, 228, 0.931) */
+    /* background-color : rgba(5,5,5,0.9) */
+    /* background-color 2 : #151515 */
+    
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 html{
     scroll-behavior: smooth;
@@ -10,9 +18,10 @@ html{
     -ms-user-select: none;      /* IE 10+ */
     user-select: none;
 }
-body , html {
-    margin: 0;
-    padding: 0;
+h1 { 
+    font-family: 'Akshar', sans-serif;
+    font-size: 75px;
+    text-align: center;
 }
 #welcome {
     opacity: 1;
@@ -28,9 +37,7 @@ body , html {
     margin: 0;
     padding: 0;
     color: rgba(255, 255, 255, 0.733) ;
-    font-size: 100px;
-    text-align: center;
-    
+    font-size: 100px;    
 }
 #h ,#n ,#t {
     overflow: hidden; /* Ensures the content is not revealed until the animation */
@@ -38,30 +45,30 @@ body , html {
     white-space: nowrap; /* Keeps the content on a single line */
     letter-spacing: .06em; /* Adjust as needed */
 }
-/* Hello I'm*/
+/*--- Hello I'm ---*/
 #h{ 
     animation: 
     typing 1.5s steps(75, end),
     blink-caret .5s step-end 3 forwards;
 }
-/* Nutthabhas */
+/*--- Nutthabhas --- */
 #n {
     animation: 
     typing 2s steps(100, end) 1.5s backwards,
     blink-caret .5s step-end 4 1.5s forwards;
 }
-/* Thitabhas */
+/*--- Thitabhas --- */
 #t {
     animation: 
     typing 2s steps(100, end) 3.5s backwards,
     blink-caret .5s step-end 4 3.5s forwards;
 }
-/* The typing effect */
+/*--- The typing effect ---*/
 @keyframes typing {
     from { width: 0 }
     to { width: 100% ;}
 }
-/* The typewriter cursor effect */
+/*--- The typewriter cursor effect ---*/
 @keyframes blink-caret {
     from, to { border-color: transparent }
     50% { border-color: orange; }   
@@ -69,7 +76,6 @@ body , html {
 #welcome-message {
     opacity:0 ;
     margin-top: 75px;
-    
 }
 /* Hi, My Guests*/
 #welcome h2 {
@@ -87,6 +93,8 @@ body , html {
     text-align: center;
     margin:7.5px 0px;
 }
+
+/* ---------------------main webpage -----------------------*/
 #main {
     background-color: rgba(5, 5, 5, 0.9) ;
     opacity: 1;
@@ -98,7 +106,7 @@ body , html {
     padding: 30px 0px;
 }
 .header h1 {
-    margin:0;
+    text-align: left;
     margin-left: 50px;
     font-size: 45px;
     color: #8a8a8a;
@@ -110,6 +118,7 @@ body , html {
     width: 100%;
 }
 #top-nav{
+    width : 100vw;
     overflow: hidden;
     background: rgb(50,50,50);
     padding: 16px 20px;
@@ -136,25 +145,17 @@ body , html {
     flex-direction: row;
     justify-content: center;
 }
-.column {
-    background-color: #2a2a2a;
+.first-column {
+    background-color: #151515;
     padding: 100px 0px 0px;
     margin: 15px 15px 0px;
 }
 /*---first paragraph---*/
-.column:first-child {
+.first-column:first-child {
     display: flex;
     flex-direction: column;
     align-items: center;
     flex-basis: 100%;
-}
-/*---Nutthabhas Thitabhas---*/
-.column:first-child h1 {
-    margin: 30px 0px ;
-    font-size: 70px;
-    color: rgba(231, 228, 228, 0.931);
-    letter-spacing: 0.75px;
-    text-align: center;
 }
 /*--- Slide Show ---*/
 .slideshow-container {
@@ -252,10 +253,8 @@ a:-webkit-any-link{
     padding-top:30px;
 }
 /*---about me---*/
-#about-me {
-    font-family: 'Akshar', sans-serif;
+#about-me{
     text-align: center;
-    font-size: 75px;
     letter-spacing: 2px;
     color: rgba(231, 228, 228, 0.931);
     margin:45px 0px 10px;
@@ -279,14 +278,12 @@ a:-webkit-any-link{
     flex-basis: 25%;
 }
 .biocard-container p{
-    margin-top:0px ;
     font-size: 18px;
     color: #ddd;
 }
 #biocard-1{
     display:flex ; 
     flex-flow: row wrap;
-    
 }
 #biocard-1 > div {
     flex-basis: 50%;
@@ -300,6 +297,7 @@ a:-webkit-any-link{
 }
 #biocard-1 div p:nth-child(2){
     font-size: 20px;
+    padding: 10px 0px;
     opacity: 0.5;
     text-decoration: none;
 }
@@ -309,6 +307,7 @@ a:-webkit-any-link{
 }
 #biocard-2 div p:nth-child(n+2){
     margin-left : 75px;
+    padding: 10px 0px;
     font-size: 20px;
     opacity: 0.5;
 }
@@ -319,52 +318,34 @@ a:-webkit-any-link{
     margin: 75px 15px;
     width: 50%;
     background-color: rgba(5,5,5,0.9);
-    border: 5px solid #2a2a2a;
+    border: 5px solid #151515;
 }
 #codewars-container > h1 {
     flex-basis: 100%;
-    text-align: center;
-    font-family: 'Akshar', sans-serif;
-    font-size: 75px;
     margin:50px 0 0px;
     letter-spacing: 2px;
     color: rgba(231, 228, 228, 0.931);
 }
-.codewars_link{
+#codewars-container a{
     position: relative;
     color: rgba(231, 228, 228, 0.931);
     flex-basis: 100%;
     text-align: center;
-    font-size: 25px;
+    font-size: 22px;
+    text-decoration: underline;
     font-family: 'Akshar', sans-serif;
     margin-bottom:50px;
 }
-.codewars_link:hover {
-    opacity: .8;
-}
-.codewars_link::after{
-    visibility: hidden;
-    content: "";
-    position : absolute;
-    top:100%;
-    left:50%;
-    width: 200px;
-    opacity: 0;
-    transform : translateX(-50%) translateY(-50%); 
-    margin: 2.5px 0;
-    border-top:2.5px solid white;
-    transition: all 1s ease-in-out;
-}
-.codewars_link:hover + .codewars_link::after{
-    opacity : 1;
-    visibility: visible;
+#codewars-container a:hover {
+    opacity: .7;
 }
 #codewars-card {
     flex-basis: 100%;
 }
 #codewars-card > div{
     margin:0;
-    background-color: #2a2a2a;
+    padding: 2.5px 0px;
+    background-color: #151515;
     color: rgba(231, 228, 228, 0.931);
     font-size: 30px;
     font-family: 'Akshar', sans-serif;
@@ -377,14 +358,14 @@ a:-webkit-any-link{
     justify-content: center;
 }
 #langDetail > p {
-    margin: 0;
+    padding: 5px 0px;
     font-size: 22px;
     text-align: left;
 }
 #langDetail > p:nth-child(even) {
     background-color: rgba(5,5,5,0.5) ;
 }
-#showLang {
+#showLangBtn {
     position: relative;
     width: 30px ; height: 30px;
     margin: 0 10px;
@@ -392,6 +373,11 @@ a:-webkit-any-link{
     border: transparent;
     background-color: #2a2a2a;
     border-radius: 50%;
+    transition: all 0.4s ;
+}
+#showLangBtn:hover{
+    opacity: 0.6;
+    cursor: pointer; 
 }
 .hide{
     visibility: hidden;
@@ -405,9 +391,6 @@ a:-webkit-any-link{
     transition: all 1s
 
 }
-#showLang:hover{
-    opacity: 0.6;
-}
 #arrow {
     content : "";
     position : absolute;
@@ -417,7 +400,7 @@ a:-webkit-any-link{
     border-style: solid;
     border-width: 0 6px 6px 0;
     border-color :black;
-    transition: all 0.7s
+    transition: all 0.5s
 }
 .arrow-down{
     transform: rotate(45deg);
@@ -431,26 +414,21 @@ a:-webkit-any-link{
 #codewars-card > div:nth-child(even){
     background-color: rgba(5,5,5,0.5);
 } 
-
 #language {
     cursor: pointer;
 }
-
 /* -------- education -------*/
 #education-container {
     display: flex;
     flex-flow: column nowrap;
     width: 100%;
     margin: 15px 15px;
-    background-color: #2a2a2a ;
+    background-color: #151515 ;
 }
 .ed-title {
     width: 100%;
 }
 .ed-title h1 {
-    font-family: 'Akshar', sans-serif;
-    text-align: center;
-    font-size: 75px;
     letter-spacing: 2px;
     color:rgba(231, 228, 228, 0.931);
     margin: 75px 0px;
@@ -539,22 +517,40 @@ a:-webkit-any-link{
 .ed-item:hover .logo{
     opacity: 1;
     bottom: -10%;
-    transition: all 0.85s ease-in-out 1.25s;
+    transition: all 0.85s ease-in-out 1s;
 }
 /* -------- footer -------*/
 .footer {
     display: flex;
-    flex-direction: row;
+    flex-flow: row wrap;
 }
-.footer div{
-    flex-basis:33.33%;
+.footer > div{
+    flex-basis:50%;
     background-color: rgba(5, 5, 5, 0.9);
 }
-.footer div h1 {
-    padding : 10px 0px;
-    text-align: center;
-    color: #8a8a8a;
+.footer-contact {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center
+}
 
+.footer-icon {
+    width: 48px; height: 48px;
+    margin: 12px 10px;
+    opacity: 0.6;
+    transition: all 0.4s
+}
+.footer-icon:hover {
+    opacity: 1;
+}
+.footer > div h1 {
+    margin: 10px 0;
+    font-size: 35px;
+    padding : 10px 0px;
+    color: #8a8a8a;
+}
+.footer-contact > div:last-child > p {
+    font-size: 20px;
 }
 .credit {
     display : flex;
@@ -562,11 +558,21 @@ a:-webkit-any-link{
 }
 .credit > a {
     margin: 0 15px ;
-    align-self: flex-end;
-    font-size: 20px;
+    align-self: center;
+    font-size: 16px;
     text-align: center;
+    letter-spacing: 0.5px;
     color: rgba(231, 228, 228, 0.931);
     text-decoration: none;
+    white-space: nowrap;
+}
+.footer >div:last-child{
+    background-color: #151515;
+    flex-basis:100% ;
+    width:100%;
+}
+.footer >div:last-child h1{
+    font-size: 25px;
 }
 /* ------- Responsive -------*/
 /*---------------------LAPTOP-------------------------*/
@@ -631,6 +637,9 @@ a:-webkit-any-link{
 }
 /*-------------- Laptop --------------*/
 @media screen and (max-width:1024px){
+    #codewars-container {
+        width: 65%;
+    }
     .ed-content-hide {
         font-size: 21px;
         white-space: normal;
@@ -647,9 +656,25 @@ a:-webkit-any-link{
     .ed-item:hover .logo{
         bottom: 0%;
     }
+    .footer-icon {
+        width: 44px; height: 44px;
+    }
+    .footer > div h1 {
+        font-size: 30px
+    }
+    .footer-contact > div:last-child > p {
+        font-size: 18px;
+    }
+    .credit > a {
+        font-size: 14px;
+    }
 }
 /*-------------- Tablet--------------*/
 @media screen and (max-width:768px) {
+    h1 {
+        font-size: 50px; 
+    }
+
     #welcome h1 {
         font-size: 70px;
     }
@@ -659,17 +684,13 @@ a:-webkit-any-link{
     #welcome-message p{
         font-size: 30px;
     }
-    .column:first-child h1 {
-        font-size: 55px;
-        margin: 20px 0px ;
-    }
     .myslide img {
         width:500px; height:500px;
     }
     .dot {
         width:15px; height: 15px; 
     }
-    .column {
+    .first-column {
         padding: 60px 0 30px;
     }
     .tooltipText {
@@ -677,8 +698,11 @@ a:-webkit-any-link{
         margin-left: -100px; /*width / 2 */
         font-size: 20px;
     }
-    .flex-container .column p{
+    .first-column p{
         font-size: 40px;
+    }
+    #hi-myname {
+        font-size: 25px;
     }
     .biocard-container {
         flex-flow: column nowrap;
@@ -701,6 +725,12 @@ a:-webkit-any-link{
         font-size: 20px;
         opacity: 0.5;
     }
+    #codewars-container {
+        width: 75%;
+    }
+    #codewars-container > div {
+        font-size: 24px;
+    }
     .ed-title h1{
         margin: 50px 0px 25px;
     }
@@ -710,6 +740,7 @@ a:-webkit-any-link{
     }
     .ed-item {
         flex-basis : 25%;
+        
     }
     .ed-item:hover{
         flex-basis:40%;
@@ -724,21 +755,23 @@ a:-webkit-any-link{
     .logo {
         width: 125px; height: 125px;
     }
-
+    .footer {
+        flex-direction: column;
+    }
+    .footer > div {
+        width:100%
+    }
+    .credit > a {
+        align-self: center;
+        font-size: 12px;
+    }
 }
 @media screen and (max-width:600px){
+    h1 { 
+        font-size: 40px;
+    }
     .header h1{
         font-size: 40px;
-    }
-    .column:first-child h1 {
-        font-size: 40px;
-        margin: 15px 0px ;
-    }
-    #about-me {
-        font-size : 40px;
-    }
-    #hi-myname {
-        font-size: 25px;
     }
     .myslide img {
         width:400px; height:400px;
@@ -749,7 +782,7 @@ a:-webkit-any-link{
     .contact-tab{
         padding: 20px 0px;
     }
-    .column {
+    .first-column {
         padding: 50px 0 40px;
     }
     .tooltipText {
@@ -759,6 +792,12 @@ a:-webkit-any-link{
     }
     .dot{
         width:15px; height:15px;
+    }
+    #codewars-card > div {
+        font-size: 22px;
+    }
+    #codewars-container a {
+        font-size: 20px;
     }
     .ed-title h1 {
         margin: 25px 0 25px;
@@ -796,7 +835,7 @@ a:-webkit-any-link{
         width:10px; height: 10px; 
         
     }
-    .column {
+    .first-column {
         padding: 60px 0 30px;
     }
     .tooltipText {
@@ -808,14 +847,32 @@ a:-webkit-any-link{
         width:48px; height:48px;
         margin:5px 10px;
     }
-    .column:first-child h1 {
-        margin: 20px 0px;
-    }
-    .flex-container .column p{
+    .first-column p{
         font-size: 30px;
     }
-    .flex-container .column h1{
+    .first-column h1{
         font-size: 35px;
+    }
+    #showLangBtn {
+        position: relative;
+        width: 25px ; height: 25px;
+    }
+    #arrow {
+        top: 25%;
+        left: 25%;
+        padding: 4px;
+        border-style: solid;
+        border-width: 0 4px 4px 0;
+    }
+    #codewars-card > div {
+        font-size: 20px;
+    }
+    #langDetail > p {
+        font-size: 18px;
+        text-align: left;
+    }
+    #codewars-container {
+        width: 85%;
     }
     .ed-title h1 {
         font-size: 50px;
@@ -847,16 +904,24 @@ a:-webkit-any-link{
     .footer {
         flex-direction: column;
     }
-    .credit > a {
-        font-size: 16px;
-        white-space: nowrap;
+    .footer >div:last-child h1{
+        font-size: 22px;
     }
-
+    .footer-contact > div:last-child > p {
+        font-size: 16px;
+    }
 }
 /*-------------- Mobile M --------------*/
 @media screen and (max-width:375px) {
     .myslide img {
         width:275px; height:275px;
+    }
+    #biocard-1 div p:nth-child(2) ,
+    #biocard-2 div p:nth-child(n+2) {
+        margin-left: 50px;
+        font-size: 18px;
+        padding: 15px 0px;
+        opacity: 0.5;
     }
     .ed-title h1 {
         font-size: 40px;
@@ -870,6 +935,12 @@ a:-webkit-any-link{
     .ed-content-hide{
         font-size: 14px;
         letter-spacing: 0.5px;
+    }
+    .footer >div:last-child h1{
+        font-size: 20px;
+    }
+    .footer-contact > div:last-child > p {
+        font-size: 15px;
     }
 }
 /*-------------- Mobile S --------------*/

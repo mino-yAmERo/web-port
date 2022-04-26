@@ -8,13 +8,12 @@ console.log('position before main webpage show: '+sticky);
 
 //main function 
 //welcome fade-in
-// setTimeout(fadeIn,6000); // welcome to my website //
-// setTimeout(fadeOut,8000); //welcome fade-out and show main webpage
+setTimeout(fadeIn,6000); // welcome to my website //
+setTimeout(fadeOut,8000); //welcome fade-out and show main webpage
 
-
-     //----FOR TEST----
-setTimeout(fadeIn,100);
-setTimeout(fadeOut,100);
+//----FOR MAINTENANCE----//
+// setTimeout(fadeIn,100);
+// setTimeout(fadeOut,100);
 
 function fadeIn (){
     let myInterval = setInterval(function() {
@@ -49,9 +48,7 @@ function fadeOut (){
 }
 // welcome disappear && show webpage
 
-// ----------------------------change icon ------------------------------------//
-
-//----------------------------- slide show ----------------------------- //
+//---- slide show --- //
 const slide = document.getElementsByClassName('myslide');
 const dot = document.getElementsByClassName('dot');
 let slideIndex = 0 ;
@@ -81,7 +78,7 @@ function currentSlide(n){
 //--- Hide top navbar on scroll ---//
 let prevScrollpos = window.pageYOffset;
 window.onscroll = function() {  
-    myFunction()
+    stickyFunction()
     let currentScrollpos = window.pageYOffset;
     if (prevScrollpos > currentScrollpos) {
         navbar.style.top ="0";
@@ -92,7 +89,7 @@ window.onscroll = function() {
 };  
 
 //--- add sticky class at top navbar ---//
-function myFunction(){
+function stickyFunction(){
     if (window.pageYOffset >= sticky) {
         navbar.classList.add("sticky")
     } else {
@@ -114,8 +111,8 @@ xhttp.onreadystatechange = function () {
         codewars.innerHTML = '<div>Username : ' + myJSON.username + '</div>';
         codewars.innerHTML += '<div>Leaderboard : ' +myJSON.leaderboardPosition + '</div>';
         codewars.innerHTML += '<div>Total Challenge Complete : ' + myJSON.codeChallenges.totalCompleted + '</div>';
-        codewars.innerHTML += '<div id="lang" onclick="showLang()" >Languages : '+ Object.keys(myJSON.ranks.languages).length+
-        '<button id="showLang"><span id="arrow" class="arrow-down"></button> </div>';
+        codewars.innerHTML += '<div id="lang" >Languages : '+ Object.keys(myJSON.ranks.languages).length+
+        '<button id="showLangBtn" onclick="showLang()"><span id="arrow" class="arrow-down"></button> </div>';
 
 
         const Obj = myJSON.ranks.languages;
@@ -127,7 +124,7 @@ xhttp.onreadystatechange = function () {
             } else {
                 text += "<p><b>"+x.charAt(0).toUpperCase()+x.slice(1)+ "</b> : ";
             }
-            text += Obj[x]['name']+" | score : "+Obj[x]['score'];
+            text += "rank : "+Obj[x]['name']+" | score : "+Obj[x]['score'];
             document.getElementById('langDetail').innerHTML += text +"<br></p>";
         }
     }
@@ -139,10 +136,13 @@ xhttp.send();
 let arrow = true;
 function showLang() {
     arrow = !arrow;
+    console.log("arrowStat : "+arrow);
     if(arrow){
+        //hide
         document.getElementById('arrow').classList.replace('arrow-up', 'arrow-down'); //replace arrow-down -> arrow up
         document.getElementById('langDetail').classList.replace('show','hide'); // replace hide -> show
     }else{
+        //show
         document.getElementById('arrow').classList.replace('arrow-down', 'arrow-up');
         document.getElementById('langDetail').classList.replace('hide','show');
     }
