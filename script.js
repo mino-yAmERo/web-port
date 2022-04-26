@@ -11,7 +11,7 @@ console.log('position before main webpage show: '+sticky);
 setTimeout(fadeIn,6000); // welcome to my website //
 setTimeout(fadeOut,8000); //welcome fade-out and show main webpage
 
-//----FOR TEST----//
+//----FOR MAINTENANCE----//
 // setTimeout(fadeIn,100);
 // setTimeout(fadeOut,100);
 
@@ -48,9 +48,7 @@ function fadeOut (){
 }
 // welcome disappear && show webpage
 
-// ----------------------------change icon ------------------------------------//
-
-//----------------------------- slide show ----------------------------- //
+//---- slide show --- //
 const slide = document.getElementsByClassName('myslide');
 const dot = document.getElementsByClassName('dot');
 let slideIndex = 0 ;
@@ -80,7 +78,7 @@ function currentSlide(n){
 //--- Hide top navbar on scroll ---//
 let prevScrollpos = window.pageYOffset;
 window.onscroll = function() {  
-    myFunction()
+    stickyFunction()
     let currentScrollpos = window.pageYOffset;
     if (prevScrollpos > currentScrollpos) {
         navbar.style.top ="0";
@@ -91,11 +89,63 @@ window.onscroll = function() {
 };  
 
 //--- add sticky class at top navbar ---//
-function myFunction(){
+function stickyFunction(){
     if (window.pageYOffset >= sticky) {
         navbar.classList.add("sticky")
     } else {
         navbar.classList.remove("sticky");
     }
 }
+window.onload= function () {
 
+const xhttp = new XMLHttpRequest();
+const url = 'https://www.codewars.com/api/v1/users/Mi No';
+xhttp.open('GET',url);
+xhttp.setRequestHeader('Content-Type','application/json');
+let codewars = document.getElementById('codewars-card');
+//-------- GET JSON --------//
+xhttp.onreadystatechange = function () {
+    if(this.readyState ==4 & this.status ==200) {
+        let myJSON = JSON.parse(this.responseText);
+        console.table(myJSON);
+        codewars.innerHTML = '<div>Username : ' + myJSON.username + '</div>';
+        codewars.innerHTML += '<div>Leaderboard : ' +myJSON.leaderboardPosition + '</div>';
+        codewars.innerHTML += '<div>Total Challenge Complete : ' + myJSON.codeChallenges.totalCompleted + '</div>';
+        codewars.innerHTML += '<div id="lang" >Languages : '+ Object.keys(myJSON.ranks.languages).length+
+        '<button id="showLangBtn" onclick="showLang()"><span id="arrow" class="arrow-down"></button> </div>';
+
+
+        const Obj = myJSON.ranks.languages;
+        codewars.innerHTML += '<div id="langDetail" class="hide"></div>' ;
+        for (let x in Obj){
+            let text = "";
+            if(x.length <= 3) {
+                text += "<p><b>"+x.toUpperCase()+ "</b> : ";
+            } else {
+                text += "<p><b>"+x.charAt(0).toUpperCase()+x.slice(1)+ "</b> : ";
+            }
+            text += "rank : "+Obj[x]['name']+" | score : "+Obj[x]['score'];
+            document.getElementById('langDetail').innerHTML += text +"<br></p>";
+        }
+    }
+};
+
+
+xhttp.send();
+}
+let arrow = true;
+function showLang() {
+    arrow = !arrow;
+    console.log("arrowStat : "+arrow);
+    if(arrow){
+        //hide
+        document.getElementById('arrow').classList.replace('arrow-up', 'arrow-down'); //replace arrow-down -> arrow up
+        document.getElementById('langDetail').classList.replace('show','hide'); // replace hide -> show
+    }else{
+        //show
+        document.getElementById('arrow').classList.replace('arrow-down', 'arrow-up');
+        document.getElementById('langDetail').classList.replace('hide','show');
+    }
+};
+
+// https://www.codewars.com/api/v1/users/Mi%20No/code-challenges/completed?page=1
