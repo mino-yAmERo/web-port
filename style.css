@@ -326,7 +326,7 @@ a:-webkit-any-link{
     letter-spacing: 2px;
     color: rgba(231, 228, 228, 0.931);
 }
-#codewars-container a{
+#codewars-container > a{
     position: relative;
     color: rgba(231, 228, 228, 0.931);
     flex-basis: 100%;
@@ -336,7 +336,7 @@ a:-webkit-any-link{
     font-family: 'Akshar', sans-serif;
     margin-bottom:50px;
 }
-#codewars-container a:hover {
+#codewars-container > a:hover {
     opacity: .7;
 }
 #codewars-card {
@@ -357,12 +357,12 @@ a:-webkit-any-link{
     align-items: center;
     justify-content: center;
 }
-#langDetail > p {
+#langDetail > div {
     padding: 5px 0px;
     font-size: 22px;
     text-align: left;
 }
-#langDetail > p:nth-child(even) {
+#langDetail > div:nth-child(even) {
     background-color: rgba(5,5,5,0.5) ;
 }
 #showLangBtn {
@@ -383,6 +383,7 @@ a:-webkit-any-link{
     visibility: hidden;
     opacity:0;
     height:0;
+    padding: 0 !important;
 }
 .show{
     visibility: visible;
@@ -417,6 +418,48 @@ a:-webkit-any-link{
 #language {
     cursor: pointer;
 }
+#langShowMore {
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s;
+    opacity: 0.5;
+}
+#langShowMore:hover {
+    opacity: 1;
+}
+#dataList {
+    display : flex ;
+    flex-flow: row wrap;
+    padding: 10px 5px;
+}
+#dataList > li{
+    padding: 5px 10px;
+    font-size: 18px;
+    width: 33.33%;
+    list-style: none;
+    border-style: dashed;
+    border-width: 1px;
+    border-color: white;
+    border-left: none;
+    transition: all 0.4s;
+    
+}
+#dataList > li:nth-child(3n+1){
+    border-left: 1px dashed white;
+}
+#dataList > li:nth-child(3n+1){
+    border-left: 1px dashed white;
+}
+#lastDatalist a {
+    color: rgba(231, 228, 228, 0.931);
+    font-size: 17px;
+    text-align: center;
+    text-decoration: underline;
+    font-family: 'Akshar', sans-serif;
+    font-style: italic;
+}
+
+
 /* -------- education -------*/
 #education-container {
     display: flex;
@@ -796,7 +839,7 @@ a:-webkit-any-link{
     #codewars-card > div {
         font-size: 22px;
     }
-    #codewars-container a {
+    #codewars-container > a {
         font-size: 20px;
     }
     .ed-title h1 {
@@ -867,7 +910,7 @@ a:-webkit-any-link{
     #codewars-card > div {
         font-size: 20px;
     }
-    #langDetail > p {
+    #langDetail > div {
         font-size: 18px;
         text-align: left;
     }
