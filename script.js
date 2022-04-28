@@ -145,7 +145,7 @@ function showLang() {
     }else{
         //hide
         document.getElementById('arrow').classList.replace('arrow-up', 'arrow-down'); //replace arrow-down -> arrow up
-        document.getElementById('langDetail').classList.replace('show','hide'); // replace hide -> show
+        document.getElementById('langDetail').classList.replace('show','hide'); // replace show -> hide
     }
 };
 //--------- Show more ----------//

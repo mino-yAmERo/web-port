@@ -1,3 +1,13 @@
+<?php
+    session_start();
+    // ------ Check ADMIN and Login-Status ------
+    if(!(array_key_exists('UserID',$_SESSION)) || (empty($_SESSION['UserID'])) || ($_SESSION["Status"] != "ADMIN"))
+    {
+        echo "You're not an admin or you're not logged in";
+        header("location:login.php");
+        exit();
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
