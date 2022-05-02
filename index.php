@@ -1,9 +1,8 @@
 <?php
     session_start();
     // ------ Check ADMIN and Login-Status ------
-    if(!(array_key_exists('UserID',$_SESSION)) || (empty($_SESSION['UserID'])) || ($_SESSION["Status"] != "ADMIN"))
+    if (  (!(array_key_exists('UserID',$_SESSION))) || (empty($_SESSION['UserID'])) )
     {
-        echo "You're not an admin or you're not logged in";
         header("location:login.php");
         exit();
     }
@@ -28,10 +27,10 @@
 <!-- first welcome-animation -->
     <div id="welcome">
         <div>
-            <h1 id="h">Hello I'm </h1>
+            <h1 id="h">Hello <?php echo $_SESSION["Username"]?> </h1>
         </div>
         <div>
-            <h1 id="n">Nutthabhas</h1>
+            <h1 id="n">I'm Nutthabhas</h1>
         </div>
         <div>
             <h1 id="t">Thitabhas</h1>
@@ -57,6 +56,7 @@
             <a href="#main">Home</a>
             <a href="#about-me-container">About me</a>
             <a href="#education-container">Education</a>
+            <a href="logout.php" id="logout-btn">Logout</a>
         </div>
 
         <!-- content -->

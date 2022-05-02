@@ -118,10 +118,10 @@ h1 {
     width: 100%;
 }
 #top-nav{
-    width : 100vw;
+    display:flex;
+    flex-basis:100%;
     overflow: hidden;
     background: rgb(50,50,50);
-    padding: 16px 20px;
     z-index: 1;
     transition: top 0.3s ease-in-out;
 }
@@ -131,12 +131,15 @@ h1 {
     text-decoration: none;
     font-size: 25px;
     color :#ffffff;
-    padding: 20px 20px;
+    padding: 15px 20px;
     transition: all 0.2s
 }
 #top-nav a:hover {
     background-color: rgba(5, 5, 5, 0.9) !important;
     color: rgba(231, 228, 228, 0.931);
+}
+#logout-btn {
+    justify-content: flex-end;
 }
 .flex-container {
     background-color: rgba(5, 5, 5, 0.9);

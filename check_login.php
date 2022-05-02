@@ -4,7 +4,7 @@
 
     $username = $conn -> real_escape_string($_POST['txtUsername']);
     $password = $conn -> real_escape_string($_POST['txtPassword']);
-    $sql = "SELECT * FROM userinfo WHERE Username = '$username' AND Password = '$password' ";
+    $sql = "SELECT * FROM UserInfo WHERE Username = '$username' AND Password = '$password' ";
     $result = $conn -> query($sql);
     $row = $result -> fetch_array(MYSQLI_ASSOC);
 
@@ -45,7 +45,7 @@
             header("location:index.php");
         }else{
             echo "You're a user "."<br>";
-            header("location:user_page.php");
+            header("location:index.php");
         }
     }
     $conn -> close();

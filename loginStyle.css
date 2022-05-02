@@ -38,27 +38,12 @@ h1 {
     font-size: 45px;
     color: #8a8a8a;
 }
-.container{
-    display: flex;
-    flex-flow : column nowrap;
-    align-items : center;
-    padding: 30px 30px;
-    background-color: #151515;
-    text-align: center;
-}
+
 form {
     color: #fff;
     font-size: 24px;
     width: 100%;
     margin: 15px 15px 0px;
-}
-.log {
-    text-align: center;
-    width:200px ; height: 200px;
-    margin-top : 50px;
-    background-color:  #fff;
-    color: #151515;
-    font-size: 24px;
 }
 .show {
     display:block;
@@ -69,26 +54,32 @@ form {
     height: 0;
     width: 0;
 }
-#login-form > h1{
-    font-size:50px;
-    padding: 25px 25px;
-    letter-spacing: 2px;
-}
-.form-container{
+.container {
     display:flex;
     flex-direction: column;
     align-items: center;
 }
-.form-container > label {
-    padding: 7px 0px;
-}
-.form-container > input {
-    height: 30px;
-    width: 25%;
-}
-#submitBtn {
-    margin: 20px;
-    width: 10%;
-    font-size:18px;
+.container > h2{
+    color: #fff;
+    font-size:50px;
+    margin: 15px 0px;
+    letter-spacing: 2px;
+    text-align: center;
 }
 
+#submitBtn {
+    margin: 20px;
+    width: 5%;
+    font-size:18px;
+}
+#txtHint p{
+    font-size: 22px;
+    font-style: italic;
+    transition: all 0.5s ease-in-out;
+}
+.invalid {
+    color: red;
+}
+.valid {
+    color: green;
+}
