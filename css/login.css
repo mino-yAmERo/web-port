@@ -1,0 +1,118 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color:  rgba(5, 5, 5, 0.9) ;
+}
+a {
+    padding: 15px 15px;
+    font-size: 20px;
+    color: #fff;
+}
+html{
+    scroll-behavior: smooth;
+}
+.no-select {
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;
+}
+h1 { 
+    font-family: 'Akshar', sans-serif;
+    font-size: 75px;
+    text-align: center;
+}
+
+.header {
+    background-color: rgba(5, 5, 5, 0.9) !important;
+    width: 100%;
+    padding: 30px 0px;
+}
+.header h1 {
+    text-align: left;
+    margin-left: 50px;
+    font-size: 45px;
+    color: #8a8a8a;
+}
+
+form {
+    color: #fff;
+    font-size: 24px;
+    width: 100%;
+    margin: 15px 15px 0px;
+}
+.show {
+    display:block;
+}
+.hide {
+    display:none;
+    opacity: 0;
+    height: 0;
+    width: 0;
+}
+.container {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top:50px;
+    height: 100%;
+}
+.container > h2{
+    color: #fff;
+    font-size:50px;
+    margin: 15px 0px;
+    letter-spacing: 2px;
+    text-align: center;
+}
+#login-form{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+#login-form > label {
+    padding: 7px 0px;
+}
+#login-form > input {
+    text-align: center;
+    height: 27px;
+    margin-bottom: 7px;
+    font-size: 18px;
+}
+a:hover {
+    opacity: 0.6;
+    cursor: pointer;
+}
+#submitBtn {
+    margin: 20px;
+    width: 5%;
+    font-size:18px;
+}
+#txtHint p{
+    font-size: 22px;
+    font-style: italic;
+    transition: all 0.5s ease-in-out;
+}
+.invalid {
+    color: red;
+}
+.valid {
+    color: green;
+}
+/*---- footer ----*/
+.footer {
+    display: flex;
+    background-color: #151515;
+    position: absolute;
+    justify-content: center;
+    bottom:0;
+    width: 100%;
+}
+.footer > div h1 {
+    margin: 10px 0;
+    font-size: 25px;
+    padding : 10px 0px;
+    color: #8a8a8a;
+}

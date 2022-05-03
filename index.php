@@ -1,3 +1,12 @@
+<?php
+    session_start();
+    // ------ Check ADMIN and Login-Status ------
+    if (  (!(array_key_exists('UserID',$_SESSION))) || (empty($_SESSION['UserID'])) )
+    {
+        header("location:login.php");
+        exit();
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +17,7 @@
     <meta name="author" content="Nutthabhas Thitabhas">
     <meta name="description" content="Personal Portfolio Web">
     <title>Home | Nutthabhas</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Akshar:wght@300&family=Audiowide&display=swap" rel="stylesheet">
@@ -18,10 +27,10 @@
 <!-- first welcome-animation -->
     <div id="welcome">
         <div>
-            <h1 id="h">Hello I'm </h1>
+            <h1 id="h">Hello <?php echo $_SESSION["Username"]?> </h1>
         </div>
         <div>
-            <h1 id="n">Nutthabhas</h1>
+            <h1 id="n">I'm Nutthabhas</h1>
         </div>
         <div>
             <h1 id="t">Thitabhas</h1>
@@ -44,9 +53,16 @@
 
         <!-- top nav -->
         <div id="top-nav">
-            <a href="#main">Home</a>
-            <a href="#about-me-container">About me</a>
-            <a href="#education-container">Education</a>
+            <div>
+                <a href="#main">Home</a>
+                <a href="#about-me-container">About me</a>
+                <a href="#codewars-container">Codewars</a>
+                <a href="#education-container">Education</a>
+            </div>
+            <div>
+                <a href="#" style="font-style:italic;"><u><?php echo $_SESSION["Username"] ?></u></a>
+                <a href="logout.php" id="logout-btn">Logout</a>
+            </div>
         </div>
 
         <!-- content -->
@@ -283,5 +299,5 @@
         </div>
     </div>  
 </body>
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </html>
