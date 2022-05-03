@@ -1,7 +1,6 @@
 <?php 
     session_start();
     require 'db_connect.php';
-
     $username = $conn -> real_escape_string($_POST['txtUsername']);
     $password = $conn -> real_escape_string($_POST['txtPassword']);
     $sql = "SELECT * FROM UserInfo WHERE Username = '$username' AND Password = '$password' ";

@@ -8,12 +8,12 @@ console.log('position before main webpage show: '+sticky);
 
 //main function 
 //welcome fade-in
-setTimeout(fadeIn,6000); // welcome to my website //
-setTimeout(fadeOut,8000); //welcome fade-out and show main webpage
+// setTimeout(fadeIn,6000); // welcome to my website //
+// setTimeout(fadeOut,8000); //welcome fade-out and show main webpage
 
 //----FOR MAINTENANCE----//
-// setTimeout(fadeIn,100);
-// setTimeout(fadeOut,100);
+setTimeout(fadeIn,100);
+setTimeout(fadeOut,100);
 
 function fadeIn (){
     let myInterval = setInterval(function() {

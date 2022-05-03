@@ -7,9 +7,8 @@ body {
     background-color:  rgba(5, 5, 5, 0.9) ;
 }
 a {
-    text-decoration: none;
     padding: 15px 15px;
-    font-size: 18px;
+    font-size: 20px;
     color: #fff;
 }
 html{
@@ -58,6 +57,8 @@ form {
     display:flex;
     flex-direction: column;
     align-items: center;
+    margin-top:50px;
+    height: 100%;
 }
 .container > h2{
     color: #fff;
@@ -66,7 +67,24 @@ form {
     letter-spacing: 2px;
     text-align: center;
 }
-
+#login-form{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+#login-form > label {
+    padding: 7px 0px;
+}
+#login-form > input {
+    text-align: center;
+    height: 27px;
+    margin-bottom: 7px;
+    font-size: 18px;
+}
+a:hover {
+    opacity: 0.6;
+    cursor: pointer;
+}
 #submitBtn {
     margin: 20px;
     width: 5%;
@@ -82,4 +100,19 @@ form {
 }
 .valid {
     color: green;
+}
+/*---- footer ----*/
+.footer {
+    display: flex;
+    background-color: #151515;
+    position: absolute;
+    justify-content: center;
+    bottom:0;
+    width: 100%;
+}
+.footer > div h1 {
+    margin: 10px 0;
+    font-size: 25px;
+    padding : 10px 0px;
+    color: #8a8a8a;
 }

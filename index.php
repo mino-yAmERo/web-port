@@ -17,7 +17,7 @@
     <meta name="author" content="Nutthabhas Thitabhas">
     <meta name="description" content="Personal Portfolio Web">
     <title>Home | Nutthabhas</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Akshar:wght@300&family=Audiowide&display=swap" rel="stylesheet">
@@ -53,10 +53,16 @@
 
         <!-- top nav -->
         <div id="top-nav">
-            <a href="#main">Home</a>
-            <a href="#about-me-container">About me</a>
-            <a href="#education-container">Education</a>
-            <a href="logout.php" id="logout-btn">Logout</a>
+            <div>
+                <a href="#main">Home</a>
+                <a href="#about-me-container">About me</a>
+                <a href="#codewars-container">Codewars</a>
+                <a href="#education-container">Education</a>
+            </div>
+            <div>
+                <a href="#" style="font-style:italic;"><u><?php echo $_SESSION["Username"] ?></u></a>
+                <a href="logout.php" id="logout-btn">Logout</a>
+            </div>
         </div>
 
         <!-- content -->
@@ -293,5 +299,5 @@
         </div>
     </div>  
 </body>
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </html>
