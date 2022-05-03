@@ -9,7 +9,6 @@ function checkUser(str) {
         userlog.innerHTML = "<p class='invalid'>Username must contain at least 8 characters</p>";
         return;
     } else {
-
         let xhr = new XMLHttpRequest();
         xhr.onreadystatechange = function() {
             if(xhr.readyState == 4 && xhr.status == 200){

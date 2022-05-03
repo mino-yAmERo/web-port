@@ -31,7 +31,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="loginStyle.css">
+        <link rel="stylesheet" href="css/login.css">
         <title>Register</title>
         <style>
             .container h2{
@@ -63,6 +63,11 @@
             <h3> Firstname : <?php echo $fname;?> </h3>
             <h3> Lastname : <?php echo $lname;?> </h3>
             <a href="login.php">Go back to login</a>
+            <div class="footer">
+                <div>
+                    <h1>Copyright &copy; 2022. Nutthabhas Thitabhas</h1>
+                </div>
+            </div>
         </div>
     </body>
     </html>
