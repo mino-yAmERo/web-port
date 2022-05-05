@@ -1,23 +1,13 @@
 function checkUser(str) {
-    let userInput = document.getElementById('Username');
     let userlog = document.getElementById('userLog');
-    let string = str.trim();
-    if(string.length == ""){
-        userlog.innerHTML = "";
+    if(str == ""){
+        userlog.innerHTML = "<small class='invalid'>Please fuck me</small>";
     }
-    else if(string.length < 8) {
+    else if(str.length < 8) {
         userlog.innerHTML = "<p class='invalid'>Username must contain at least 8 characters</p>";
-        return;
-    } else {
-        let xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = function() {
-            if(xhr.readyState == 4 && xhr.status == 200){
-                userlog.innerHTML = this.responseText;
-            }
-        }
-        xhr.open('GET',"getuser.php?str="+string, true);
-        xhr.send();
-        
+    }
+    else{
+        userlog.innerHTML = "";
     }
 }
 // ------- CHECK PASSWORD AND CONFIRM PASSWORD ------- //
@@ -33,8 +23,8 @@ function checkPassword() {
             pw.classList.add('invalid-box');
             confirmPw.classList.add('invalid-box');
         } else {
-        pw.classList.replace('valid-box','invalid-box');
-        confirmPw.classList.replace('valid-box','invalid-box');
+            pw.classList.replace('valid-box','invalid-box');
+            confirmPw.classList.replace('valid-box','invalid-box');
         }
 
 
@@ -45,20 +35,32 @@ function checkPassword() {
     }
 
 }
+    function clearInput(event){
+    const inputs = document.querySelectorAll('#firstname, #lastname , #Username, #Password, #ConfirmPassword');
+    inputs.forEach(e => {
+        e.value= '';
+    });
+}
+
+
+
+
+
+    
+
 function validateForm() {
-    let userlog = document.getElementById('userLog').querySelector('p');
-    let pwLog = document.getElementById('passwordLog').querySelector('p');
-    //--- username ---//
-    if (userlog.classList.value === 'invalid'){
-        console.log('Please enter a valid');
-        alert('Please enter a valid');
-        return false;
-    };
-
-    //--- password ---//
-    if (pwLog.classList.value === 'invalid'){
-
-        alert('Password is not correct');
-        return false;
-    };
+    let xhr = new XMLHttpRequest();
+    let userInput = document.getElementById('Username').value;
+    xhr.open("GET","getuser.php?name="+userInput,true);
+    xhr.send();
+    xhr.onreadystatechange = function() {
+        if(xhr.readyState == 4 && xhr.status == 200){
+            let myJSON = JSON.parse(xhr.responseText);
+            console.table(myJSON);
+            if (! (myJSON.status) ) 
+                document.getElementById('register-form').submit();
+            else
+                alert('ไอ่บิวหน้าเหี้ยยยยยยยย');
+        }
+    }
 }
