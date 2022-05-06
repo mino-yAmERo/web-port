@@ -78,7 +78,7 @@ form {
 #register-form > input:focus {
     width: clamp(250px ,15%, 600px);
 }
-#submitBtn {
+#btn {
     padding: 5px 10px;
     width: auto;
     font-size:20px;

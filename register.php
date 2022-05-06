@@ -14,7 +14,7 @@
     </div>
     <div class="container">
         <h2>Register</h2>
-        <form id="register-form" action="check_register.php" method="post" autocomplete="off">
+        <form name ="regis-form" id="register-form" action="check_register.php" method="post" autocomplete="off">
                 <label for="firstname">Firstname</label>
                 <input type="text" name="Firstname" id="firstname" required >
 
@@ -31,9 +31,10 @@
                 <label for="password">Confirm Password</label>
                 <input type="password" name="txtPassword" id="ConfirmPassword" onkeyup="checkPassword()"  autocomplete="off" required>
                 <span id="passwordLog"></span>
+
                 <label style="margin:10px 0;">Already signed up ? <a href="login.php">Sign in here</a></label>
 
-                <button type="button" name="submit" id="submitBtn" onclick="validateForm()">Submit</button>
+                <button type="button" id="btn" onclick="validateForm()">Submit</button>
 
         </form>
         <div class="footer">

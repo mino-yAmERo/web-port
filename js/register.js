@@ -1,10 +1,10 @@
 function checkUser(str) {
     let userlog = document.getElementById('userLog');
     if(str == ""){
-        userlog.innerHTML = "<small class='invalid'>Please fuck me</small>";
+        userlog.innerHTML = "<small class='invalid'>Please fill username</small>";
     }
     else if(str.length < 8) {
-        userlog.innerHTML = "<p class='invalid'>Username must contain at least 8 characters</p>";
+        userlog.innerHTML = "<small class='invalid'>Username must contain at least 8 characters</small>";
     }
     else{
         userlog.innerHTML = "";
@@ -35,32 +35,32 @@ function checkPassword() {
     }
 
 }
-    function clearInput(event){
-    const inputs = document.querySelectorAll('#firstname, #lastname , #Username, #Password, #ConfirmPassword');
-    inputs.forEach(e => {
-        e.value= '';
-    });
-}
-
-
-
-
-
-    
+//     function clearInput(event){
+//     const inputs = document.querySelectorAll('#firstname, #lastname , #Username, #Password, #ConfirmPassword');
+//     inputs.forEach(e => {
+//         e.value= '';
+//     });
+// }
 
 function validateForm() {
     let xhr = new XMLHttpRequest();
     let userInput = document.getElementById('Username').value;
-    xhr.open("GET","getuser.php?name="+userInput,true);
+    xhr.open("GET","checkUser.php?name="+userInput,true);
     xhr.send();
     xhr.onreadystatechange = function() {
         if(xhr.readyState == 4 && xhr.status == 200){
+            const myForm = document.getElementById('register-form');
             let myJSON = JSON.parse(xhr.responseText);
             console.table(myJSON);
-            if (! (myJSON.status) ) 
-                document.getElementById('register-form').submit();
-            else
-                alert('ไอ่บิวหน้าเหี้ยยยยยยยย');
+            
+            if (! (myJSON.status) ) {
+                console.log('status : '+myJSON.status);
+                HTMLFormElement.prototype.submit.call(myForm);
+            }
+            else{
+                alert(userInput + ' has already used');
+                document.getElementById('userLog').innerHTML = "<small class='invalid'> "+ userInput +" has already used  </small>";
+            }
         }
     }
 }

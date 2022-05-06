@@ -17,7 +17,7 @@
         // echo "error code: ".$stmt->errno."<br>";
         // echo "error-list : ";print_r($stmt->error_list);
 
-    if( $stmt->execute() == TRUE) {
+    if( $stmt->execute()) {
         // echo "New record created successfully";
     } else {
         die( "error : ".$stmt->error."<br>");
@@ -31,38 +31,54 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/login.css">
+        <link rel="stylesheet" href="css/register.css">
         <title>Register</title>
         <style>
-            .container h2{
-                margin: 10px 10px;
-            }
             h3 {
+                margin: 20px 10px;
                 font-size: 30px;
                 text-align: center;
                 color: #fff;
             }
+            p {
+                margin: 5px 0;
+                font-size: 25px;
+                text-align: center;
+                color: #fff;
+                letter-spacing: 1px;
+            }
             a {
                 text-decoration: none;
                 color: #fff;
-                margin: 15px 15px;
-                font-size: 22px;
+                font-size: 20px;
             }
-            a:hover {
-                opacity: 0.6;
+    
+            .login-box{
+                margin: 30px 15px;
+                background-color: #151515;
+                color: #fff;
+                padding: 15px 7px; 
+                transition: all 0.4s;
+                border: 1px solid transparent;
+                border-radius: 10px;
             }
+            .login-box:hover {
+                opacity: 0.7;
+            }
+
         </style>
+
     </head>
     <body>
         <div class="header">
             <h1>Nutthabhas Thitabhas</h1>
         </div>
         <div class="container">
-            <h2> Your Registration is successful</h2>
-            <h3> Username : <?php echo $username;?> </h3>
-            <h3> Firstname : <?php echo $fname;?> </h3>
-            <h3> Lastname : <?php echo $lname;?> </h3>
-            <a href="login.php">Go back to login</a>
+            <h3> Your Registration is successful</h3>
+            <p> Username : <small><?php echo $username;?></small></p>
+            <p> Firstname : <small><?php echo $fname;?></small> </p>
+            <p> Lastname : <small><?php echo $lname;?></small> </p>
+            <div class= "login-box"><a href="login.php">Go back to login</a></div>
             <div class="footer">
                 <div>
                     <h1>Copyright &copy; 2022. Nutthabhas Thitabhas</h1>

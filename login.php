@@ -20,15 +20,18 @@
     </div>
     <div class="container">
         <h2>Login</h2>
-        <form class="show" id="login-form" method="post" action="check_login.php">
-            <label for="username">Username</label>
-            <input type="text" name="txtUsername" id="txtUsername" >
+            <div class="login-box">
+                <label for="username">Username</label>
+                <input type="text" id="Username" >
 
-            <label for="password">Password</label>
-            <input type="password" name="txtPassword" id="txtPassword">
-            <label style="margin:10px ;">Not a member ? <a href="register.php">Create account</a></label>
-            <input type="submit" name="submit" value="Login" id="submitBtn">
-        </form>
+                <label for="password">Password</label>
+                <input type="password"  id="Password">
+                
+                <span id="statLog"></span>
+
+                <label style="margin:10px ;">Not a member ? <a href="register.php">Create account</a></label>
+                <button type="button" id="Btn" onclick="checkLogin()">Log in</button>
+            </div>
         <div class="footer">
             <div >
                 <h1>Copyright &copy; 2022. Nutthabhas Thitabhas</h1>
@@ -36,4 +39,5 @@
         </div>
     </div>
 </body>
+    <script src="js/login.js"></script>
 </html>

@@ -60,7 +60,7 @@
                 <a href="#education-container">Education</a>
             </div>
             <div>
-                <a href="#" style="font-style:italic;"><u><?php echo $_SESSION["Username"] ?></u></a>
+                <a href="#" style="font-style:italic;"><u><?php echo $_SESSION["Firstname"] ?></u></a>
                 <a href="logout.php" id="logout-btn">Logout</a>
             </div>
         </div>
