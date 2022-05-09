@@ -85,6 +85,7 @@ form {
 }
 .invalid {
     color: red;
+    text-align: center;
 }
 .valid {
     color: green;

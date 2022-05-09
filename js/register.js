@@ -54,13 +54,101 @@ function validateForm() {
             console.table(myJSON);
             
             if (! (myJSON.status) ) {
+                // false => not found duplicate
                 console.log('status : '+myJSON.status);
                 HTMLFormElement.prototype.submit.call(myForm);
             }
             else{
+                // true => found duplicate
                 alert(userInput + ' has already used');
                 document.getElementById('userLog').innerHTML = "<small class='invalid'> "+ userInput +" has already used  </small>";
             }
         }
     }
 }
+
+function fnameHandler() {
+    const fnameLog = document.getElementById('fnameLog');
+    const fnameInputBox = document.getElementById('firstname');
+    const input = document.getElementById('firstname').value;
+    const pattern = /^[a-z][a-z/D]*$/; 
+    const length = /^.{8,15}$/;
+    const fname = {
+            'pattern' : pattern.test(input),
+            'length' : length.test(input)
+        }
+    
+    
+    if ( (fname.pattern) && (fname.length)) {
+        // pattern true && length true
+        
+        fnameLog.innerHTML = "";
+
+        if (fnameInputBox.classList.value == "invalid-box") fnameInputBox.classList.replace("invalid-box" , "valid-box")
+        else fnameInputBox.classList.add("valid-box");
+        return true;
+    } else {
+        if (fnameInputBox.classList.value == "valid-box") fnameInputBox.classList.replace("valid-box" ,"invalid-box");
+        else fnameInputBox.classList.add("invalid-box");
+
+        fnameLog.innerHTML = "";
+        if ( !(fname.pattern) ) fnameLog.innerHTML += "<small class='invalid'>- Must contain only english alphabets </small><br>";
+        if ( !(fname.length) ) fnameLog.innerHTML += "<small class='invalid'>- Must contain between 8 and 15 letters </small><br>";
+        return false;
+    }
+    
+}
+
+function lnameHandler() {
+    const lnameLog = document.getElementById('lnameLog');
+    const lnameInputBox = document.getElementById('lastname');
+    const input = document.getElementById('lastname').value;
+    const pattern = /^[a-z][a-z/D]*$/; 
+    const length = /^.{8,15}$/;
+    // console.log('input : '+input+' = > '+pattern.test(input));
+    // console.log('length : '+ length.test(input));
+    const lname = {
+            'pattern' : pattern.test(input),
+            'length' : length.test(input)
+        }
+    // console.table(inputJSON);
+    
+    if ( (lname.pattern) && (lname.length)) {
+        // pattern true && length true
+        lnameLog.innerHTML = "";
+
+        if (lnameInputBox.classList.value == "invalid-box") lnameInputBox.classList.replace("invalid-box" , "valid-box")
+        else lnameInputBox.classList.add("valid-box");
+        
+        return true ;
+
+    } else {
+        if (lnameInputBox.classList.value == "valid-box") lnameInputBox.classList.replace("valid-box" ,"invalid-box");
+        else lnameInputBox.classList.add("invalid-box");
+
+        lnameLog.innerHTML = "";
+        if ( !(lname.pattern) ) lnameLog.innerHTML += "<small class='invalid'>- Must contain only english alphabets </small><br>";
+        if ( !(lname.length) ) lnameLog.innerHTML += "<small class='invalid'>- Must contain between 8 and 15 letters </small><br>";
+
+        return false
+    }
+    
+}
+
+
+
+function getStat(){
+    let fnameCanSave = fnameHandler();
+    let lnameCanSave = lnameHandler();
+    console.log('fname status : ' +fnameCanSave)
+    console.log('lname status : ' +lnameCanSave)
+
+}
+
+
+
+
+    
+        
+    
+

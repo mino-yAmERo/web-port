@@ -47,11 +47,6 @@
     session_write_close();
     $conn -> close();
 
-
-
-
-
-        
     
         // //FETCH CHECKING
         // echo    "<hr>FETCHING DATA FROM DB<hr>";

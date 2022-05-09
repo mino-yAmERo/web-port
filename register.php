@@ -16,10 +16,12 @@
         <h2>Register</h2>
         <form name ="regis-form" id="register-form" action="check_register.php" method="post" autocomplete="off">
                 <label for="firstname">Firstname</label>
-                <input type="text" name="Firstname" id="firstname" required >
+                <input type="text" name="Firstname" id="firstname" onkeyup="fnameHandler(this.value)" >
+                <span id= fnameLog></span>
 
                 <label for="lastname">Lastname</label>
-                <input type="text" name="Lastname" id="lastname" required >
+                <input type="text" name="Lastname" id="lastname"  onkeyup="lnameHandler(this.value)" >
+                <span id= lnameLog></span>
 
                 <label for="username">Username</label>
                 <input type="text" name="Username" id="Username" onkeyup= "checkUser(this.value)" autocomplete="off" required>
@@ -35,6 +37,7 @@
                 <label style="margin:10px 0;">Already signed up ? <a href="login.php">Sign in here</a></label>
 
                 <button type="button" id="btn" onclick="validateForm()">Submit</button>
+                <button type="button" onclick=getStat()>TEST</button>
 
         </form>
         <div class="footer">

@@ -20,6 +20,7 @@ function checkLogin() {
         if(xhr.readyState == 4 && xhr.status == 200){
             // console.log(xhr.responseText);
             let myJSON = JSON.parse(xhr.responseText);
+            
             if ( myJSON.status ) {
                 //true => found username and pw
                 document.getElementById('statLog').innerHTML = "";
