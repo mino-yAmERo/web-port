@@ -16,28 +16,29 @@
         <h2>Register</h2>
         <form name ="regis-form" id="register-form" action="check_register.php" method="post" autocomplete="off">
                 <label for="firstname">Firstname</label>
-                <input type="text" name="Firstname" id="firstname" onkeyup="fnameHandler(this.value)" >
+                <input type="text" name="Firstname" id="Firstname" onkeyup="fnameHandler()" >
                 <span id= fnameLog></span>
 
                 <label for="lastname">Lastname</label>
-                <input type="text" name="Lastname" id="lastname"  onkeyup="lnameHandler(this.value)" >
+                <input type="text" name="Lastname" id="Lastname"  onkeyup="lnameHandler()" >
                 <span id= lnameLog></span>
 
                 <label for="username">Username</label>
-                <input type="text" name="Username" id="Username" onkeyup= "checkUser(this.value)" autocomplete="off" required>
+                <input type="text" name="Username" id="Username" onkeyup= "userHandler()" autocomplete="off" required>
                 <span id="userLog"></span>
 
                 <label for="password">Password</label>
-                <input type="password" name="Password" id="Password" onkeyup="checkPassword()" autocomplete="off" required>
+                <input type="password" name="Password" id="Password" onkeyup="pwdHandler()" onchange="pwdMatch()" autocomplete="off" required>
+                <span id="passwordLog"></span>
 
                 <label for="password">Confirm Password</label>
-                <input type="password" name="txtPassword" id="ConfirmPassword" onkeyup="checkPassword()"  autocomplete="off" required>
-                <span id="passwordLog"></span>
+                <input type="password" name="txtPassword" id="ConfirmPassword" onkeyup="pwdMatch()"  autocomplete="off" required>
+                <span id="confirmpasswordLog"></span>
 
                 <label style="margin:10px 0;">Already signed up ? <a href="login.php">Sign in here</a></label>
 
                 <button type="button" id="btn" onclick="validateForm()">Submit</button>
-                <button type="button" onclick=getStat()>TEST</button>
+                <!-- <button type="button" onclick=getStat()>TEST</button> -->
 
         </form>
         <div class="footer">
