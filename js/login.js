@@ -1,13 +1,6 @@
 function checkLogin() {
     let userInput = document.getElementById('Username').value;
     let pwInput = document.getElementById('Password').value;
-    // // xhr.open("GET","check_login.php?i="+jsonData, true);
-    // // xhr.setRequestHeader('Content-Type','application/json')
-    // let json = {
-    //     "Username" : userInput,
-    //     "Password" : pwInput
-    // }
-    // let jsonData = JSON.stringify(json);
 
     let data = new FormData();
         data.append('user', userInput);
@@ -20,13 +13,13 @@ function checkLogin() {
         if(xhr.readyState == 4 && xhr.status == 200){
             // console.log(xhr.responseText);
             let myJSON = JSON.parse(xhr.responseText);
-            
+            console.log(myJSON);
+
             if ( myJSON.status ) {
                 //true => found username and pw
                 document.getElementById('statLog').innerHTML = "";
                 alert('login successful');
                 window.location.reload();
-                
             }
             else{
                 alert('Username or password not correct');
@@ -34,6 +27,5 @@ function checkLogin() {
                 document.getElementById('Password').value = '';
             }
         }
-    }
-    
+    }  
 }

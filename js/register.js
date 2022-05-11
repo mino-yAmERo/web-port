@@ -2,7 +2,7 @@ function fnameHandler() {
     const fname_log = document.getElementById('fnameLog');
     const fname_input = document.getElementById('Firstname');
     const input = fname_input.value;
-    const pattern = /^[a-z][a-z/D]*$/; 
+    const pattern = /^[a-z][A-Z/D]*$/i; 
     const length = /^.{0,64}$/;
 
     let fname = {
@@ -38,7 +38,7 @@ function lnameHandler() {
     const lname_log = document.getElementById('lnameLog');
     const lname_input = document.getElementById('Lastname');
     const input = lname_input.value;
-    const pattern = /^[a-z][a-z/D]*$/; 
+    const pattern = /^[a-z][a-z/D]*$/i; 
     const length = /^.{0,64}$/;
     
 
