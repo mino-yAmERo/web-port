@@ -116,7 +116,7 @@ function showDropdown() {
     if (Scrollpos > 110) dropdown.style.top = '57px'; //correct
     if (Scrollpos <= 109) {
         let x = (110 - Scrollpos) + 57;
-        console.log("x : "+x);
+        // console.log("x : "+x);
         dropdown.style.top = x+"px";
     }
 
@@ -131,7 +131,7 @@ window.onscroll = function() {
     stickyFunction();
     if (prevScrollpos > currentScrollpos) {
         // scroll-up
-        console.log('now : '+currentScrollpos);
+        // console.log('now : '+currentScrollpos);
         navbar.style.top ="0";
         let x = (110 - currentScrollpos) + 57; /* header height 110px , top nav height 57px */
         if (currentScrollpos > 110) dropdown.style.top = '57px';
