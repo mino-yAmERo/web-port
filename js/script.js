@@ -88,11 +88,23 @@ function currentSlide(n){
     showSlides(n);
 }
 //--- drop down ---//
-function showDropdown(){
-    const dropdown = document.getElementById('drop-down-list');
+const dropdown = document.getElementById('drop-down-list');
+window.onresize = function(){ 
     const cssObj = window.getComputedStyle(dropdown, null);
     let display = cssObj.getPropertyValue("display");
-    console.log(display);
+    w = window.innerWidth;
+    if (w > 768) {
+        if (display == "none") return;
+        dropdown.style.display = "none";
+    }
+}
+
+
+//--- Hide top navbar on scroll ---//
+
+function showDropdown() {
+    const cssObj = window.getComputedStyle(dropdown, null);
+    let display = cssObj.getPropertyValue("display");
 
     if(display == "none"){
         dropdown.style.display = "flex";
@@ -101,28 +113,45 @@ function showDropdown(){
     }
     
     let Scrollpos = window.pageYOffset;
-    if(Scrollpos > 110) {
-        dropdown.style.top = '57px';
-    } else {
-        dropdown.style.top = '167px';
+    if (Scrollpos > 110) dropdown.style.top = '57px'; //correct
+    if (Scrollpos <= 109) {
+        let x = (110 - Scrollpos) + 57;
+        console.log("x : "+x);
+        dropdown.style.top = x+"px";
     }
-    
-    ;
+
 }
-
 //--- Hide top navbar on scroll ---//
-let prevScrollpos = window.pageYOffset;
-const dropdown = document.getElementById('drop-down-list');
 
+let prevScrollpos = window.pageYOffset;
 window.onscroll = function() {  
-    stickyFunction()
+    
     let currentScrollpos = window.pageYOffset;
+    
+    stickyFunction();
     if (prevScrollpos > currentScrollpos) {
+        // scroll-up
+        console.log('now : '+currentScrollpos);
         navbar.style.top ="0";
-        dropdown.style.top = "57px"
+        let x = (110 - currentScrollpos) + 57; /* header height 110px , top nav height 57px */
+        if (currentScrollpos > 110) dropdown.style.top = '57px';
+
+        if (currentScrollpos <= 109) {
+            if (dropdown.classList.value == 'smooth') dropdown.classList.toggle('smooth');
+            dropdown.style.top = x+"px";
+        }
+
     }else{
+        // scroll-down
+        // add class smooth 
+        if (dropdown.classList.value != 'smooth') dropdown.classList.toggle('smooth');
         navbar.style.top ="-60px";
-        dropdown.style.top ="-200px";
+        let x = (110 - currentScrollpos) + 57; /* header height 110px , top nav height 57px */
+        if (currentScrollpos >= 110) dropdown.style.top ="-200px";
+        if (currentScrollpos < 109) {
+            if (dropdown.classList.value == 'smooth') dropdown.classList.toggle('smooth');
+            dropdown.style.top =x+"px";
+        }
     }
     prevScrollpos = currentScrollpos;
 };  

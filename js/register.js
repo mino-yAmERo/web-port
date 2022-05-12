@@ -5,11 +5,19 @@ window.onload = function() {
     ** To protect your personal information, I recommend you to.. **\n
         - Avoid using username and password that you often use. *\n
         - try to use a simple username and password instead. *\n
-    (e.g. username : abc12345 , password : 123456)`
+    (e.g. username : abc12345 , password : 123456)\n`
         );
-    },1000);
+    },1);
 }
-
+// document.addEventListener("DOMContentLoaded", function() {
+//     alert(`Note : \n
+//     the purpose of this website is for self-study and not protected by SSL certificate.\n
+//     ** To protect your personal information, I recommend you to.. **\n
+//         - Avoid using username and password that you often use. *\n
+//         - try to use a simple username and password instead. *\n
+//     (e.g. username : abc12345 , password : 123456)\n`
+//         );
+// },false);
 
 function fnameHandler() {
     const fname_log = document.getElementById('fnameLog');
@@ -322,9 +330,6 @@ function validateForm() {
         }
     }
 }
-
-
-
 
 
     
