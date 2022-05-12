@@ -4,17 +4,29 @@ const welcome = document.getElementById('welcome');
 const main = document.getElementById('main');
 const navbar = document.getElementById('top-nav');
 let sticky = navbar.offsetTop;
-console.log('position before main webpage show: '+sticky);
+// console.log('position before main webpage show: '+sticky);
 
 //main function 
 //welcome fade-in
-setTimeout(fadeIn,6000); // welcome to my website //
-setTimeout(fadeOut,8000); //welcome fade-out and show main webpage
+let setFadeIn = setTimeout(fadeIn,6000); // welcome to my website //
+let setFadeOut = setTimeout(fadeOut,8000); //welcome fade-out and show main webpage
 
 //----FOR MAINTENANCE----//
 // setTimeout(fadeIn,100);
 // setTimeout(fadeOut,100);
 
+function stopTimeOut() {
+    clearTimeout(setFadeIn);
+    clearTimeout(setFadeOut);
+}
+function skipIntro() {
+    stopTimeOut();
+    document.querySelector('#h ,#n ,#t').style.animation = 'none';
+    welcome.style.display = 'none';
+    main.style.display = 'block';
+    sticky = navbar.offsetTop;
+    showSlides();
+}
 function fadeIn (){
     let myInterval = setInterval(function() {
         let opacity = Number(window.getComputedStyle(welcome_message).getPropertyValue("opacity"));
@@ -42,7 +54,7 @@ function fadeOut (){
                 main.style.display = 'block';
                 clearInterval(myInterval);
                 sticky = navbar.offsetTop;
-                console.log('position after main webpage show: '+sticky);
+                // console.log('position after main webpage show: '+sticky);
                 showSlides();
     }},10);  
 }
@@ -75,15 +87,42 @@ function showSlides(n) {
 function currentSlide(n){
     showSlides(n);
 }
+//--- drop down ---//
+function showDropdown(){
+    const dropdown = document.getElementById('drop-down-list');
+    const cssObj = window.getComputedStyle(dropdown, null);
+    let display = cssObj.getPropertyValue("display");
+    console.log(display);
+
+    if(display == "none"){
+        dropdown.style.display = "flex";
+    }else{
+        dropdown.style.display = "none"
+    }
+    
+    let Scrollpos = window.pageYOffset;
+    if(Scrollpos > 110) {
+        dropdown.style.top = '57px';
+    } else {
+        dropdown.style.top = '167px';
+    }
+    
+    ;
+}
+
 //--- Hide top navbar on scroll ---//
 let prevScrollpos = window.pageYOffset;
+const dropdown = document.getElementById('drop-down-list');
+
 window.onscroll = function() {  
     stickyFunction()
     let currentScrollpos = window.pageYOffset;
     if (prevScrollpos > currentScrollpos) {
         navbar.style.top ="0";
+        dropdown.style.top = "57px"
     }else{
         navbar.style.top ="-60px";
+        dropdown.style.top ="-200px";
     }
     prevScrollpos = currentScrollpos;
 };  
@@ -92,8 +131,10 @@ window.onscroll = function() {
 function stickyFunction(){
     if (window.pageYOffset >= sticky) {
         navbar.classList.add("sticky")
+        
     } else {
         navbar.classList.remove("sticky");
+        
     }
 }
 window.onload= function () {
@@ -108,7 +149,7 @@ window.onload= function () {
     xhttp.onreadystatechange = function () {
         if(this.readyState ==4 & this.status ==200) {
             let myJSON = JSON.parse(this.responseText);
-            console.table(myJSON);
+            // console.table(myJSON);
             codewars.innerHTML = '<div>Username : ' + myJSON.username + '</div>';
             codewars.innerHTML += '<div>Leaderboard : ' +myJSON.leaderboardPosition + '</div>';
             codewars.innerHTML += '<div>Total Challenge Complete : ' + myJSON.codeChallenges.totalCompleted + '</div>';
@@ -135,9 +176,9 @@ window.onload= function () {
 }
 let arrow = false;
 function showLang() {
-    console.log("arrowStat b4 : "+arrow);
+    // console.log("arrowStat b4 : "+arrow);
     arrow = !arrow;
-    console.log("arrowStat after : "+arrow);
+    // console.log("arrowStat after : "+arrow);
     if(arrow){
         //show
         document.getElementById('arrow').classList.replace('arrow-down', 'arrow-up');
@@ -157,14 +198,14 @@ function getDataFunction(){
             if (dataStatus === true) {
                 //--- hide ---//
                 dataStatus = false;
-                console.log('dataStatus = '+dataStatus);
+                // console.log('dataStatus = '+dataStatus);
                 document.getElementById('dataList').classList.replace('show','hide');
                 document.getElementById('langShowMore').innerText = "Show More...";
                 return;
             } else {
                 //--- show ---//
                 dataStatus = true;
-                console.log('dataStatus = '+dataStatus);
+                // console.log('dataStatus = '+dataStatus);
                 document.getElementById('dataList').classList.replace('hide','show');
                 document.getElementById('langShowMore').innerText = "Show Less...";
                 return;
@@ -192,7 +233,7 @@ function getDataFunction(){
                     //--- DEFINE BORDER-BOTTOM STYLE ON LAST ROWS ELEMENT ---//
                     const liNodeList = document.getElementById('dataList').querySelectorAll('li');
                     let li_count = liNodeList.length-1; // -1 except lastDatalist
-                    console.log("count : "+li_count); 
+                    // console.log("count : "+li_count); 
                     if (li_count % 3 == 1) { // ตารางมี3 คอลัมน์ -> คอลัมน์สุดท้าย เศษ 1 
                         document.getElementById('lastDatalist').style.flexBasis = "66.66%";
                         for (let i=0 ; i < liNodeList.length ; i++) {
@@ -208,7 +249,7 @@ function getDataFunction(){
                     } else if (li_count % 3 == 2){ // ตารางมี3 คอลัมน์ -> คอลัมน์สุดท้าย เศษ 2 
                         document.getElementById('lastDatalist').style.flexBasis = "33.33%";
                         for (let i=0 ; i < liNodeList.length ; i++) {
-                            console.log('number : '+i); 
+                            // console.log('number : '+i); 
                             liNodeList[i].style.borderBottom = "none" ;
                             if (i >= liNodeList.length-3){
                                 liNodeList[i].style.borderBottom = "1px dashed white";
@@ -218,14 +259,14 @@ function getDataFunction(){
                     } else { // ตารางมี3 คอลัมน์ -> คอลัมน์สุดท้าย เศษ 0
                         document.getElementById('lastDatalist').style.flexBasis = "100.00%";
                         for (let i=0 ; i < liNodeList.length ; i++) {
-                            console.log('number : '+i); 
+                            // console.log('number : '+i); 
                             liNodeList[i].style.borderBottom = "none" ;
                             if (i >= liNodeList.length-1){
                                 liNodeList[i].style.borderBottom = "1px dashed white";
                             }
                         }
                     }     
-                    console.log('dataStatus when data showed = '+dataStatus);
+                    // console.log('dataStatus when data showed = '+dataStatus);
                     document.getElementById('langShowMore').innerText = "Show Less...";    
                 }
             }

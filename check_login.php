@@ -30,7 +30,9 @@
             $_SESSION["Status"] = $data["permission"];
             $_SESSION["Firstname"] = $data["fname"];
             $_SESSION["Lastname"] = $data["lname"];
-
+            //set เวลา นำไปเช็คเพื่อโหลดหน้า animation 
+            $_SESSION["start"] = time();
+            $_SESSION["expire"] = $_SESSION['start'] + 10*60; // 60วินาที * 10 => 10นาที
 
         } else {
             //not found

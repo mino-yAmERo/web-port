@@ -6,6 +6,7 @@
         header("location:login.php");
         exit();
     }
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +23,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Akshar:wght@300&family=Audiowide&display=swap" rel="stylesheet">
 </head>
-
 <body>
 <!-- first welcome-animation -->
     <div id="welcome">
@@ -40,12 +40,17 @@
             <p>Welcome to nutthabhas.com</p>
             <hr style="width:auto; color:#ddd;">
         </div>
-        
+        <div class="skip">
+            <span>
+                <button onclick="skipIntro()">
+                    <p>Skip Intro</p><img src="icon/skip_icon.png" style="width:48px;height:48px">
+                </button>
+            </span>
+        </div>
     </div>
 
 <!-- main webpage  -->
     <div id="main">
-
         <!-- header -->
         <div class="header">
             <h1> Nutthabhas Thitabhas</h1>
@@ -53,18 +58,29 @@
 
         <!-- top nav -->
         <div id="top-nav">
-            <div>
+            <div id="left-top-nav">
                 <a href="#main">Home</a>
                 <a href="#about-me-container">About me</a>
                 <a href="#codewars-container">Codewars</a>
                 <a href="#education-container">Education</a>
             </div>
-            <div>
-                <a href="#" style="font-style:italic;"><u><?php echo $_SESSION["Firstname"] ?></u></a>
+            <div id="drop-down">
+                <div class="square" style="background-image: url('icon/hamburger-menu-icon.png');" onclick="showDropdown()">
+                </div>        
+            </div>
+            
+            <div id="right-top-nav">
+                <a href="#" style="font-style:italic;"><u><?php echo $_SESSION["Username"] ?></u></a>
                 <a href="logout.php" id="logout-btn">Logout</a>
             </div>
+            
         </div>
-
+        <div id="drop-down-list">
+                <a href="#main">Home</a>
+                <a href="#about-me-container">About me</a>
+                <a href="#codewars-container">Codewars</a>
+                <a href="#education-container">Education</a>
+            </div>
         <!-- content -->
         <div class="content-wrapper">
             <div class="flex-container">
@@ -288,10 +304,12 @@
             </div>
             <div class="credit">
                 <h1>Credit</h1>
-                <a href="https://www.flaticon.com/free-icons/facebook" title="facebook icons">Facebook icons created by Pixel perfect - Flaticon</a><br>
-                <a href="https://www.flaticon.com/free-icons/instagram" title="instagram icons">Instagram icons created by Pixel perfect - Flaticon</a><br>
-                <a href="https://www.flaticon.com/free-icons/line" title="line icons">Line icons created by Ruslan Babkin - Flaticon</a><br>
-                <a href="https://www.flaticon.com/free-icons/github" title="github icons">Github icons created by Ruslan Babkin - Flaticon</a><br>
+                <a target="_blank" href="https://www.flaticon.com/free-icons/facebook" title="facebook icons">Facebook icons created by Pixel perfect - Flaticon</a><br>
+                <a target="_blank" href="https://www.flaticon.com/free-icons/instagram" title="instagram icons">Instagram icons created by Pixel perfect - Flaticon</a><br>
+                <a target="_blank" href="https://www.flaticon.com/free-icons/line" title="line icons">Line icons created by Ruslan Babkin - Flaticon</a><br>
+                <a target="_blank" href="https://www.flaticon.com/free-icons/github" title="github icons">Github icons created by Ruslan Babkin - Flaticon</a><br>
+                <span><a target="_blank" href="https://icons8.com/icon/S5biqohaDgd1/menu-rounded">Menu Rounded</a><a target="_blank" href="https://icons8.com">Icon By Icons8</a><span>
+                <br>    
             </div>
             <div >
                 <h1>Copyright &copy; 2022. Nutthabhas Thitabhas</h1>
@@ -300,4 +318,10 @@
     </div>  
 </body>
     <script src="js/script.js"></script>
+    <?php 
+        $now = time() ; // check time when main page starts.
+        if ($now > $_SESSION["expire"]) {
+            echo "<script> skipIntro(); </script>";   
+        }
+    ?>   
 </html>

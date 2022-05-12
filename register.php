@@ -41,11 +41,12 @@
                 <!-- <button type="button" onclick=getStat()>TEST</button> -->
 
         </form>
-        <div class="footer">
+    </div>
+    <div class="footer">
             <div >
                 <h1>Copyright &copy; 2022. Nutthabhas Thitabhas</h1>
             </div>
-        </div>
+    </div>
 </body>
     <script src="js/register.js"></script>
 </html>

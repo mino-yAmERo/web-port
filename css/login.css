@@ -62,6 +62,7 @@ form {
     display:flex;
     flex-direction: column;
     align-items: center;
+    min-height: 400px;
 }
 .login-box > label {
     padding: 7px 0px;
@@ -100,9 +101,10 @@ a:hover , .login-box button:hover {
 .footer {
     display: flex;
     background-color: #151515;
-    position: absolute;
     justify-content: center;
     bottom:0;
+    left:0;
+    position: fixed;
     width: 100%;
 }
 .footer > div h1 {
@@ -110,4 +112,43 @@ a:hover , .login-box button:hover {
     font-size: 25px;
     padding : 10px 0px;
     color: #8a8a8a;
+}
+
+@media screen and (max-width: 420px) {
+    .header h1 {
+        text-align: center;
+        margin-left:0;
+        font-size: 30px;
+        color: #8a8a8a;
+    }
+    .footer > div h1 {
+        margin: 10px 0;
+        font-size: 20px;
+        padding : 5px 0px;
+        color: #8a8a8a;
+    }
+    .container > h2{
+        font-size:35px;
+        text-align: center;
+    }
+    .login-box{
+        min-height: 350px;
+    }
+    .login-box > label {
+        font-size: 20px;
+    }
+    .login-box > input {
+        height: 22px;
+        margin-bottom: 7px;
+        font-size: 16px;
+    }
+    .login-box button {
+        margin: 10px;
+        width: auto;
+        padding: 5px 12px;
+        font-size:15px;
+    }
+    #statLog {
+        font-size: 20px;
+    }
 }

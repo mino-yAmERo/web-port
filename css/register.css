@@ -42,13 +42,13 @@ form {
     color: #fff;
     font-size: 24px;
     width: 100%;
-    margin: 15px 15px 0px;
+    margin: 0px 15px 0px;
 }
 .container {
     display:flex;
     flex-direction: column;
     align-items: center;
-    margin-top:50px;
+    margin-top:20px;
     height: 100%;
 }
 .container > h2{
@@ -58,11 +58,11 @@ form {
     letter-spacing: 2px;
     text-align: center;
 }
-
 #register-form{
     display:flex;
     flex-direction: column;
     align-items: center;
+    min-height: 600px;
 }
 #register-form > label {
     padding: 7px 0px;
@@ -101,9 +101,10 @@ form {
 .footer {
     display: flex;
     background-color: #151515;
-    position: absolute;
     justify-content: center;
     bottom:0;
+    left:0;
+    position: fixed;
     width: 100%;
 }
 .footer > div h1 {
@@ -111,4 +112,42 @@ form {
     font-size: 25px;
     padding : 10px 0px;
     color: #8a8a8a;
+}
+@media screen and (max-width: 420px) {
+    .header h1 {
+        text-align: center;
+        margin-left:0;
+        font-size: 30px;
+        color: #8a8a8a;
+    }
+    .footer > div h1 {
+        margin: 10px 0;
+        font-size: 20px;
+        padding : 5px 0px;
+        color: #8a8a8a;
+    }
+    .container > h2{
+        font-size:35px;
+        text-align: center;
+    }
+    #register-form{
+        min-height: 550px;
+    }
+    #register-form > label {
+        font-size: 20px;
+    }
+    #register-form > input {
+        height: 22px;
+        margin-bottom: 7px;
+        font-size: 16px;
+    }
+    #register-form button {
+        margin: 10px;
+        width: auto;
+        padding: 5px 12px;
+        font-size:15px;
+    }
+    #statLog {
+        font-size: 20px;
+    }
 }

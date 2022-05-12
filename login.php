@@ -32,11 +32,12 @@
                 <label style="margin:10px ;">Not a member ? <a href="register.php">Create account</a></label>
                 <button type="button" id="Btn" onclick="checkLogin()">Log in</button>
             </div>
-        <div class="footer">
+        
+    </div>
+    <div class="footer">
             <div >
                 <h1>Copyright &copy; 2022. Nutthabhas Thitabhas</h1>
             </div>
-        </div>
     </div>
 </body>
     <script src="js/login.js"></script>

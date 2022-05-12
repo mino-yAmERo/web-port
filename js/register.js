@@ -1,3 +1,16 @@
+window.onload = function() {
+    setTimeout(function() {
+        alert(`Note : \n
+    the purpose of this website is for self-study and not protected by SSL certificate.\n
+    ** To protect your personal information, I recommend you to.. **\n
+        - Avoid using username and password that you often use. *\n
+        - try to use a simple username and password instead. *\n
+    (e.g. username : abc12345 , password : 123456)`
+        );
+    },1000);
+}
+
+
 function fnameHandler() {
     const fname_log = document.getElementById('fnameLog');
     const fname_input = document.getElementById('Firstname');
@@ -204,7 +217,7 @@ function getStat(){
 function validateForm() {
     const user_input = document.getElementById('Username');
     let username = user_input.value;
-  
+
     let fname = fnameHandler();
     let lname = lnameHandler();
     let user = userHandler();
@@ -279,10 +292,11 @@ function validateForm() {
 
                 // text log
                 user_log.innerHTML = "<small class='invalid'>"+username+" have already used</small>"
-
+        
                 // style
                 if (user_input.classList.value == "valid-box") user_input.classList.replace("valid-box" ,"invalid-box");
                 else user_input.classList.add("invalid-box");
+                
                 return;
 
             } else if ( !(isDuplicated) ){
@@ -296,13 +310,13 @@ function validateForm() {
                 else user_input.classList.add("valid-box");
 
                 // all input => valid
-                let text = "Confirm ? ";
+                let text = "Confirm register? ";
                 if ( confirm(text) === true ) {
                     HTMLFormElement.prototype.submit.call(myForm); 
                 } else {
                     return;
                 }
-                 
+                
             }
     
         }

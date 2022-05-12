@@ -18,7 +18,7 @@ function checkLogin() {
             if ( myJSON.status ) {
                 //true => found username and pw
                 document.getElementById('statLog').innerHTML = "";
-                alert('login successful');
+                alert('login successful'); 
                 window.location.reload();
             }
             else{

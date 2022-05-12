@@ -7,5 +7,5 @@
     // destroy the session
     session_destroy();
     header("location:login.php");
-    echo '<script type="text/JavaScript"> location.reload(); </script>';
+    
 ?>
