@@ -166,6 +166,23 @@ function stickyFunction(){
         
     }
 }
+//--- BIO function ---//
+    function readMore() {
+        const btn = document.getElementById('bio-btn');
+        const xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200){
+                document.getElementById('bio-info').innerHTML += this.responseText;
+            }
+            btn.style.display = "none";
+        }
+        xhr.open('GET','bio.txt',true);
+        xhr.send();
+
+    }
+    
+
+//--- Codewars API ---//
 window.onload= function () {
     //-------- USER API --------//
     const xhttp = new XMLHttpRequest();

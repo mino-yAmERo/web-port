@@ -3,7 +3,9 @@
     /* color: rgba(231, 228, 228, 0.931) */
     /* background-color : rgba(5,5,5,0.9) */
     /* background-color 2 : #151515 */
-    
+    /* header , subjuct font : 'Akshar', sans-serif; */
+    /* biography font : font-family: 'Roboto', sans-serif; */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -124,21 +126,21 @@ h1 {
 
 /* ---------------------main webpage -----------------------*/
 #main {
-    background-color: rgba(5, 5, 5, 0.9) ;
+    background-color: rgb(7, 7, 7) ;
     opacity: 1;
     display:none;
 }
 .header {
-    background-color: rgba(5, 5, 5, 0.9) !important;
+    background-color: rgb(7, 7, 7);
     width: 100%;
+    height: 110px;
     padding: 30px 0px;
 }
 .header h1 {
     text-align: left;
-    margin-left: 50px;
+    margin-left: 75px;
     font-size: 45px;
     color: #8a8a8a;
-
 }
 .sticky {
     position:fixed;
@@ -154,7 +156,7 @@ h1 {
     flex-flow: row nowrap;
     flex-basis: 100%;
     overflow: hidden;
-    background: rgb(50,50,50);
+    background: rgb(33,33,33);
     z-index: 1;
     transition: top 0.3s ease-in-out;
     align-items: center;
@@ -178,16 +180,14 @@ h1 {
     width: 45px; height: 45px;
     margin-left: 20px;
 }
-.ham{
-    padding: 7px 7px;
-}
+
 .square:hover {
     cursor: pointer;
     opacity: 0.8;
 }
 #drop-down-list{
     display:none;
-    background: rgb(50,50,50);
+    background: rgb(5, 5, 5);
     flex-direction: column;
     position: fixed;
     width: 50vw;
@@ -204,8 +204,7 @@ h1 {
     text-decoration: none; 
 }
 #drop-down-list a:hover{
-    opacity: 0.8;
-    background-color: #4e4a4a;
+    background-color: rgb(33,33,33);
 }
 #top-nav a {
     text-align: center;
@@ -332,7 +331,7 @@ a:-webkit-any-link{
     visibility : visible;
     opacity : 1;
 }
-#about-me-container {
+#about-me{
     display:flex;
     flex-flow: column nowrap;
     flex-basis: 100%;
@@ -340,69 +339,105 @@ a:-webkit-any-link{
     padding-top:30px;
 }
 /*---about me---*/
-#about-me{
+#about-me h1{
     text-align: center;
     letter-spacing: 2px;
     color: rgba(231, 228, 228, 0.931);
-    margin:45px 0px 10px;
-}
-/* ---hi my name is Nuttbhas---  */
-#hi-myname{
-    text-align:center ;
-    font-family: 'Akshar', sans-serif;
-    color: #ddd;
-    flex-basis: 100% ; 
-    font-size:30px ;
-    letter-spacing: 0px; 
-    margin: 5px 0 50px;
-}
-.biocard-container {
-    display: flex;
-    flex-direction: row;
-    flex-basis: 100%;
-}
-.biocard-container > div {
-    flex-basis: 25%;
-}
-.biocard-container p{
-    font-size: 18px;
-    color: #ddd;
-}
-#biocard-1{
-    display:flex ; 
-    flex-flow: row wrap;
-}
-#biocard-1 > div {
-    flex-basis: 50%;
-    padding:0px 10px;
+    margin:50px 0px 50px;
 }
 
-/* ---biocard text--- */
-#biocard-1 div p:first-child{
+/*-- personal info --*/
+.per-info-container {
+    display: flex;
+    flex-direction: row;
+    flex-basis: 70%;
+    justify-content: space-between;
+    margin-bottom:100px;
+}
+.per-info-container > div:first-child {
+    flex-basis: 50%;
+}
+.per-info-container > div {
+    flex-basis: 25%;
+    padding: 10px 20px;
+}
+.per-info {
+    display: flex;
+    flex-flow: row wrap;
+}
+.per-info div {
+    flex: 1 1 50%;
+    padding: 0px 10px 15px;
+}
+
+/* -- personal info text--- */
+.per-info-container ul , .per-info-container li , .per-info > div{
     font-size: 22px;
     white-space: nowrap;
+    color: #ddd;
 }
-#biocard-1 div p:nth-child(2){
-    font-size: 20px;
-    padding: 10px 0px;
-    opacity: 0.5;
-    text-decoration: none;
+.per-info-container li, .per-info > div p {
+    font-size : 18px;
+    list-style: none;
+    padding: 15px 5px;
+    color:#aaa;
 }
-#biocard-2 div p:first-child{
-    font-size: 22px;
-    text-align: center;
+/* --- personal statement */
+#story-container * {
+    font-family: 'Roboto', sans-serif;
 }
-#biocard-2 div p:nth-child(n+2){
-    margin-left : 75px;
-    padding: 10px 0px;
-    font-size: 20px;
-    opacity: 0.5;
+#story-container {
+    color: rgba(231, 228, 228, 0.931);
+    width:70%;
 }
+#story-card::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+#story-card > h1 , #story-card > h3 , #story-card > p {
+    text-align: left;
+}
+#story-card > h1 , #story-card > h3{
+    white-space:nowrap;
+    padding: 20px 0px;
+    font-size: 37px;
+    letter-spacing:1px;
+}
+#story-card > h3 { font-size: 28px; }
+#story-card > p{
+    text-align: justify;
+    width: 100%;
+    padding: 30px 0px;
+    font-size: 17px;
+    letter-spacing: 0.75px;
+    line-height: 135%;
+}
+#story-card > img { 
+    float: right;
+    padding: 30px 30px;
+    width: 579px;
+    height: 730px;
+}
+#story-card > button {
+    cursor: pointer;
+    color: #0042e6;
+    background-color: transparent;
+    font-size: 26px;
+    border-width: 0px;
+    width: 200px;
+    text-align: left;
+    margin-bottom: 50px;
+}
+#story-card button:hover {
+    opacity: 0.7;
+}
+
 /* -------- codewar ---------*/
 #codewars-container {
     display: flex;
     flex-direction: column;
-    margin: 75px 15px;
+    margin: 100px 15px;
     width: 50%;
     background-color: rgba(5,5,5,0.9);
     border: 5px solid #151515;
@@ -477,7 +512,6 @@ a:-webkit-any-link{
     opacity:1;
     height:auto;
     transition: all 1s
-
 }
 #arrow {
     content : "";
@@ -732,8 +766,20 @@ a:-webkit-any-link{
     .ed-content-hide {
         font-size: 23px;
     }
+    #story-card > h1 , #story-card > h3{
+        padding: 10px 0px;
+    }
+    
 }
 @media screen and (max-width:1280px) {
+    #story-container {
+        width: 80%;
+    }
+    #story-card > img { 
+        padding: 20px 20px;
+        width: 500px;
+        height: 630px;
+    }
     .ed-list{
         flex-flow : column nowrap;
         height: 90vh ;
@@ -783,6 +829,17 @@ a:-webkit-any-link{
     #welcome h1 {
         font-size: 75px;
     }
+    #story-container {
+        width: 85%;
+    }
+    #story-card > img { 
+        padding: 15px 15px;
+        width: 340px;
+        height: 430px;
+    }
+    #story-card > h1 { font-size : 30px; }
+    #story-card > h3 { font-size : 24px; }
+    #story-card > p  { font-size : 16px; }
     #codewars-container {
         width: 65%;
     }
@@ -853,29 +910,36 @@ a:-webkit-any-link{
     .first-column p{
         font-size: 40px;
     }
-    #hi-myname {
-        font-size: 25px;
+    .per-info-container {
+        flex-flow: row wrap;
+        flex-basis: 80%;
     }
-    .biocard-container {
-        flex-flow: column nowrap;
+    .per-info-container > div {
+        padding: 25px 20px;
+        flex:1 1 50%;
+        text-align: center;
     }
-    .biocard-container > div {
+    .per-info-container > div:first-child {
         flex-basis: 100%;
     }
-    #biocard-1 {
+    .per-info {
         flex-flow: column nowrap;
-        align-items:normal;
+        align-items: center;
     }
-    #biocard-1 > div {
-        padding : 5px 0px;
+    .per-info div{
+        text-align: center;
     }
-    #biocard-1 div p:first-child{
-        text-align:center;
+    #story-card > h1 { font-size : 28px; }
+    #story-card > h3 { font-size : 22px; }
+    #story-card > p  { font-size : 15px; }
+    #story-card > button { font-size: 22px; }
+    #story-container {
+        width: 90%;
     }
-    #biocard-1 div p:nth-child(2){
-        margin-left : 75px;
-        font-size: 20px;
-        opacity: 0.5;
+    #story-card > img { 
+        padding: 10px 10px;
+        width: 300px;
+        height: 380px;
     }
     #codewars-container {
         width: 75%;
@@ -926,6 +990,8 @@ a:-webkit-any-link{
         font-size: 40px;
     }
     .header h1{
+        margin-left: 0px;
+        text-align: center;
         font-size: 40px;
     }
     #drop-down-list {
@@ -950,6 +1016,15 @@ a:-webkit-any-link{
     }
     .dot{
         width:15px; height:15px;
+    }
+    #story-card > h1 { font-size : 24px; }
+    #story-card > h3 { font-size : 18px; }
+    #story-card > p  { font-size : 14px; }
+    #story-card > button { font-size: 18px; }
+    #story-card > img { 
+        padding: 7px 7px;
+        width: 220px;
+        height: 280px;
     }
     #codewars-card > div {
         font-size: 22px;
@@ -983,7 +1058,6 @@ a:-webkit-any-link{
     }
     .header h1{
         font-size: 35px;
-        margin-left: 0px;
         text-align: center;
     }
     .myslide img {
@@ -1011,6 +1085,26 @@ a:-webkit-any-link{
     .first-column h1{
         font-size: 35px;
     }
+    #about-me > h1 { 
+        margin: 20px 0 20px; 
+    }
+    .per-info-container {
+        margin-bottom: 50px;
+    }
+    #story-card > h1 { font-size : 18px; }
+    #story-card > h3 { font-size : 16px; }
+    #story-card > p  { font-size : 12px; }
+    #story-card > button { font-size: 16px; }
+    #story-card > img { 
+        margin-top: 50px;
+        padding: 5px 5px;
+        width: 160px;
+        height: 200px;
+    }
+    #codewars-container {
+        margin: 50px 15px;
+    }
+
     #showLangBtn {
         position: relative;
         width: 25px ; height: 25px;
@@ -1077,12 +1171,11 @@ a:-webkit-any-link{
     .myslide img {
         width:275px; height:275px;
     }
-    #biocard-1 div p:nth-child(2) ,
-    #biocard-2 div p:nth-child(n+2) {
-        margin-left: 50px;
-        font-size: 18px;
-        padding: 15px 0px;
-        opacity: 0.5;
+    .per-info-container ul , .per-info-container li , .per-info > div{
+        font-size: 20px;
+    }
+    .per-info-container li, .per-info > div p {
+        font-size : 16px;
     }
     .ed-title h1 {
         font-size: 40px;

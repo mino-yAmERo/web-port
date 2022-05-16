@@ -22,6 +22,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Akshar:wght@300&family=Audiowide&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
 <!-- first welcome-animation -->
@@ -60,13 +61,15 @@
         <div id="top-nav">
             <div id="left-top-nav">
                 <a href="#main">Home</a>
-                <a href="#about-me-container">About me</a>
+                <a href="#about-me">About me</a>
                 <a href="#codewars-container">Codewars</a>
                 <a href="#education-container">Education</a>
             </div>
             <div id="drop-down">
                 <div class="square" onclick="showDropdown()">
-                    <svg class="ham" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/></svg>
+                    <svg style ="padding: 7px 7px;"
+                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/>
+                    </svg>
                 </div>        
                 
             </div>
@@ -79,7 +82,7 @@
         </div>
         <div id="drop-down-list" class="smooth">
                 <a href="#main">Home</a>
-                <a href="#about-me-container">About me</a>
+                <a href="#about-me">About me</a>
                 <a href="#codewars-container">Codewars</a>
                 <a href="#education-container">Education</a>
             </div>
@@ -163,49 +166,62 @@
                         </div>
                     </div>
                 </div>
-                <div id = "about-me-container">
-                    <h1 id="about-me">About Me</h1>
-                    <p id="hi-myname">
-                        Hi! My name is Nutthabhas Thitabhas<br>
-                    </p>
+                <div id = "about-me">
+                    <h1>About Me</h1>
                 </div>
-                <div class = "biocard-container">
-                    <div class="column-space-left"></div>
-                    <div id="biocard-1">
+                <div class = "per-info-container">
+                    <div class= "per-info">
                         <div>
-                            <p>Address</p>
+                            Address
                             <p>Ban Mai Nong Sai<br>
                                 Aranyaprathet, Sakaeo</p>
                         </div>
                         <div>
-                            <p>Date of Birth</p>
+                            Date of Birth
                             <p>31 October 1996</p>
                         </div>
                         <div>
-                            <p>Email</p>
+                            Email
                             <p>off1996@icloud.com</p>
                         </div>
                         <div>
-                            <p>Phone</p>
+                            Phone
                             <p>086 315 4562</p>
                         </div>
                         <div>
-                            <p>Language</p>
+                            Language
                             <p>Thai <br>
-                                English</p>
+                                English <small>(TOEIC score : 780)</small></p>
                         </div>
                     </div>
-                    <div id="biocard-2">
-                        <div>
-                            <p>Programming skills</p>
-                            <p>HTML</p>
-                            <p>CSS</p>
-                            <p>Javascript</p>
-                            <p>PHP</p>
-                            <p>SQL</p>
-                        </div>
+                    <div>
+                        <ul>Programming skills
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>Javascript</li>
+                            <li>PHP</li>
+                            <li>SQL</li>
+                        </ul>
                     </div>
-                    <div class="column-space-right"></div>
+                    <div>
+                        <ul>Software and tools
+                            <li>Git Version Control</li>
+                            <li>Visual Studio Code</li>
+                            <li>Microsoft Office</li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="story-container">
+                    <div id="story-card" class="fade">
+                        <img src="image/mino-portrait.png">
+                        <h1>Nutthabhas Thitabhas</h1>
+                        <h3>Biography</h3>
+                        <p id="bio-info">I discovered myself recently,
+                        I am a person who likes problem solving and challenges.
+                        Programming is what I'm looking for.  So, I'm ready to learn, to grow up and explore new experiences.</p>
+                        <button id="bio-btn" onclick="readMore()">Read more</button>    
+                    </div>
+
                 </div>
                 <div id="codewars-container">
                     <h1>Codewars API</h1>
@@ -225,7 +241,6 @@
                                 <hr class="year-line">
                                 <p>2009 - 2014</p>
                                 <hr class="year-line">
-                
                             </div>
                             <div class="ed-content">
                                 <p class = "ed-content-hide">
