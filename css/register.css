@@ -131,7 +131,7 @@ form {
         text-align: center;
     }
     #register-form{
-        min-height: 550px;
+        min-height: 700px;
     }
     #register-form > label {
         font-size: 20px;
