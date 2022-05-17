@@ -9,6 +9,7 @@ function guestLogin() {
     if ( confirm(text)) {
     document.getElementById('Username').value = 'guest1234';
     document.getElementById('Password').value = '1234'
+    checkLogin();
     } else {
         return;
     }
