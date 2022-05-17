@@ -294,19 +294,19 @@
                 <div id="activity-container">
                     <h1>My Activities</h1>
                     <div class="activity-card">
-                        <div id="sport">
+                        <div id="sport" class="no-select">
                             <h1>Sport</h1>
                             <span class="card-tooltip" style="background-image:url('image/activity/sport/sport1.jpg')">
                                 <a target="_blank" href="https://drive.google.com/file/d/1SvLJ-yhLpCAG0CJg-KryKbKEUB_kN0aN/view?usp=drivesdk">See More</a>
                             </span>
                         </div>
-                        <div id="music">
+                        <div id="music" class="no-select">
                             <h1>Music</h1>
                             <span class="card-tooltip" style="background-image:url('image/activity/music/music1.jpg')">
                                 <a target="_blank" href="https://drive.google.com/file/d/1SvLJ-yhLpCAG0CJg-KryKbKEUB_kN0aN/view?usp=drivesdk">See More</a>
                             </span>
                         </div>
-                        <div id="student">
+                        <div id="student" class="no-select">
                             <h1>Student Activities</h1>
                             <span class="card-tooltip" style="background-image:url('image/activity/student/student1.JPG')">
                                 <a target="_blank" href="https://drive.google.com/file/d/1SvLJ-yhLpCAG0CJg-KryKbKEUB_kN0aN/view?usp=drivesdk">See More</a>
