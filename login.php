@@ -19,7 +19,7 @@
         <h1>Nutthabhas Thitabhas</h1>
     </div>
     <div class="container">
-        <h2>Login</h2>
+            <h2>Login</h2>
             <div class="login-box">
                 <label for="username">Username</label>
                 <input type="text" id="Username" >
@@ -29,7 +29,7 @@
                 
                 <span id="statLog"></span>
 
-                <label style="margin:10px ;">Not a member ? <a href="register.php">Create account</a></label>
+                <label style="margin:10px ;">Not a member ? <a href="register.php">Create account</a> or <a href="#" onclick="guestLogin()">login as guest</a></label>
                 <button type="button" id="Btn" onclick="checkLogin()">Log in</button>
             </div>
         

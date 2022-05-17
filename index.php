@@ -263,7 +263,7 @@
                             <div class="ed-content">
                                 <p class="ed-content-hide">
                                     Bachelor of Humanities and Social Sciences<br>
-                                    (Resigned)<br><br>
+                                    ( Resigned )<br><br>
                                     Major | English<br>
                                     GPA(1<sup style="font-size: 18px">st</sup> year) | 3.56 <br><br>
                                     Burapha University | Chon Buri
@@ -325,9 +325,7 @@
                 <a target="_blank" href="https://www.flaticon.com/free-icons/instagram" title="instagram icons">Instagram icons created by Pixel perfect - Flaticon</a><br>
                 <a target="_blank" href="https://www.flaticon.com/free-icons/line" title="line icons">Line icons created by Ruslan Babkin - Flaticon</a><br>
                 <a target="_blank" href="https://www.flaticon.com/free-icons/github" title="github icons">Github icons created by Ruslan Babkin - Flaticon</a><br>
-                <span><a target="_blank" href="https://icons8.com/icon/S5biqohaDgd1/menu-rounded">Menu Rounded</a><a target="_blank" href="https://icons8.com">Icon By Icons8</a><span>
-                <br>    
-            </div>
+                </div>
             <div >
                 <h1>Copyright &copy; 2022. Nutthabhas Thitabhas</h1>
             </div>

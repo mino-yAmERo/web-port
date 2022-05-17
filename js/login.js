@@ -1,3 +1,18 @@
+function guestLogin() {
+    text = `
+    ** If you don't want to create account to login to my website. **\n
+        Use this username and password to explore my website.\n
+        username : guest1234 
+        password : 1234\n
+        Do you want to continue ?`
+        
+    if ( confirm(text)) {
+    document.getElementById('Username').value = 'guest1234';
+    document.getElementById('Password').value = '1234'
+    } else {
+        return;
+    }
+}
 function checkLogin() {
     let userInput = document.getElementById('Username').value;
     let pwInput = document.getElementById('Password').value;
