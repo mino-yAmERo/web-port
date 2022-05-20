@@ -29,7 +29,7 @@
                 
                 <span id="statLog"></span>
 
-                <label style="margin:10px ;">Not a member ? <a href="register.php">Create account</a> or <a href="#" onclick="guestLogin()">login as guest</a></label>
+                <label>Not a member ? <a href="register.php">Sign up</a>|<a href="#" onclick="guestLogin()">Login as guest</a></label>
                 <button type="button" id="Btn" onclick="checkLogin()">Log in</button>
             </div>
         

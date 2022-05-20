@@ -65,7 +65,7 @@ form {
     min-height: 400px;
 }
 .login-box > label {
-    padding: 7px 0px;
+    padding: 10px 0px;
     color: #fff;
     font-size: 24px;
 }
@@ -135,7 +135,10 @@ a:hover , .login-box button:hover {
         min-height: 350px;
     }
     .login-box > label {
-        font-size: 20px;
+        font-size: 17px;
+    }
+    .login-box a {
+        font-size: 17px;
     }
     .login-box > input {
         height: 22px;

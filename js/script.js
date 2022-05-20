@@ -167,7 +167,7 @@ function stickyFunction(){
     }
 }
 //--- BIO function ---//
-    function readMore() {
+function readMore() {
         const btn = document.getElementById('bio-btn');
         const xhr = new XMLHttpRequest();
         xhr.onreadystatechange = function () {
@@ -179,9 +179,144 @@ function stickyFunction(){
         xhr.open('GET','bio.txt',true);
         xhr.send();
 
-    }
-    
+}
 
+//--- Activity && Modal ---//
+
+let modal = document.getElementById('myModal');
+let modalIndex = 0;
+let modalType ;
+
+function openModal(type) {
+    modal.style.display = "block";
+    modalIndex = 0;
+    if (type === 'sport') {
+        sportSlides(modalIndex);
+        modalType = 'sport';
+    }
+    if (type === 'music') {
+        musicSlides(modalIndex);
+        modalType = 'music';
+    }
+    if (type === 'student') {
+        studentSlides(modalIndex);
+        modalType = 'student';
+    }
+}
+function closeModal() {
+    modal.style.display = "none";
+    modalType = "";
+    allSlidesNone();
+}
+
+function changeModalIndex(n) {
+    // prev n => -1
+    // next n => +1
+    if (modalType == "sport"){
+        sportSlides(modalIndex += n);
+    }
+    if (modalType == "music"){
+        musicSlides(modalIndex += n);
+    }
+    if (modalType == "student"){
+        studentSlides(modalIndex += n);
+    }
+}
+
+function sportSlides(n) {
+    let sport = document.getElementsByClassName('sportSlide');
+    let i;
+    
+    // n = modal index
+    // n start 0 1 2 3 4
+    
+    // sport.length = 5 | 5 slides
+
+    // max of n = 4  return -> modal index 0 (first slide)
+    if (n > sport.length-1) { modalIndex = 0; }
+
+    // min of n = 0 return -> modal index 4 (last slide)
+    if (n < 0) { modalIndex = sport.length-1; }
+
+    // all slide => "display" : "none"
+    for (i = 0; i < sport.length; i++) {
+        
+        sport[i].style.display = "none" ;
+    }
+
+    // modal index => "display" : "block"
+    sport[modalIndex].style.display = "block";
+
+}
+function musicSlides(n) {
+    let music = document.getElementsByClassName('musicSlide');
+    let i;
+    
+    // n = modal index
+    // n start 0 1 2 3 4
+    
+    // music.length = 5 | 5 slides
+
+    // max of n = 4  return -> modal index 0 (first slide)
+    if (n > music.length-1) { modalIndex = 0; }
+
+    // min of n = 0 return -> modal index 4 (last slide)
+    if (n < 0) { modalIndex = music.length-1; }
+
+    // all slide => "display" : "none"
+    for (i = 0; i < music.length; i++) {
+        
+        music[i].style.display = "none" ;
+    }
+
+    // modal index => "display" : "block"
+    music[modalIndex].style.display = "block";
+
+}
+
+function studentSlides(n) {
+    let student = document.getElementsByClassName('studentSlide');
+    let i;
+    
+    // n = modal index
+    // n start 0 1 2 3 4
+    
+    // music.length = 5 | 5 slides
+
+    // max of n = 4  return -> modal index 0 (first slide)
+    if (n > student.length-1) { modalIndex = 0; }
+
+    // min of n = 0 return -> modal index 4 (last slide)
+    if (n < 0) { modalIndex = student.length-1; }
+
+    // all slide => "display" : "none"
+    for (i = 0; i < student.length; i++) {
+        
+        student[i].style.display = "none" ;
+    }
+
+    // modal index => "display" : "block"
+    student[modalIndex].style.display = "block";
+
+}
+
+
+function allSlidesNone() {
+    let sport = document.getElementsByClassName('sportSlide');
+    for (i = 0; i < sport.length; i++) {
+        sport[i].style.display = "none" ;
+    }
+
+    let music = document.getElementsByClassName('musicSlide');
+    for (i = 0; i < music.length; i++) {
+        music[i].style.display = "none" ;
+    }
+
+    let student = document.getElementsByClassName('studentSlide');
+    for (i = 0; i < student.length; i++) {
+        student[i].style.display = "none" ;
+    }
+}
 //--- Codewars API ---//
 window.onload= function () {
     //-------- USER API --------//
