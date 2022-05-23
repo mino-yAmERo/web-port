@@ -64,6 +64,7 @@
                 <a href="#about-me">About me</a>
                 <a href="#codewars-container">Codewars</a>
                 <a href="#education-container">Education</a>
+                <a href="#activity-container">My Activity</a>
             </div>
             <div id="drop-down">
                 <div class="hamburger" onclick="showDropdown()">
@@ -83,6 +84,7 @@
                 <a href="#about-me">About me</a>
                 <a href="#codewars-container">Codewars</a>
                 <a href="#education-container">Education</a>
+                <a href="#activity-container">My Activity</a>
             </div>
         
         <!-- content -->
