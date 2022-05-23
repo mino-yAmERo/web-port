@@ -87,22 +87,30 @@ function showSlides(n) {
 function currentSlide(n){
     showSlides(n);
 }
+
 //--- drop down ---//
 const dropdown = document.getElementById('drop-down-list');
+const hamburger = document.querySelector('.hamburger');
+const resetDropDown = () => {
+    dropdown.style.display = "none";
+    hamburger.classList.remove("clicked");
+}
 window.onresize = function(){ 
     const cssObj = window.getComputedStyle(dropdown, null);
     let display = cssObj.getPropertyValue("display");
     w = window.innerWidth;
     if (w > 768) {
+        resetDropDown();
         if (display == "none") return;
-        dropdown.style.display = "none";
     }
 }
 
 
 //--- Hide top navbar on scroll ---//
-
 function showDropdown() {
+    const hamburger = document.querySelector('.hamburger');
+    hamburger.classList.toggle('clicked');
+    
     const cssObj = window.getComputedStyle(dropdown, null);
     let display = cssObj.getPropertyValue("display");
 
@@ -122,7 +130,6 @@ function showDropdown() {
 
 }
 //--- Hide top navbar on scroll ---//
-
 let prevScrollpos = window.pageYOffset;
 window.onscroll = function() {  
     
@@ -143,6 +150,7 @@ window.onscroll = function() {
 
     }else{
         // scroll-down
+        resetDropDown();
         // add class smooth 
         if (dropdown.classList.value != 'smooth') dropdown.classList.toggle('smooth');
         navbar.style.top ="-60px";

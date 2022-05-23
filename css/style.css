@@ -172,23 +172,50 @@ h1 {
     flex-basis: 60%;
     justify-content: flex-end;
     align-items: center;
+    margin-right: 15px;
 }
 #drop-down{
     display: none;
     align-items: center;
 }
-.square{
-    width: 45px; height: 45px;
-    margin-left: 20px;
+.hamburger{
+    background-color: transparent;
+    border:none;
+    outline: none;
+    cursor: pointer;
+    margin-left: 15px;
+}
+.hamburger .line {
+    display:block;
+    width: 40px;
+    height: 3px;
+    background-color: #fff;
+    margin-block: 10px;
+    border-radius: 4px;
+    margin-left: 0px;
+    transition: transform 0.4s , opacity 0.25s , width 0.4s , margin-left 0.25s ;   
+}
+.hamburger.clicked .line:nth-child(1) {
+    transform: translateX(-8px) translateY(13px)
+    rotate(45deg);
+    width: 25px;
+    margin-left: 5px;
+}
+.hamburger.clicked .line:nth-child(2) {
+    opacity: 0;
+    width: 25px;
+    margin-left: 5px;
+}
+.hamburger.clicked .line:nth-child(3) {
+    transform: translateX(8px) translateY(-13px)
+    rotate(-45deg);
+    width: 25px;
+    margin-left: 5px;
 }
 
-.square:hover {
-    cursor: pointer;
-    opacity: 0.8;
-}
 #drop-down-list{
     display:none;
-    background: rgb(5, 5, 5);
+    background: rgb(17, 17, 17);
     flex-direction: column;
     position: fixed;
     width: 50vw;
@@ -1248,6 +1275,10 @@ a:-webkit-any-link{
     .header h1{
         font-size: 35px;
         text-align: center;
+    }
+    #top-nav a{
+        font-size: 20px;
+        padding: 15px 10px;
     }
     .myslide img {
         width:300px; height:300px;
