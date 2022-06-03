@@ -19,7 +19,116 @@ window.onload = function() {
 //         );
 // },false);
 
-function fnameHandler() {
+function validateForm() {
+    const fname_input = document.getElementById('Firstname').value;
+    const lname_input = document.getElementById('Lastname').value;
+    const user_input = document.getElementById('Username').value;
+    const pwd_input = document.getElementById('Password').value;
+    const conpwd_input = document.getElementById('ConfirmPassword').value;
+
+    let data = new FormData();
+        data.append('fname', fname_input);
+        data.append('lname', lname_input);
+        data.append('username', user_input);
+        data.append('password', pwd_input);
+        data.append('confirmpassword', conpwd_input);
+    console.log(data);
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST" , "checkRegister.php", true);
+    xhr.send(data);
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            console.log(this.responseText);
+            let myJSON = JSON.parse(this.responseText);
+            console.log(myJSON);
+            let log = document.getElementsByClassName('log');
+
+
+            // check status
+            if (myJSON.status.fname.length !== 0 || myJSON.status.lname.length !== 0 
+                || myJSON.status.user.length !== 0 || myJSON.status.pwd.length !== 0  ) {
+                
+                // found Error
+                // set default 
+                log[0].innerHTML = "";    // firstname log
+                log[1].innerHTML = "";    // lastname log
+                log[2].innerHTML = "";    // username log 
+                log[3].innerHTML = "";    // password log
+                log[4].innerHTML = "";    // confirm password log
+
+                //fname error
+                if (myJSON.status.fname.fnameErr !== undefined) log[0].innerHTML = myJSON.status.fname.fnameErr;
+                // else log[0].innerHTML = "";
+
+                //lname error
+                if (myJSON.status.lname.lnameErr !== undefined) log[1].innerHTML = myJSON.status.lname.lnameErr;
+                // else log[1].innerHTML = "";
+
+                //user error
+                if (myJSON.status.user.userErr !== undefined) log[2].innerHTML = myJSON.status.user.userErr;
+                // else log[2].innerHTML = "";
+                
+                //user duplicated error
+                if (myJSON.status.user.userDuplicated !== undefined) log[2].innerHTML += myJSON.status.user.userDuplicated;
+                // else log[2].innerHTML = "";
+
+                //password error
+                if (myJSON.status.pwd.pwdErr !== undefined) log[3].innerHTML = myJSON.status.pwd.pwdErr;
+                // else log[3].innerHTML = "";
+                
+                //password match error
+                if (myJSON.status.pwd.pwdIsMatched !== undefined) log[4].innerHTML = myJSON.status.pwd.pwdIsMatched;
+                // else log[4].innerHTML = "";
+
+                isInputValid();
+            } else {
+                alert(`Your register was successful
+                USER information 
+                firstname : ${myJSON.info.firstname}
+                lastname : ${myJSON.info.lastname}
+                username : ${myJSON.info.username}
+                `);
+                window.location.reload();
+            }
+
+
+        }
+    }
+}
+function isInputValid () {
+    const input = document.querySelectorAll('input');
+    const log = document.getElementsByClassName('log');
+    /*
+    [0] => firstname
+    [1] => Lastname
+    [2] => username
+    [3] => Password
+    [4] => Confirm Password
+    */
+
+    // check if log contains text && add invalid class to input
+
+    for (let i = 0; i < log.length; i++) {
+        // remove invalid-box by default
+        input[i].classList.remove('invalid-box');
+        input[i].classList.remove('valid-box');
+        // remove placeholder
+        input[i].placeholder = '';
+
+        // check if log contains error text -> invalid-box
+        if ( log[i].textContent !== '') {
+            input[i].classList.add('invalid-box');
+        } else {
+            input[i].classList.add('valid-box');
+        }
+
+    }
+
+}
+
+    
+/* JS VALIDATION (NOT USED)  
+    function fnameHandler() {
     const fname_log = document.getElementById('fnameLog');
     const fname_input = document.getElementById('Firstname');
     const input = fname_input.value;
@@ -331,8 +440,5 @@ function validateForm() {
     }
 }
 
-
-    
-        
-    
+*/
 

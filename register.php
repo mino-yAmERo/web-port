@@ -1,3 +1,15 @@
+<?php 
+    session_start();
+        if (array_key_exists('hasRegistered',$_SESSION)) {
+            if ($_SESSION['hasRegistered']  === true ) {
+                session_unset();
+                session_destroy();
+                header('Location: login.php');
+                exit(0);
+            } 
+        }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,33 +26,41 @@
     </div>
     <div class="container">
         <h2>Register</h2>
-        <form name ="regis-form" id="register-form" action="check_register.php" method="post" autocomplete="off">
-                <label for="firstname">Firstname</label>
-                <input type="text" name="Firstname" id="Firstname" onkeyup="fnameHandler()" >
-                <span id= fnameLog></span>
+        <div id = "register-form" >
+            <label for="firstname">Firstname</label>
+            <input type="text" id="Firstname" 
+            placeholder="Enter your firstname.." 
+            title="Firstname must contains only English letters" >
+            <span class = "log">Firstname must contains only English letters</span>
 
-                <label for="lastname">Lastname</label>
-                <input type="text" name="Lastname" id="Lastname"  onkeyup="lnameHandler()" >
-                <span id= lnameLog></span>
+            <label for="lastname">Lastname</label>
+            <input type="text" id="Lastname" 
+            placeholder="Enter your lastname.." 
+            title="Lastname must contains only English letters" >
+            <span class = "log">Lastname must contains only English letters</span>
 
-                <label for="username">Username</label>
-                <input type="text" name="Username" id="Username" onkeyup= "userHandler()" autocomplete="off" required>
-                <span id="userLog"></span>
+            <label for="username">Username</label>
+            <input type="text" id="Username"
+            placeholder="Enter your username.."
+            title="Username must be between 8 to 15 characters and contains letters [A-Z , a-z], underscore [ _ ] and numbers." >
+            <span class = "log">Username must be between 8 to 15 characters and contains English letters, underscore and numbers. </span>
 
-                <label for="password">Password</label>
-                <input type="password" name="Password" id="Password" onkeyup="pwdHandler()" onchange="pwdMatch()" autocomplete="off" required>
-                <span id="passwordLog"></span>
+            <label for="password">Password</label>
+            <input type="password" id="Password" 
+            placeholder="Enter your password.."
+            title="Password must be at least 6 characters and contains letters [A-Z , a-z], underscore [ _ ] and numbers." >
+            <span class = "log">Password must be at least 6 characters and contains English letters, underscore and numbers.</span>
 
-                <label for="password">Confirm Password</label>
-                <input type="password" name="txtPassword" id="ConfirmPassword" onkeyup="pwdMatch()"  autocomplete="off" required>
-                <span id="confirmpasswordLog"></span>
+            <label for="password">Confirm Password</label>
+            <input type="password" id="ConfirmPassword" 
+            placeholder="Enter your confirm password.." >
+            <span class = "log"></span>
 
-                <label style="margin:10px 0;">Already signed up ? <a href="login.php">Sign in here</a></label>
+            <label style="margin:10px 0;text-align:center">Already signed up ? <a href="login.php">Sign in here</a></label>
 
-                <button type="button" id="btn" onclick="validateForm()">Submit</button>
-                <!-- <button type="button" onclick=getStat()>TEST</button> -->
+            <button type="button" id="btn" onclick="validateForm()">Submit</button>
 
-        </form>
+        </div>
     </div>
     <div class="footer">
             <div >

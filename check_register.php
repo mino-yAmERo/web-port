@@ -1,7 +1,11 @@
 <?php
+    /*************  NOT USED *************/
+    /*************  NOT USED *************/
+    /*************  NOT USED *************/
+    /*************  NOT USED *************/
     session_start();
     if (isset($_SESSION['check_user']) && ( $_SESSION['check_user'] == $_POST['Username'] ) ) {
-        //re-post
+        //prevent re-post
         session_unset();
         session_destroy();
         header("location:login.php");

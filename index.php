@@ -1,6 +1,6 @@
 <?php
     session_start();
-    // ------ Check ADMIN and Login-Status ------
+    // ------ Login-Status ------
     if (  (!(array_key_exists('UserID',$_SESSION))) || (empty($_SESSION['UserID'])) )
     {
         header("location:login.php");

@@ -38,7 +38,7 @@
             //not found
             $list = array(
             'status'=>false,
-            'message'=> "Not found this ".$username." user"
+            'message'=> "Can not find this ".$username." user"
             );
         }
 
