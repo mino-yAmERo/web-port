@@ -62,7 +62,6 @@
             <label style="margin:10px 0;text-align:center">Already signed up ? <a href="login.php">Sign in here</a></label>
 
             <button type="button" id="btn" onclick="validateForm()">Submit</button>
-            <button type="button" id="test-btn" onclick=" testSwal()">testSwal</button>
             
         </div>
     </div>

@@ -30,7 +30,7 @@ function guestLogin() {
         } else {
             return;
         }
-    })
+    });
 }
 function checkLogin() {
     let userInput = document.getElementById('Username').value;

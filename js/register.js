@@ -9,7 +9,8 @@ window.onload = function() {
                 '<p style="text-align: left">- Use a simple username and password instead.</p>' +
                 '<small style=" text-align: left ; margin-left:15px ">e.g. username : abc12345 , password : 123456</small><br>' +
                 '<p style="text-align: left">- Use a guest user to login <a href="login.php" style="color:#545454; padding:0;" ><small>Click here</small></a></p>',
-                
+            confirmButtonText : 'Ok, I got it !',
+            confirmButtonColor: 'limegreen',    
         });
     },1);
 }
@@ -76,13 +77,18 @@ function validateForm() {
 
                 isInputValid();
             } else {
-                alert(`Your register was successful
-                USER information 
-                firstname : ${myJSON.info.firstname}
-                lastname : ${myJSON.info.lastname}
-                username : ${myJSON.info.username}
-                `);
-                window.location.reload();
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Your registeration successful',
+                    html: '<p>Your infomation is<br></p>'+
+                    '<p>Firstname : '+myJSON.info.firstname+'</p>'+
+                    '<p>Lastname : '+myJSON.info.lastname+'</p>'+
+                    '<p>Username : '+myJSON.info.username+'</p>', 
+                    confirmButtonColor: 'limegreen',
+                    confirmButtonText: 'Ok, Go to login !',
+                }).then( () => {
+                        window.location.reload();
+                })
             }
 
 
