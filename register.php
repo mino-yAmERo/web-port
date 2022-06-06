@@ -19,6 +19,9 @@
     <title>Register</title>
     <link rel="stylesheet" href="css/register.css">
     <link href="https://fonts.googleapis.com/css2?family=Akshar:wght@300&family=Audiowide&display=swap" rel="stylesheet">
+    <!-- sweetalert -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
+    <script src="sweetalert2.all.min.js"></script>
 </head>
 <body>
     <div class="header">
@@ -59,7 +62,8 @@
             <label style="margin:10px 0;text-align:center">Already signed up ? <a href="login.php">Sign in here</a></label>
 
             <button type="button" id="btn" onclick="validateForm()">Submit</button>
-
+            <button type="button" id="test-btn" onclick=" testSwal()">testSwal</button>
+            
         </div>
     </div>
     <div class="footer">

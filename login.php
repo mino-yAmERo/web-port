@@ -13,6 +13,9 @@
     <title>Login</title>
     <link rel="stylesheet" href="css/login.css">
     <link href="https://fonts.googleapis.com/css2?family=Akshar:wght@300&family=Audiowide&display=swap" rel="stylesheet">
+    <!-- sweetalert -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
+    <script src="sweetalert2.all.min.js"></script>
 </head>
 <body >
     <div class="header">

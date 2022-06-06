@@ -1,24 +1,18 @@
 window.onload = function() {
     setTimeout(function() {
-        alert(`Note : \n
-    the purpose of this website is for self-study and not protected by SSL certificate.\n
-    ** To protect your personal information, I recommend you to.. **\n
-        - Avoid using username and password that you often use. *\n
-        - try to use a simple username and password instead. *\n
-    (e.g. username : abc12345 , password : 123456)\n`
-        );
+        Swal.fire({
+            title : 'Notice',
+            html : 
+                '<b>the purpose of this website is for studying and not protected by SSL certificate.<br><br></b>' +
+                '<p>To protect your personal information I recommend you to..</p><br>' +
+                '<p style="text-align: left">- Avoid using username and password that you often use.</p>' + 
+                '<p style="text-align: left">- Use a simple username and password instead.</p>' +
+                '<small style=" text-align: left ; margin-left:15px ">e.g. username : abc12345 , password : 123456</small><br>' +
+                '<p style="text-align: left">- Use a guest user to login <a href="login.php" style="color:#545454; padding:0;" ><small>Click here</small></a></p>',
+                
+        });
     },1);
 }
-// document.addEventListener("DOMContentLoaded", function() {
-//     alert(`Note : \n
-//     the purpose of this website is for self-study and not protected by SSL certificate.\n
-//     ** To protect your personal information, I recommend you to.. **\n
-//         - Avoid using username and password that you often use. *\n
-//         - try to use a simple username and password instead. *\n
-//     (e.g. username : abc12345 , password : 123456)\n`
-//         );
-// },false);
-
 function validateForm() {
     const fname_input = document.getElementById('Firstname').value;
     const lname_input = document.getElementById('Lastname').value;
@@ -125,7 +119,13 @@ function isInputValid () {
     }
 
 }
-
+function testSwal() {
+    Swal.fire(
+        'The Internet?',
+        'That thing is still around?',
+        'question'
+    );
+}
     
 /* JS VALIDATION (NOT USED)  
     function fnameHandler() {
