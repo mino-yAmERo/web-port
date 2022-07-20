@@ -249,7 +249,7 @@ h1 {
     background-color: rgba(5, 5, 5, 0.9) !important;
     color: rgba(231, 228, 228, 0.931);
 }
-#logout-btn {
+#login-btn {
     justify-content: flex-end;
 }
 .page-wrapper {

@@ -15,6 +15,7 @@ let setFadeOut = setTimeout(fadeOut,8000); //welcome fade-out and show main webp
 // setTimeout(fadeIn,100);
 // setTimeout(fadeOut,100);
 
+
 function stopTimeOut() {
     clearTimeout(setFadeIn);
     clearTimeout(setFadeOut);
@@ -59,6 +60,28 @@ function fadeOut (){
     }},10);  
 }
 // welcome disappear && show webpage
+// show right navbar-item by default | after logging out
+const regisBtn = document.getElementById('register-nav-btn');
+const loginBtn = document.getElementById('login-nav-btn');
+const userBtn = document.getElementById('user-nav-btn');
+const logoutBtn = document.getElementById('logout-nav-btn');
+
+function showRightNavItem () {
+    regisBtn.style.display = 'block';
+    loginBtn.style.display = 'block';
+    userBtn.style.display = 'none';
+    logoutBtn.style.display = 'none';
+}
+// hide right navbar-item
+function hideRightNavItem () {
+    
+    regisBtn.style.display = 'none';
+    loginBtn.style.display = 'none';
+    userBtn.style.display = 'block';
+    logoutBtn.style.display = 'block';
+}
+
+
 
 //---- slide show --- //
 const slide = document.getElementsByClassName('myslide');

@@ -1,12 +1,11 @@
 <?php
     session_start();
-    // ------ Login-Status ------
-    if (  (!(array_key_exists('UserID',$_SESSION))) || (empty($_SESSION['UserID'])) )
-    {
-        header("location:login.php");
-        exit();
+    // ------ First time login ------
+    // welcome animation
+    if ( !(array_key_exists('firstTimeLogin',$_SESSION)) || (empty($_SESSION['firstTimeLogin']))) {
+        $_SESSION["firstTimeLogin"] = true ;
     }
-    
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,7 +27,7 @@
 <!-- first welcome-animation -->
     <div id="welcome">
         <div>
-            <h1 id="h">Hello <?php echo $_SESSION["Username"]?> </h1>
+            <h1 id="h">Hello my guest</h1>
         </div>
         <div>
             <h1 id="n">I'm Nutthabhas</h1>
@@ -37,7 +36,7 @@
             <h1 id="t">Thitabhas</h1>
         </div>
         <div id="welcome-message">
-            <h2>Hello! My guests</h2> 
+            
             <p>Welcome to nutthabhas.com</p>
             <hr style="width:auto; color:#ddd;">
         </div>
@@ -74,9 +73,11 @@
                 </div>        
                 
             </div>
-            <div id="right-top-nav">
-                <a href="#" style="font-style:italic;"><u><?php echo $_SESSION["Username"] ?></u></a>
-                <a href="logout.php" id="logout-btn">Logout</a>
+            <div id="right-top-nav"> 
+                <a href="register.php" id="register-nav-btn">Sign up</a>
+                <a href="login.php" id="login-nav-btn">Login</a>
+                <a href="userPage.php" id="user-nav-btn" style="display:none"> <?php echo $_SESSION["Username"]?></a>
+                <a href="logout.php" id="logout-nav-btn" style="display:none">Log Out</a>
             </div>
         </div>
         <div id="drop-down-list" class="smooth">
@@ -476,9 +477,28 @@
 </body>
     <script src="js/script.js"></script>
     <?php 
-        $now = time() ; // check time when main page starts.
-        if ($now > $_SESSION["expire"]) {
-            echo "<script> skipIntro(); </script>";   
+        // check time when main page starts.
+        // $now = time() ; 
+        // if ($now > $_SESSION["expire"]) {
+        //     echo "<script> skipIntro(); </script>";   
+        // }
+
+        if (array_key_exists('firstTimeLogin',$_SESSION) || !(empty($_SESSION['firstTimeLogin']))) {
+            if ($_SESSION["firstTimeLogin"] === true) { // if it's not first time login -> skip intro animation
+                echo "<script> skipIntro(); </script>";
+            }
         }
-    ?>   
+
+        //check if user has logged in already
+        //check right nav-item
+
+        if ( array_key_exists('UserID',$_SESSION) || !(empty($_SESSION['UserID']))) {
+            echo "<script> hideRightNavItem() ;</script>";
+        } else {
+            echo "<script> showRightNavItem() ;</script>";
+        }
+    
+        
+    ?>
+    
 </html>
