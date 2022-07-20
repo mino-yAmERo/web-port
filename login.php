@@ -1,7 +1,7 @@
 <?php 
     session_start();
     if ( array_key_exists('UserID',$_SESSION) || !(empty($_SESSION['UserID']))) {
-        header('Location:index.php');
+        header('Location:userPage.php');
     }
 ?>
 <!DOCTYPE html>
