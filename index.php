@@ -2,8 +2,9 @@
     session_start();
     // ------ First time login ------
     // welcome animation
-    if ( !(array_key_exists('firstTimeLogin',$_SESSION)) || (empty($_SESSION['firstTimeLogin']))) {
-        $_SESSION["firstTimeLogin"] = true ;
+    if ( !(array_key_exists('first_login_time',$_SESSION)) || (empty($_SESSION['first_login_time']))) {
+        $_SESSION["first_login_time"] = time();
+        $_SESSION["expire"] = $_SESSION['first_login_time'] + 30; // 60วินาที * 10 => 10นาที
     }
 
 ?>
@@ -40,9 +41,9 @@
             <p>Welcome to nutthabhas.com</p>
             <hr style="width:auto; color:#ddd;">
         </div>
-        <div class="skip">
+        <div id="skip" style="opacity:0">
             <span>
-                <button onclick="skipIntro()">
+                <button onclick="skipIntro()" >
                     <p>Skip Intro</p><img src="icon/skip_icon.png" style="width:48px;height:48px">
                 </button>
             </span>
@@ -477,17 +478,21 @@
 </body>
     <script src="js/script.js"></script>
     <?php 
-        // check time when main page starts.
-        // $now = time() ; 
-        // if ($now > $_SESSION["expire"]) {
-        //     echo "<script> skipIntro(); </script>";   
-        // }
-
-        if (array_key_exists('firstTimeLogin',$_SESSION) || !(empty($_SESSION['firstTimeLogin']))) {
-            if ($_SESSION["firstTimeLogin"] === true) { // if it's not first time login -> skip intro animation
-                echo "<script> skipIntro(); </script>";
+        
+        if ( array_key_exists('first_login_time',$_SESSION) && !(empty($_SESSION['first_login_time']))) {
+            $now = time() ; 
+            // if it's not first time login -> skip intro animation for 10min
+            if ($now > $_SESSION["first_login_time"]) {
+                echo "<script> skipIntro(); </script>";   
             }
+            
+            // after 10min unset first_login_time
+            if ($now >= $_SESSION['expire'] ) {
+                unset($_SESSION["first_login_time"]);
+            }
+            
         }
+
 
         //check if user has logged in already
         //check right nav-item

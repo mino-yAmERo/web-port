@@ -41,7 +41,7 @@ if (  (!(array_key_exists('UserID',$_SESSION))) || (empty($_SESSION['UserID'])) 
     </div>
     <div id="top-nav">
         <div id="left-top-nav">
-            <a href="index.php#main">Home</a>
+            <a href="index.php">Home</a>
         </div>
         <div id="drop-down">
             <div class="hamburger" onclick="showDropdown()">

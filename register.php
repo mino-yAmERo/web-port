@@ -2,8 +2,7 @@
     session_start();
         if (array_key_exists('hasRegistered',$_SESSION)) {
             if ($_SESSION['hasRegistered']  === true ) {
-                session_unset();
-                session_destroy();
+                unset($_SESSION['hasRegistered']);
                 header('Location: login.php');
                 exit(0);
             } 

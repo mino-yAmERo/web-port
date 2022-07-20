@@ -4,10 +4,12 @@ const welcome = document.getElementById('welcome');
 const main = document.getElementById('main');
 const navbar = document.getElementById('top-nav');
 let sticky = navbar.offsetTop;
-// console.log('position before main webpage show: '+sticky);
+
 
 //main function 
 //welcome fade-in
+
+let setSkipbtn_fade = setTimeout(skipFadeIn,1000);
 let setFadeIn = setTimeout(fadeIn,6000); // welcome to my website //
 let setFadeOut = setTimeout(fadeOut,8000); //welcome fade-out and show main webpage
 
@@ -17,13 +19,27 @@ let setFadeOut = setTimeout(fadeOut,8000); //welcome fade-out and show main webp
 
 
 function stopTimeOut() {
+    clearTimeout(setSkipbtn_fade);
     clearTimeout(setFadeIn);
     clearTimeout(setFadeOut);
 }
+function skipFadeIn (){
+    const skip_btn = document.getElementById('skip');
+    let skipInterval = setInterval(function() {
+        let skip_opacity = Number(window.getComputedStyle(skip_btn).getPropertyValue("opacity"));
+            if (skip_opacity < 1) {
+                skip_opacity += 0.01;
+                skip_btn.style.opacity = skip_opacity;
+                
+            } else {
+                clearInterval(skipInterval);
+        }
+    },10);
+}
 function skipIntro() {
+    welcome.style.display = 'none';
     stopTimeOut();
     document.querySelector('#h ,#n ,#t').style.animation = 'none';
-    welcome.style.display = 'none';
     main.style.display = 'block';
     sticky = navbar.offsetTop;
     showSlides();
