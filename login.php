@@ -1,7 +1,13 @@
 <?php 
     session_start();
     if ( array_key_exists('UserID',$_SESSION) || !(empty($_SESSION['UserID']))) {
-        header('Location:userPage.php');
+
+        if ($_SESSION['Status'] == 'ADMIN' ){
+            header("location:admin.php");
+    
+        } else {
+            header('Location:userPage.php');
+        }
     }
 ?>
 <!DOCTYPE html>
