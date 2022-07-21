@@ -1,0 +1,110 @@
+* {
+    font-family: sans-serif;
+}
+.footer {
+    display: flex;
+    flex-flow: row wrap;
+}
+.footer > div{
+    flex-basis:50%;
+    background-color: rgba(5, 5, 5, 0.9);
+}
+.footer-contact {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center
+}
+
+.footer-icon {
+    width: 48px; height: 48px;
+    margin: 12px 10px;
+    opacity: 0.6;
+    transition: all 0.4s
+}
+.footer-icon:hover {
+    opacity: 1;
+}
+.footer > div h1 {
+    margin: 10px 0;
+    font-size: 35px;
+    padding : 10px 0px;
+    color: #8a8a8a;
+}
+.footer-contact > div:last-child > p {
+    font-size: 20px;
+}
+.credit {
+    display : flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+}
+.credit a, .credit > span , .credit span a{
+    margin: 0 15px ;
+    align-self: center;
+    font-size: 16px;
+    text-align: center;
+    letter-spacing: 0.5px;
+    color: rgba(231, 228, 228, 0.931);
+    text-decoration: none;
+    white-space: nowrap;
+}
+.footer >div:last-child{
+    background-color: #151515;
+    flex-basis:100% ;
+    width:100%;
+}
+.footer >div:last-child h1{
+    font-size: 25px;
+}
+
+
+
+@media screen and (max-width:1024px){
+    .footer-icon {
+        width: 44px; height: 44px;
+    }
+    .footer > div h1 {
+        font-size: 30px
+    }
+    .footer-contact > div:last-child > p {
+        font-size: 18px;
+    }
+    .credit a ,.credit span a {
+        font-size: 14px;
+    }   
+}
+
+@media screen and (max-width:768px) {
+    .footer {
+        flex-direction: column;
+    }
+    .footer > div {
+        width:100%
+    }
+    .credit a , .credit span a {
+        align-self: center;
+        font-size: 12px;
+    }
+}
+
+
+@media screen and (max-width:425px){
+    .footer {
+        flex-direction: column;
+    }
+    .footer >div:last-child h1{
+        font-size: 22px;
+    }
+    .footer-contact > div:last-child > p {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width:375px) {
+    .footer >div:last-child h1{
+        font-size: 20px;
+    }
+    .footer-contact > div:last-child > p {
+        font-size: 15px;
+    }
+}

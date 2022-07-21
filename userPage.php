@@ -13,15 +13,13 @@ if (  (!(array_key_exists('UserID',$_SESSION))) || (empty($_SESSION['UserID'])) 
 <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="format-detection" content="telephone=no">
+    <!-- <meta name="format-detection" content="telephone=no"> -->
     <meta name="author" content="Nutthabhas Thitabhas">
     <meta name="description" content="Personal Portfolio Web">
     <title>User Page | Nutthabhas</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Akshar:wght@300&family=Audiowide&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+
     <!-- animate css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <!-- bootstrap 4.6.2 -->
@@ -34,7 +32,7 @@ if (  (!(array_key_exists('UserID',$_SESSION))) || (empty($_SESSION['UserID'])) 
 
     </style>
 </head>
-<body class="bg-dark">
+<body class="bg-dark text-white-50">
     <!-- header -->
     <div class="header">
             <h1> Nutthabhas Thitabhas</h1>
@@ -42,14 +40,6 @@ if (  (!(array_key_exists('UserID',$_SESSION))) || (empty($_SESSION['UserID'])) 
     <div id="top-nav">
         <div id="left-top-nav">
             <a href="index.php">Home</a>
-        </div>
-        <div id="drop-down">
-            <div class="hamburger" onclick="showDropdown()">
-                <span class="line"></span>
-                <span class="line"></span>
-                <span class="line"></span>
-            </div>        
-            
         </div>
         <div id="right-top-nav"> 
             <a href="logout.php" >Log Out</a>
@@ -67,7 +57,7 @@ if (  (!(array_key_exists('UserID',$_SESSION))) || (empty($_SESSION['UserID'])) 
                 <h1><br></h1>
             </div>
             <div class="col-12 mt-5">
-                <h1 class="animate__animated animate__rubberBand animate__repeat-3 animate__delay-2s">Working in progress...</h1>
+                <h1 class="text-center animate__animated animate__rubberBand animate__repeat-3 animate__delay-2s">Working in progress...</h1>
                 
             </div>
         </div>
@@ -80,7 +70,7 @@ if (  (!(array_key_exists('UserID',$_SESSION))) || (empty($_SESSION['UserID'])) 
     <!-- footer -->
     <div class="footer">
             <div class="footer-contact">
-                <h1 style="width: 100%;">Contact me</h1>
+                <h1 class="text-center">Contact me</h1>
                 <div class="contact-me">
                     <a href='https://www.facebook.com/off.miner' target='_blank'>
                         <img class="footer-icon"
@@ -103,7 +93,7 @@ if (  (!(array_key_exists('UserID',$_SESSION))) || (empty($_SESSION['UserID'])) 
                 </div>
             </div>
             <div class="credit">
-                <h1>Credit</h1>
+                <h1 class="text-center">Credit</h1>
                 <a target="_blank" href="https://www.flaticon.com/free-icons/facebook" title="facebook icons">Facebook icons created by Pixel perfect - Flaticon</a><br>
                 <a target="_blank" href="https://www.flaticon.com/free-icons/instagram" title="instagram icons">Instagram icons created by Pixel perfect - Flaticon</a><br>
                 <a target="_blank" href="https://www.flaticon.com/free-icons/line" title="line icons">Line icons created by Ruslan Babkin - Flaticon</a><br>
