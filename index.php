@@ -198,11 +198,12 @@
                 </div>
                 <div>
                     <ul>Programming skills
-                        <li>HTML</li>
-                        <li>CSS</li>
-                        <li>Javascript</li>
+                        <li>HTML, CSS, JavaScript</li>
+                        <li>Bootstrap, jQuery</li>
+                        <li>AJAX, JSON</li>
                         <li>PHP</li>
-                        <li>SQL</li>
+                        <li>SQL, MySQL , phpMyAdmin</li>
+                        
                     </ul>
                 </div>
                 <div>
