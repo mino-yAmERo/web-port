@@ -490,11 +490,7 @@
             // if it's not first time login -> skip intro animation for 10min
             if ($now > $_SESSION["first_login_time"]) {
                 echo "<script> skipIntro(); </script>";   
-            }
-            
-            
-            
-            
+            }  
         }
 
 
@@ -507,7 +503,6 @@
             echo "<script> showRightNavItem() ;</script>";
         }
     
-        
     ?>
     
 </html>
