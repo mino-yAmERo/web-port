@@ -1,9 +1,6 @@
 const navbar = document.getElementById('top-nav');
 let sticky = navbar.offsetTop;
 
-
-
-
 //--- Hide top navbar on scroll ---//
 let prevScrollpos = window.pageYOffset;
 window.onscroll = function() {  
