@@ -479,6 +479,8 @@
 </body>
     <script src="js/script.js"></script>
     <?php 
+        
+        // after 10min unset first_login_time
         if ($now >= $_SESSION['expire'] ) {
                 unset($_SESSION["first_login_time"]);
         }
@@ -490,7 +492,7 @@
                 echo "<script> skipIntro(); </script>";   
             }
             
-            // after 10min unset first_login_time
+            
             
             
         }
