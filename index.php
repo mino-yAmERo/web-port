@@ -479,7 +479,10 @@
 </body>
     <script src="js/script.js"></script>
     <?php 
-        
+        if ($now >= $_SESSION['expire'] ) {
+                unset($_SESSION["first_login_time"]);
+        }
+
         if ( array_key_exists('first_login_time',$_SESSION) && !(empty($_SESSION['first_login_time']))) {
             $now = time() ; 
             // if it's not first time login -> skip intro animation for 10min
@@ -488,9 +491,7 @@
             }
             
             // after 10min unset first_login_time
-            if ($now >= $_SESSION['expire'] ) {
-                unset($_SESSION["first_login_time"]);
-            }
+            
             
         }
 
